@@ -49,7 +49,7 @@
             // textBox1
             // 
             textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(847, 456);
+            textBox1.Location = new Point(809, 495);
             textBox1.Name = "textBox1";
             textBox1.PlaceholderText = "Usuario";
             textBox1.Size = new Size(297, 23);
@@ -60,10 +60,10 @@
             linkLabel1.ActiveLinkColor = Color.SteelBlue;
             linkLabel1.Anchor = AnchorStyles.None;
             linkLabel1.AutoSize = true;
-            linkLabel1.BackColor = SystemColors.ActiveCaptionText;
+            linkLabel1.BackColor = Color.Transparent;
             linkLabel1.ForeColor = Color.Gold;
             linkLabel1.LinkColor = Color.Gold;
-            linkLabel1.Location = new Point(1036, 541);
+            linkLabel1.Location = new Point(998, 580);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(90, 15);
             linkLabel1.TabIndex = 2;
@@ -75,9 +75,9 @@
             // 
             checkBox1.Anchor = AnchorStyles.None;
             checkBox1.AutoSize = true;
-            checkBox1.BackColor = Color.Black;
+            checkBox1.BackColor = Color.Transparent;
             checkBox1.ForeColor = Color.Gold;
-            checkBox1.Location = new Point(828, 541);
+            checkBox1.Location = new Point(790, 580);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(92, 19);
             checkBox1.TabIndex = 3;
@@ -88,7 +88,7 @@
             // textBox2
             // 
             textBox2.Anchor = AnchorStyles.None;
-            textBox2.Location = new Point(847, 495);
+            textBox2.Location = new Point(809, 534);
             textBox2.Name = "textBox2";
             textBox2.PlaceholderText = "Senha";
             textBox2.Size = new Size(297, 23);
@@ -99,10 +99,10 @@
             linkLabel2.ActiveLinkColor = Color.SteelBlue;
             linkLabel2.Anchor = AnchorStyles.None;
             linkLabel2.AutoSize = true;
-            linkLabel2.BackColor = SystemColors.ActiveCaptionText;
+            linkLabel2.BackColor = Color.Transparent;
             linkLabel2.ForeColor = SystemColors.ActiveCaptionText;
             linkLabel2.LinkColor = Color.Gold;
-            linkLabel2.Location = new Point(828, 613);
+            linkLabel2.Location = new Point(790, 652);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(73, 15);
             linkLabel2.TabIndex = 5;
@@ -118,10 +118,11 @@
             rButton1.BorderColor = Color.PaleVioletRed;
             rButton1.BorderRadius = 20;
             rButton1.BorderSize = 0;
+            rButton1.Cursor = Cursors.Hand;
             rButton1.FlatAppearance.BorderSize = 0;
             rButton1.FlatStyle = FlatStyle.Flat;
             rButton1.ForeColor = SystemColors.ActiveCaptionText;
-            rButton1.Location = new Point(828, 570);
+            rButton1.Location = new Point(790, 609);
             rButton1.Name = "rButton1";
             rButton1.Size = new Size(316, 40);
             rButton1.TabIndex = 8;
@@ -133,9 +134,9 @@
             // pictureBox1
             // 
             pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.BackColor = SystemColors.ActiveCaptionText;
+            pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(810, 456);
+            pictureBox1.Location = new Point(772, 495);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(29, 20);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -145,9 +146,9 @@
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackColor = SystemColors.ActiveCaptionText;
+            pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(810, 495);
+            pictureBox2.Location = new Point(772, 534);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 23);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -157,9 +158,9 @@
             // pictureBox3
             // 
             pictureBox3.Anchor = AnchorStyles.None;
-            pictureBox3.BackColor = Color.Black;
+            pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(828, 263);
+            pictureBox3.Location = new Point(790, 302);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(316, 140);
             pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -193,7 +194,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ActiveCaptionText;
+            BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
             Controls.Add(label1);
             Controls.Add(linkLabel2);

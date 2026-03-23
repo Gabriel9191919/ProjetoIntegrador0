@@ -29,8 +29,10 @@ namespace TelaLogin
 
         private void rButton1_Click(object sender, EventArgs e)
         {
-
-        }
+            TelaCadastro telacadastro = new TelaCadastro();
+            telacadastro.Show();
+            this.Hide();
+        }   
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
