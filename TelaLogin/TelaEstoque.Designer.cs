@@ -49,6 +49,8 @@
             button4 = new Button();
             pictureBox2 = new PictureBox();
             button6 = new Button();
+            button7 = new Button();
+            button8 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -60,7 +62,7 @@
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Produto, Preço, Quantidade, Vencimento });
-            dataGridView1.Location = new Point(468, 217);
+            dataGridView1.Location = new Point(647, 436);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(594, 369);
             dataGridView1.TabIndex = 0;
@@ -99,7 +101,7 @@
             // button1
             // 
             button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(539, 188);
+            button1.Location = new Point(718, 407);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 1;
@@ -110,7 +112,7 @@
             // button2
             // 
             button2.Cursor = Cursors.Hand;
-            button2.Location = new Point(620, 188);
+            button2.Location = new Point(799, 407);
             button2.Name = "button2";
             button2.Size = new Size(75, 23);
             button2.TabIndex = 2;
@@ -121,7 +123,7 @@
             // button3
             // 
             button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(701, 188);
+            button3.Location = new Point(880, 407);
             button3.Name = "button3";
             button3.Size = new Size(75, 23);
             button3.TabIndex = 3;
@@ -132,7 +134,7 @@
             // 
             textBox1.BorderStyle = BorderStyle.None;
             textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(782, 187);
+            textBox1.Location = new Point(1051, 408);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(156, 22);
             textBox1.TabIndex = 4;
@@ -143,7 +145,7 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Location = new Point(944, 187);
+            pictureBox1.Location = new Point(1213, 408);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(27, 22);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -157,7 +159,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Trebuchet MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Gold;
-            label1.Location = new Point(689, 140);
+            label1.Location = new Point(868, 359);
             label1.Name = "label1";
             label1.Size = new Size(130, 35);
             label1.TabIndex = 6;
@@ -168,7 +170,7 @@
             pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(334, -214);
+            pictureBox3.Location = new Point(830, 212);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(213, 153);
             pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -187,7 +189,7 @@
             Painel_Principal.Dock = DockStyle.Left;
             Painel_Principal.Location = new Point(0, 0);
             Painel_Principal.Name = "Painel_Principal";
-            Painel_Principal.Size = new Size(184, 626);
+            Painel_Principal.Size = new Size(184, 1080);
             Painel_Principal.TabIndex = 13;
             // 
             // label3
@@ -195,7 +197,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(90, 170);
+            label3.Location = new Point(69, 224);
             label3.Name = "label3";
             label3.Size = new Size(68, 32);
             label3.TabIndex = 17;
@@ -203,7 +205,8 @@
             // 
             // button5
             // 
-            button5.Location = new Point(0, 341);
+            button5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button5.Location = new Point(0, 411);
             button5.Name = "button5";
             button5.Size = new Size(184, 95);
             button5.TabIndex = 14;
@@ -214,7 +217,7 @@
             // 
             label2.Font = new Font("Trebuchet MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(12, 171);
+            label2.Location = new Point(35, 193);
             label2.Name = "label2";
             label2.Size = new Size(72, 31);
             label2.TabIndex = 16;
@@ -222,40 +225,67 @@
             // 
             // button4
             // 
-            button4.Location = new Point(0, 231);
+            button4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button4.Location = new Point(0, 300);
             button4.Name = "button4";
             button4.Size = new Size(184, 95);
             button4.TabIndex = 13;
             button4.Text = "Home";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // pictureBox2
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(-61, -16);
+            pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(311, 151);
+            pictureBox2.Size = new Size(184, 151);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
             // button6
             // 
-            button6.Location = new Point(0, 454);
+            button6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button6.Location = new Point(0, 523);
             button6.Name = "button6";
             button6.Size = new Size(184, 95);
             button6.TabIndex = 15;
             button6.Text = "DashBoard";
             button6.UseVisualStyleBackColor = true;
+            button6.Click += button6_Click;
+            // 
+            // button7
+            // 
+            button7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button7.Location = new Point(1257, 443);
+            button7.Name = "button7";
+            button7.Size = new Size(32, 30);
+            button7.TabIndex = 14;
+            button7.Text = "+";
+            button7.UseVisualStyleBackColor = true;
+            button7.Click += button7_Click;
+            // 
+            // button8
+            // 
+            button8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button8.Location = new Point(1257, 481);
+            button8.Name = "button8";
+            button8.Size = new Size(32, 30);
+            button8.TabIndex = 15;
+            button8.Text = "-";
+            button8.UseVisualStyleBackColor = true;
             // 
             // TelaEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1284, 626);
+            ClientSize = new Size(1920, 1080);
+            Controls.Add(button8);
+            Controls.Add(button7);
             Controls.Add(Painel_Principal);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -265,6 +295,7 @@
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox3);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "TelaEstoque";
             Text = "TelaEstoque";
             Load += TelaEstoque_Load;
@@ -300,5 +331,7 @@
         private PictureBox pictureBox2;
         private Label label3;
         private Label label2;
+        private Button button7;
+        private Button button8;
     }
 }

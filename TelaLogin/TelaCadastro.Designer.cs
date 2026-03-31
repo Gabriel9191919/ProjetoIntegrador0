@@ -174,6 +174,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "TelaCadastro";
             Text = "TelaCadastro";
+            Load += TelaCadastro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
