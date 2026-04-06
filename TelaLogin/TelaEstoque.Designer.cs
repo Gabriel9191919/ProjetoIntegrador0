@@ -56,7 +56,15 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+            dataGridView1.Location = new Point(468, 217);
+=======
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Produto, Preço, Quantidade, Vencimento });
+>>>>>>> 4718065e960a2bdea8205da29a2e8ae149b8a974
             dataGridView1.Location = new Point(647, 436);
+>>>>>>> 41713c1c75519ea30ff0f44b7a59a7bcebe8dc57
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(594, 369);
             dataGridView1.TabIndex = 0;

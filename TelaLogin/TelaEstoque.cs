@@ -13,11 +13,21 @@ namespace TelaLogin
 {
     public partial class TelaEstoque : Form
     {
+<<<<<<< HEAD
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
+=======
+        string conexao = "server = localhost; Uid = root; pwd =; Database=Adega_JM;";
+>>>>>>> 4718065e960a2bdea8205da29a2e8ae149b8a974
         public TelaEstoque()
         {
             InitializeComponent();
 
+<<<<<<< HEAD
+=======
+            int quantidade = 15;
+
+            
+>>>>>>> 4718065e960a2bdea8205da29a2e8ae149b8a974
 
         }
 
@@ -28,7 +38,22 @@ namespace TelaLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
     
+=======
+            MySqlConnection con = new MySqlConnection(conexao);
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM estoque";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataAdapter estoque = new MySqlDataAdapter(cmd);
+                DataTable qualquercoisa = new DataTable();
+                estoque.Fill(qualquercoisa);
+                dataGridView1.DataSource = qualquercoisa;
+            }
+            catch { }
+>>>>>>> 4718065e960a2bdea8205da29a2e8ae149b8a974
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
