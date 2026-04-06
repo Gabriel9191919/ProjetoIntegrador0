@@ -7,21 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace TelaLogin
 {
     public partial class TelaEstoque : Form
     {
+        string conexao = "server = localhost; Uid = root; pwd =; Database=Adega_JM;";
         public TelaEstoque()
         {
             InitializeComponent();
 
             int quantidade = 15;
 
-            for (int i = 0; i < quantidade; i++)
-            {
-                dataGridView1.Rows.Add();
-            }
+            
 
         }
 
@@ -32,7 +31,18 @@ namespace TelaLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            MySqlConnection con = new MySqlConnection(conexao);
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM estoque";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataAdapter estoque = new MySqlDataAdapter(cmd);
+                DataTable qualquercoisa = new DataTable();
+                estoque.Fill(qualquercoisa);
+                dataGridView1.DataSource = qualquercoisa;
+            }
+            catch { }
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
