@@ -45,7 +45,7 @@
             label6 = new Label();
             textBox1 = new TextBox();
             label8 = new Label();
-            dateTimePicker1 = new DateTimePicker();
+            label9 = new Label();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -210,15 +210,15 @@
             label8.TabIndex = 22;
             label8.Text = "Observações";
             // 
-            // dateTimePicker1
+            // label9
             // 
-            dateTimePicker1.CalendarFont = new Font("Segoe UI", 9.75F, FontStyle.Underline, GraphicsUnit.Point, 0);
-            dateTimePicker1.Location = new Point(1021, 50);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(231, 23);
-            dateTimePicker1.TabIndex = 23;
-            dateTimePicker1.Value = new DateTime(2026, 3, 31, 16, 49, 27, 0);
-            dateTimePicker1.ValueChanged += dateTimePicker1_ValueChanged;
+            label9.AutoSize = true;
+            label9.Location = new Point(668, 82);
+            label9.Name = "label9";
+            label9.Size = new Size(38, 15);
+            label9.TabIndex = 23;
+            label9.Text = "label9";
+            label9.Click += label9_Click;
             // 
             // HomeTela
             // 
@@ -226,7 +226,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1061);
-            Controls.Add(dateTimePicker1);
+            Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(textBox1);
             Controls.Add(label6);
@@ -264,5 +264,6 @@
         private TextBox textBox1;
         private Label label8;
         private DateTimePicker dateTimePicker1;
+        private Label label9;
     }
 }

@@ -15,7 +15,7 @@ namespace TelaLogin
         public HomeTela()
         {
             InitializeComponent();
-            dateTimePicker1.Value = DateTime.Now;
+            label9.Text = DateTime.Now.ToString("dddd, dd 'de' MMMM") ;
         }
 
         private void HomeTela_Load(object sender, EventArgs e)
@@ -31,7 +31,7 @@ namespace TelaLogin
             this.WindowState = FormWindowState.Maximized;
         }
 
-        
+
 
         private void button4_Click(object sender, EventArgs e)
         {
@@ -58,6 +58,11 @@ namespace TelaLogin
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
         {
 
         }
