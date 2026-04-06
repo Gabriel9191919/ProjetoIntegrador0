@@ -30,11 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaEstoque));
             dataGridView1 = new DataGridView();
-            ID = new DataGridViewTextBoxColumn();
-            Produto = new DataGridViewTextBoxColumn();
-            Preço = new DataGridViewTextBoxColumn();
-            Quantidade = new DataGridViewTextBoxColumn();
-            Vencimento = new DataGridViewTextBoxColumn();
             button1 = new Button();
             button2 = new Button();
             button3 = new Button();
@@ -61,42 +56,11 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { ID, Produto, Preço, Quantidade, Vencimento });
             dataGridView1.Location = new Point(647, 436);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(594, 369);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // ID
-            // 
-            ID.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            ID.HeaderText = "ID";
-            ID.Name = "ID";
-            // 
-            // Produto
-            // 
-            Produto.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Produto.HeaderText = "Produto";
-            Produto.Name = "Produto";
-            // 
-            // Preço
-            // 
-            Preço.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Preço.HeaderText = "Preço";
-            Preço.Name = "Preço";
-            // 
-            // Quantidade
-            // 
-            Quantidade.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Quantidade.HeaderText = "Quantidade";
-            Quantidade.Name = "Quantidade";
-            // 
-            // Vencimento
-            // 
-            Vencimento.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-            Vencimento.HeaderText = "Data de Vencimento";
-            Vencimento.Name = "Vencimento";
             // 
             // button1
             // 
@@ -317,11 +281,6 @@
         private Button button3;
         private TextBox textBox1;
         private PictureBox pictureBox1;
-        private DataGridViewTextBoxColumn ID;
-        private DataGridViewTextBoxColumn Produto;
-        private DataGridViewTextBoxColumn Preço;
-        private DataGridViewTextBoxColumn Quantidade;
-        private DataGridViewTextBoxColumn Vencimento;
         private Label label1;
         private PictureBox pictureBox3;
         private Panel Painel_Principal;

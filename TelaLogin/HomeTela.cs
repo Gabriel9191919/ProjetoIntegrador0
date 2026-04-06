@@ -15,6 +15,7 @@ namespace TelaLogin
         public HomeTela()
         {
             InitializeComponent();
+            dateTimePicker1.Value = DateTime.Now;
         }
 
         private void HomeTela_Load(object sender, EventArgs e)
