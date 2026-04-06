@@ -69,6 +69,7 @@
             resources.ApplyResources(button5, "button5");
             button5.Name = "button5";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label2
             // 
@@ -81,6 +82,7 @@
             resources.ApplyResources(button4, "button4");
             button4.Name = "button4";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click;
             // 
             // pictureBox2
             // 
@@ -122,7 +124,9 @@
             Controls.Add(chart1);
             Controls.Add(label1);
             Controls.Add(Painel_Principal);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
+            Load += Form2_Load;
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
