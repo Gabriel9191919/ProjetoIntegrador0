@@ -218,7 +218,7 @@
             button6.Name = "button6";
             button6.Size = new Size(184, 95);
             button6.TabIndex = 15;
-            button6.Text = "DashBoard";
+            button6.Text = "PDV";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
