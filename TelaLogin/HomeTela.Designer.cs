@@ -46,6 +46,7 @@
             textBox1 = new TextBox();
             label8 = new Label();
             label9 = new Label();
+            button1 = new Button();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -113,7 +114,7 @@
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, -10);
+            pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(184, 151);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -220,12 +221,27 @@
             label9.Text = "label9";
             label9.Click += label9_Click;
             // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Red;
+            button1.Location = new Point(1852, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(56, 29);
+            button1.TabIndex = 24;
+            button1.Text = "SAIR";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // HomeTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1061);
+            Controls.Add(button1);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(textBox1);
@@ -265,5 +281,6 @@
         private Label label8;
         private DateTimePicker dateTimePicker1;
         private Label label9;
+        private Button button1;
     }
 }

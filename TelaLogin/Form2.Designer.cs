@@ -29,9 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             Painel_Principal = new Panel();
             label3 = new Label();
             button5 = new Button();
@@ -40,10 +37,9 @@
             pictureBox2 = new PictureBox();
             button6 = new Button();
             label1 = new Label();
-            chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            button1 = new Button();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).BeginInit();
             SuspendLayout();
             // 
             // Painel_Principal
@@ -102,26 +98,21 @@
             resources.ApplyResources(label1, "label1");
             label1.Name = "label1";
             // 
-            // chart1
+            // button1
             // 
-            resources.ApplyResources(chart1, "chart1");
-            chartArea1.Name = "ChartArea1";
-            chart1.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            chart1.Legends.Add(legend1);
-            chart1.Name = "chart1";
-            chart1.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.SemiTransparent;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            chart1.Series.Add(series1);
+            resources.ApplyResources(button1, "button1");
+            button1.FlatAppearance.BorderSize = 0;
+            button1.ForeColor = Color.Red;
+            button1.Name = "button1";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Form2
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            Controls.Add(chart1);
+            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(Painel_Principal);
             FormBorderStyle = FormBorderStyle.None;
@@ -130,7 +121,6 @@
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)chart1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,5 +136,6 @@
         private PictureBox pictureBox2;
         private Button button6;
         private Label label1;
+        private Button button1;
     }
 }

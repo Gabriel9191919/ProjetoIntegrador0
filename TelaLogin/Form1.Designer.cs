@@ -40,6 +40,7 @@
             pictureBox3 = new PictureBox();
             label1 = new Label();
             pictureBox4 = new PictureBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -190,12 +191,27 @@
             pictureBox4.TabIndex = 13;
             pictureBox4.TabStop = false;
             // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Red;
+            button1.Location = new Point(1852, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(56, 29);
+            button1.TabIndex = 25;
+            button1.Text = "SAIR";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(linkLabel2);
             Controls.Add(pictureBox1);
@@ -233,5 +249,6 @@
         private PictureBox pictureBox3;
         private Label label1;
         private PictureBox pictureBox4;
+        private Button button1;
     }
 }

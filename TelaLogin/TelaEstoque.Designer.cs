@@ -46,6 +46,7 @@
             button6 = new Button();
             button7 = new Button();
             button8 = new Button();
+            button9 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -56,7 +57,6 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-
             dataGridView1.Location = new Point(647, 436);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(594, 369);
@@ -243,12 +243,26 @@
             button8.Text = "-";
             button8.UseVisualStyleBackColor = true;
             // 
+            // button9
+            // 
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button9.ForeColor = Color.Red;
+            button9.Location = new Point(1852, 12);
+            button9.Name = "button9";
+            button9.Size = new Size(56, 29);
+            button9.TabIndex = 25;
+            button9.Text = "SAIR";
+            button9.UseVisualStyleBackColor = true;
+            // 
             // TelaEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
             Controls.Add(Painel_Principal);
@@ -293,5 +307,6 @@
         private Label label2;
         private Button button7;
         private Button button8;
+        private Button button9;
     }
 }

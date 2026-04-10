@@ -15,7 +15,7 @@ namespace TelaLogin
         public HomeTela()
         {
             InitializeComponent();
-            label9.Text = DateTime.Now.ToString("dddd, dd 'de' MMMM") ;
+            label9.Text = DateTime.Now.ToString("dddd, dd 'de' MMMM");
         }
 
         private void HomeTela_Load(object sender, EventArgs e)
@@ -65,6 +65,11 @@ namespace TelaLogin
         private void label9_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }
