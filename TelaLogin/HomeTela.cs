@@ -15,7 +15,8 @@ namespace TelaLogin
         public HomeTela()
         {
             InitializeComponent();
-            label9.Text = DateTime.Now.ToString("dddd, dd 'de' MMMM");
+            
+            
         }
 
         private void HomeTela_Load(object sender, EventArgs e)
@@ -24,11 +25,15 @@ namespace TelaLogin
 
             this.FormBorderStyle = FormBorderStyle.None;
 
-            // 2. Define o tamanho máximo como a área útil (sem a Taskbar)
+            
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
 
-            // 3. Maximiza o form
+            
             this.WindowState = FormWindowState.Maximized;
+            EstiloRelogio();
+            label9.Text = DateTime.Now.ToString("dddd, dd 'de' MMMM 'às' HH:mm:ss");
+
+
         }
 
 
@@ -70,6 +75,29 @@ namespace TelaLogin
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label9.Text = DateTime.Now.ToString("dddd, dd 'de' MMMM 'às' HH:mm:ss");
+        }
+
+        private void lblHora_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void EstiloRelogio()
+        {
+            label9.Text = DateTime.Now.ToString("HH:mm:ss");
+
+            label9.Font = new Font("Segoe UI", 12, FontStyle.Bold);
+            label9.ForeColor = Color.FloralWhite;
+            
+
+            label9.AutoSize = true;
+            label9.TextAlign = ContentAlignment.MiddleCenter;
+
+            
         }
     }
 }

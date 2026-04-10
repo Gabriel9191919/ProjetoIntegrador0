@@ -47,6 +47,7 @@
             label8 = new Label();
             label9 = new Label();
             button1 = new Button();
+            timer1 = new System.Windows.Forms.Timer(components);
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -63,7 +64,7 @@
             Painel_Principal.Dock = DockStyle.Left;
             Painel_Principal.Location = new Point(0, 0);
             Painel_Principal.Name = "Painel_Principal";
-            Painel_Principal.Size = new Size(184, 1061);
+            Painel_Principal.Size = new Size(184, 1041);
             Painel_Principal.TabIndex = 14;
             // 
             // label3
@@ -114,7 +115,7 @@
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Location = new Point(0, -10);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(184, 151);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -214,7 +215,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(668, 82);
+            label9.Location = new Point(1624, 970);
             label9.Name = "label9";
             label9.Size = new Size(38, 15);
             label9.TabIndex = 23;
@@ -235,12 +236,18 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // HomeTela
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1920, 1061);
+            ClientSize = new Size(1904, 1041);
             Controls.Add(button1);
             Controls.Add(label9);
             Controls.Add(label8);
@@ -282,5 +289,6 @@
         private DateTimePicker dateTimePicker1;
         private Label label9;
         private Button button1;
+        private System.Windows.Forms.Timer timer1;
     }
 }
