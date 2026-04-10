@@ -92,7 +92,7 @@ namespace TelaLogin
 
         private void button6_Click(object sender, EventArgs e)
         {
-            Form2 TelaDashboard = new Form2();
+            PDV TelaDashboard = new PDV();
             TelaDashboard.Show();
             this.Hide();
 
