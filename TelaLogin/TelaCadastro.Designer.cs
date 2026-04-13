@@ -32,11 +32,11 @@
             linkLabel2 = new LinkLabel();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
-            textBox2 = new TextBox();
+            txtsenha = new TextBox();
             pictureBox3 = new PictureBox();
-            textBox1 = new TextBox();
+            txtUsuario = new TextBox();
             pictureBox4 = new PictureBox();
-            textBox3 = new TextBox();
+            txtsenha2 = new TextBox();
             rButton1 = new RButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -84,14 +84,15 @@
             pictureBox2.TabIndex = 18;
             pictureBox2.TabStop = false;
             // 
-            // textBox2
+            // txtsenha
             // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.Location = new Point(826, 533);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Senha";
-            textBox2.Size = new Size(297, 23);
-            textBox2.TabIndex = 15;
+            txtsenha.Anchor = AnchorStyles.None;
+            txtsenha.Location = new Point(826, 533);
+            txtsenha.Name = "txtsenha";
+            txtsenha.PasswordChar = '*';
+            txtsenha.PlaceholderText = "Senha";
+            txtsenha.Size = new Size(297, 23);
+            txtsenha.TabIndex = 15;
             // 
             // pictureBox3
             // 
@@ -105,14 +106,14 @@
             pictureBox3.TabIndex = 19;
             pictureBox3.TabStop = false;
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(826, 494);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Usuario";
-            textBox1.Size = new Size(297, 23);
-            textBox1.TabIndex = 12;
+            txtUsuario.Anchor = AnchorStyles.None;
+            txtUsuario.Location = new Point(826, 494);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = "Usuario";
+            txtUsuario.Size = new Size(297, 23);
+            txtUsuario.TabIndex = 12;
             // 
             // pictureBox4
             // 
@@ -126,14 +127,15 @@
             pictureBox4.TabIndex = 21;
             pictureBox4.TabStop = false;
             // 
-            // textBox3
+            // txtsenha2
             // 
-            textBox3.Anchor = AnchorStyles.None;
-            textBox3.Location = new Point(826, 571);
-            textBox3.Name = "textBox3";
-            textBox3.PlaceholderText = "Confirme sua senha";
-            textBox3.Size = new Size(297, 23);
-            textBox3.TabIndex = 20;
+            txtsenha2.Anchor = AnchorStyles.None;
+            txtsenha2.Location = new Point(826, 571);
+            txtsenha2.Name = "txtsenha2";
+            txtsenha2.PasswordChar = '*';
+            txtsenha2.PlaceholderText = "Confirme sua senha";
+            txtsenha2.Size = new Size(297, 23);
+            txtsenha2.TabIndex = 20;
             // 
             // rButton1
             // 
@@ -147,7 +149,7 @@
             rButton1.FlatAppearance.BorderSize = 0;
             rButton1.FlatStyle = FlatStyle.Flat;
             rButton1.ForeColor = SystemColors.ActiveCaptionText;
-            rButton1.Location = new Point(807, 608);
+            rButton1.Location = new Point(807, 617);
             rButton1.Name = "rButton1";
             rButton1.Size = new Size(316, 40);
             rButton1.TabIndex = 22;
@@ -164,13 +166,13 @@
             ClientSize = new Size(1920, 1080);
             Controls.Add(rButton1);
             Controls.Add(pictureBox4);
-            Controls.Add(textBox3);
+            Controls.Add(txtsenha2);
             Controls.Add(linkLabel2);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
-            Controls.Add(textBox2);
+            Controls.Add(txtsenha);
             Controls.Add(pictureBox3);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsuario);
             FormBorderStyle = FormBorderStyle.None;
             Name = "TelaCadastro";
             Text = "TelaCadastro";
@@ -188,11 +190,11 @@
         private LinkLabel linkLabel2;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private TextBox textBox2;
+        private TextBox txtsenha;
         private PictureBox pictureBox3;
-        private TextBox textBox1;
+        private TextBox txtUsuario;
         private PictureBox pictureBox4;
-        private TextBox textBox3;
+        private TextBox txtsenha2;
         private RButton rButton1;
     }
 }

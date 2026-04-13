@@ -31,12 +31,13 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTela));
             Painel_Principal = new Panel();
+            pictureBox2 = new PictureBox();
             label3 = new Label();
             button5 = new Button();
             label2 = new Label();
             button4 = new Button();
-            pictureBox2 = new PictureBox();
             button6 = new Button();
+            panel1 = new Panel();
             contextMenuStrip1 = new ContextMenuStrip(components);
             label1 = new Label();
             label4 = new Label();
@@ -45,7 +46,6 @@
             label6 = new Label();
             textBox1 = new TextBox();
             label8 = new Label();
-            label9 = new Label();
             button1 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
             Painel_Principal.SuspendLayout();
@@ -55,17 +55,29 @@
             // Painel_Principal
             // 
             Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(button5);
             Painel_Principal.Controls.Add(label2);
             Painel_Principal.Controls.Add(button4);
-            Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(button6);
             Painel_Principal.Dock = DockStyle.Left;
             Painel_Principal.Location = new Point(0, 0);
             Painel_Principal.Name = "Painel_Principal";
             Painel_Principal.Size = new Size(184, 1041);
             Painel_Principal.TabIndex = 14;
+            // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(184, 151);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 12;
+            pictureBox2.TabStop = false;
             // 
             // label3
             // 
@@ -110,18 +122,6 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, -10);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(184, 151);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 12;
-            pictureBox2.TabStop = false;
-            // 
             // button6
             // 
             button6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
@@ -133,6 +133,14 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Gold;
+            panel1.Location = new Point(0, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1920, 100);
+            panel1.TabIndex = 25;
+            // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
@@ -142,12 +150,13 @@
             // 
             label1.AutoSize = true;
             label1.BackColor = SystemColors.ControlDarkDark;
+            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(222, 50);
+            label1.Location = new Point(223, 231);
             label1.Name = "label1";
-            label1.Size = new Size(98, 15);
+            label1.Size = new Size(197, 25);
             label1.TabIndex = 15;
-            label1.Text = "NomeDoUsuario:";
+            label1.Text = "Nome do usuario:";
             // 
             // label4
             // 
@@ -164,10 +173,11 @@
             // 
             label5.AutoSize = true;
             label5.BackColor = SystemColors.ControlDarkDark;
+            label5.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             label5.ForeColor = SystemColors.ButtonFace;
-            label5.Location = new Point(222, 241);
+            label5.Location = new Point(223, 474);
             label5.Name = "label5";
-            label5.Size = new Size(174, 15);
+            label5.Size = new Size(335, 25);
             label5.TabIndex = 17;
             label5.Text = "Produto em menor quantidade:";
             // 
@@ -175,10 +185,11 @@
             // 
             label7.AutoSize = true;
             label7.BackColor = SystemColors.ControlDarkDark;
+            label7.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             label7.ForeColor = SystemColors.ButtonFace;
-            label7.Location = new Point(222, 101);
+            label7.Location = new Point(223, 303);
             label7.Name = "label7";
-            label7.Size = new Size(184, 15);
+            label7.Size = new Size(363, 25);
             label7.TabIndex = 19;
             label7.Text = "Produto mais proximo a validade:";
             // 
@@ -186,16 +197,17 @@
             // 
             label6.AutoSize = true;
             label6.BackColor = SystemColors.ControlDarkDark;
+            label6.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ButtonFace;
-            label6.Location = new Point(222, 166);
+            label6.Location = new Point(223, 385);
             label6.Name = "label6";
-            label6.Size = new Size(184, 15);
+            label6.Size = new Size(369, 25);
             label6.TabIndex = 20;
-            label6.Text = "Produto mais vendido na semana";
+            label6.Text = "Produto mais vendido na semana:";
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(794, 321);
+            textBox1.Location = new Point(1434, 844);
             textBox1.Multiline = true;
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(458, 185);
@@ -206,24 +218,15 @@
             label8.AutoSize = true;
             label8.BackColor = SystemColors.ControlDarkDark;
             label8.ForeColor = SystemColors.ButtonFace;
-            label8.Location = new Point(794, 300);
+            label8.Location = new Point(1434, 823);
             label8.Name = "label8";
             label8.Size = new Size(74, 15);
             label8.TabIndex = 22;
             label8.Text = "Observações";
             // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(1624, 970);
-            label9.Name = "label9";
-            label9.Size = new Size(38, 15);
-            label9.TabIndex = 23;
-            label9.Text = "label9";
-            label9.Click += label9_Click;
-            // 
             // button1
             // 
+            button1.BackColor = Color.Gold;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -233,14 +236,13 @@
             button1.Size = new Size(56, 29);
             button1.TabIndex = 24;
             button1.Text = "SAIR";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // timer1
             // 
             timer1.Enabled = true;
             timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
             // 
             // HomeTela
             // 
@@ -249,7 +251,6 @@
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1904, 1041);
             Controls.Add(button1);
-            Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(textBox1);
             Controls.Add(label6);
@@ -258,6 +259,7 @@
             Controls.Add(label4);
             Controls.Add(Painel_Principal);
             Controls.Add(label1);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "HomeTela";
             Text = "HomeTela";
@@ -287,8 +289,8 @@
         private TextBox textBox1;
         private Label label8;
         private DateTimePicker dateTimePicker1;
-        private Label label9;
         private Button button1;
         private System.Windows.Forms.Timer timer1;
+        private Panel panel1;
     }
 }

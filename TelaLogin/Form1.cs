@@ -1,10 +1,17 @@
+using MySql.Data.MySqlClient;
+
 namespace TelaLogin
 {
     public partial class Form1 : Form
     {
+        string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
+
         public Form1()
         {
             InitializeComponent();
+
+
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -17,6 +24,12 @@ namespace TelaLogin
 
             // 3. Maximiza o form
             this.WindowState = FormWindowState.Maximized;
+
+
+
+
+
+
         }
 
 
@@ -40,10 +53,49 @@ namespace TelaLogin
 
         private void rButton1_Click(object sender, EventArgs e)
         {
-            HomeTela telahome = new HomeTela();
-            telahome.Show();
-            this.Hide();
+
+
+
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
+                string.IsNullOrWhiteSpace(txtSenha.Text))
+            {
+                MessageBox.Show("Preencha todos os campos!");
+                return;
+            }
+
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conexao))
+                {
+                    con.Open();
+
+                    string sql = "SELECT COUNT(*) FROM login WHERE usuario = @usuario AND senha = @senha";
+
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                    cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
+
+                    int count = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        MessageBox.Show("Login realizado com sucesso!");
+                        HomeTela telahome = new HomeTela();
+                        telahome.Show();
+                        this.Hide();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Usuário ou senha inválidos!");
+                    }
+                }
+            }
+            catch (Exception ex) { }
         }
+
+
+
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
@@ -69,5 +121,58 @@ namespace TelaLogin
         {
             this.Close();
         }
+
+        private void btnCadastrar_Click(object sender, EventArgs e)
+        {
+            TelaCadastro telacadastro = new TelaCadastro();
+            telacadastro.Show();
+            this.Hide();
+
+        }
+
+        private void txtUsuario_KeyDown(object sender, KeyEventArgs e)
+        {
+
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtSenha.Focus();
+            }
+        }
+
+        private void txtSenha_KeyDown(object sender, KeyEventArgs e)
+        {
+            
+            if (e.KeyCode == Keys.Enter)
+            {
+                rButton1.PerformClick();
+            }
+        }
+
+        bool senhaVisivel = false;
+
+        private void btnOlho_Click(object sender, EventArgs e)
+        {
+            senhaVisivel = !senhaVisivel;
+
+            if (senhaVisivel)
+            {
+                // mostra senha
+                txtSenha.PasswordChar = '\0';
+
+                
+                btnOlho.BackgroundImage = Image.FromFile("imagens/olho_aberto.png");
+            }
+            else
+            {
+                // esconde senha
+                txtSenha.PasswordChar = '*';
+
+                // troca imagem
+                btnOlho.BackgroundImage = Image.FromFile("imagens/olho_fechado.png");
+            }
+        }
     }
+    
+    
+
 }
