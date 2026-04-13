@@ -13,55 +13,17 @@ namespace TelaLogin
 {
     public partial class TelaEstoque : Form
     {
-
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
-
 
         public TelaEstoque()
         {
             InitializeComponent();
-
-
-            int quantidade = 15;
-
-            
-
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-
-    
-
-            MySqlConnection con = new MySqlConnection(conexao);
-            try
-            {
-                con.Open();
-                string sql = "SELECT * FROM estoque";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataAdapter estoque = new MySqlDataAdapter(cmd);
-                DataTable qualquercoisa = new DataTable();
-                estoque.Fill(qualquercoisa);
-                dataGridView1.DataSource = qualquercoisa;
-            }
-            catch { }
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
+            Form3 telaadd = new Form3();
+            telaadd.Show();
         }
 
         private void TelaEstoque_Load(object sender, EventArgs e)
@@ -86,7 +48,7 @@ namespace TelaLogin
 
             // 3. Maximiza o form
             this.WindowState = FormWindowState.Maximized;
-        
+
 
         }
 
@@ -105,9 +67,21 @@ namespace TelaLogin
             this.Hide();
         }
 
-        private void button7_Click(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
 
+            MySqlConnection con = new MySqlConnection(conexao);
+            try
+            {
+                con.Open();
+                string sql = "SELECT * FROM estoque";
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlDataAdapter estoque = new MySqlDataAdapter(cmd);
+                DataTable qualquercoisa = new DataTable();
+                estoque.Fill(qualquercoisa);
+                dataGridView1.DataSource = qualquercoisa;
+            }
+            catch { }
         }
     }
 }

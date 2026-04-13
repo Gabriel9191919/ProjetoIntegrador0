@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaEstoque));
             dataGridView1 = new DataGridView();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
             textBox1 = new TextBox();
             pictureBox1 = new PictureBox();
             label1 = new Label();
@@ -47,6 +45,7 @@
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -57,11 +56,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(647, 436);
+            dataGridView1.Location = new Point(646, 436);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(594, 369);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
             // button1
             // 
@@ -73,27 +71,6 @@
             button1.Text = "Adicionar";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
-            // 
-            // button2
-            // 
-            button2.Cursor = Cursors.Hand;
-            button2.Location = new Point(799, 407);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 2;
-            button2.Text = "Editar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
-            // button3
-            // 
-            button3.Cursor = Cursors.Hand;
-            button3.Location = new Point(880, 407);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 3;
-            button3.Text = "Excluir";
-            button3.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -116,7 +93,6 @@
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
             pictureBox1.TabIndex = 5;
             pictureBox1.TabStop = false;
-            pictureBox1.Click += pictureBox1_Click;
             // 
             // label1
             // 
@@ -231,7 +207,6 @@
             button7.TabIndex = 14;
             button7.Text = "+";
             button7.UseVisualStyleBackColor = true;
-            button7.Click += button7_Click;
             // 
             // button8
             // 
@@ -256,12 +231,24 @@
             button9.Text = "SAIR";
             button9.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.Cursor = Cursors.Hand;
+            button2.Location = new Point(895, 407);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 26;
+            button2.Text = "Atualizar";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // TelaEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(button2);
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
@@ -269,8 +256,6 @@
             Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(textBox1);
-            Controls.Add(button3);
-            Controls.Add(button2);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox3);
@@ -292,8 +277,6 @@
 
         private DataGridView dataGridView1;
         private Button button1;
-        private Button button2;
-        private Button button3;
         private TextBox textBox1;
         private PictureBox pictureBox1;
         private Label label1;
@@ -308,5 +291,6 @@
         private Button button7;
         private Button button8;
         private Button button9;
+        private Button button2;
     }
 }
