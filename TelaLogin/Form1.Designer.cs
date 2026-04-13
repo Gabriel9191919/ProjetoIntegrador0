@@ -29,11 +29,10 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            textBox1 = new TextBox();
+            txtUsuario = new TextBox();
             linkLabel1 = new LinkLabel();
             checkBox1 = new CheckBox();
-            textBox2 = new TextBox();
-            linkLabel2 = new LinkLabel();
+            txtSenha = new TextBox();
             rButton1 = new RButton();
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
@@ -41,20 +40,23 @@
             label1 = new Label();
             pictureBox4 = new PictureBox();
             button1 = new Button();
+            btnCadastrar = new RButton();
+            btnOlho = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
-            // textBox1
+            // txtUsuario
             // 
-            textBox1.Anchor = AnchorStyles.None;
-            textBox1.Location = new Point(826, 494);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Usuario";
-            textBox1.Size = new Size(297, 23);
-            textBox1.TabIndex = 1;
+            txtUsuario.Anchor = AnchorStyles.None;
+            txtUsuario.Location = new Point(826, 494);
+            txtUsuario.Name = "txtUsuario";
+            txtUsuario.PlaceholderText = "Usuario";
+            txtUsuario.Size = new Size(297, 23);
+            txtUsuario.TabIndex = 1;
+            txtUsuario.KeyDown += txtUsuario_KeyDown;
             // 
             // linkLabel1
             // 
@@ -86,30 +88,16 @@
             checkBox1.UseVisualStyleBackColor = false;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
             // 
-            // textBox2
+            // txtSenha
             // 
-            textBox2.Anchor = AnchorStyles.None;
-            textBox2.Location = new Point(826, 533);
-            textBox2.Name = "textBox2";
-            textBox2.PlaceholderText = "Senha";
-            textBox2.Size = new Size(297, 23);
-            textBox2.TabIndex = 4;
-            // 
-            // linkLabel2
-            // 
-            linkLabel2.ActiveLinkColor = Color.SteelBlue;
-            linkLabel2.Anchor = AnchorStyles.None;
-            linkLabel2.AutoSize = true;
-            linkLabel2.BackColor = Color.Transparent;
-            linkLabel2.ForeColor = SystemColors.ActiveCaptionText;
-            linkLabel2.LinkColor = Color.Gold;
-            linkLabel2.Location = new Point(807, 651);
-            linkLabel2.Name = "linkLabel2";
-            linkLabel2.Size = new Size(73, 15);
-            linkLabel2.TabIndex = 5;
-            linkLabel2.TabStop = true;
-            linkLabel2.Text = "Cadastrar-se";
-            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
+            txtSenha.Anchor = AnchorStyles.None;
+            txtSenha.Location = new Point(826, 533);
+            txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
+            txtSenha.PlaceholderText = "Senha";
+            txtSenha.Size = new Size(297, 23);
+            txtSenha.TabIndex = 4;
+            txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // rButton1
             // 
@@ -197,7 +185,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button1.ForeColor = Color.Red;
-            button1.Location = new Point(1852, 12);
+            button1.Location = new Point(936, 730);
             button1.Name = "button1";
             button1.Size = new Size(56, 29);
             button1.TabIndex = 25;
@@ -205,23 +193,61 @@
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
             // 
+            // btnCadastrar
+            // 
+            btnCadastrar.Anchor = AnchorStyles.None;
+            btnCadastrar.BackColor = Color.Gold;
+            btnCadastrar.BackgroundColor = Color.Gold;
+            btnCadastrar.BorderColor = Color.PaleVioletRed;
+            btnCadastrar.BorderRadius = 20;
+            btnCadastrar.BorderSize = 0;
+            btnCadastrar.Cursor = Cursors.Hand;
+            btnCadastrar.FlatAppearance.BorderSize = 0;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.ForeColor = SystemColors.ActiveCaptionText;
+            btnCadastrar.Location = new Point(807, 666);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(316, 40);
+            btnCadastrar.TabIndex = 8;
+            btnCadastrar.Text = "Cadastro";
+            btnCadastrar.TextColor = SystemColors.ActiveCaptionText;
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
+            // 
+            // btnOlho
+            // 
+            btnOlho.Anchor = AnchorStyles.None;
+            btnOlho.BackColor = Color.Transparent;
+            btnOlho.BackgroundImage = (Image)resources.GetObject("btnOlho.BackgroundImage");
+            btnOlho.BackgroundImageLayout = ImageLayout.Stretch;
+            btnOlho.FlatAppearance.BorderSize = 0;
+            btnOlho.FlatStyle = FlatStyle.Flat;
+            btnOlho.ForeColor = Color.Transparent;
+            btnOlho.Location = new Point(1129, 532);
+            btnOlho.Name = "btnOlho";
+            btnOlho.Size = new Size(24, 24);
+            btnOlho.TabIndex = 26;
+            btnOlho.UseVisualStyleBackColor = false;
+            btnOlho.Click += btnOlho_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(btnOlho);
             Controls.Add(button1);
             Controls.Add(label1);
-            Controls.Add(linkLabel2);
             Controls.Add(pictureBox1);
+            Controls.Add(btnCadastrar);
             Controls.Add(rButton1);
             Controls.Add(pictureBox2);
-            Controls.Add(textBox2);
+            Controls.Add(txtSenha);
             Controls.Add(checkBox1);
             Controls.Add(pictureBox3);
             Controls.Add(linkLabel1);
-            Controls.Add(textBox1);
+            Controls.Add(txtUsuario);
             Controls.Add(pictureBox4);
             ForeColor = Color.Yellow;
             FormBorderStyle = FormBorderStyle.None;
@@ -238,11 +264,10 @@
         }
 
         #endregion
-        private TextBox textBox1;
+        private TextBox txtUsuario;
         private LinkLabel linkLabel1;
         private CheckBox checkBox1;
-        private TextBox textBox2;
-        private LinkLabel linkLabel2;
+        private TextBox txtSenha;
         private RButton rButton1;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
@@ -250,5 +275,8 @@
         private Label label1;
         private PictureBox pictureBox4;
         private Button button1;
+        private RButton btnCadastrar;
+        private Button button2;
+        private Button btnOlho;
     }
 }
