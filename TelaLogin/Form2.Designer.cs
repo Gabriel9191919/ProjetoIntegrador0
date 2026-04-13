@@ -44,13 +44,19 @@
             label4 = new Label();
             label5 = new Label();
             textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            label6 = new Label();
             label7 = new Label();
             label8 = new Label();
             textBox6 = new TextBox();
+            rButton1 = new RButton();
+            dataGridView1 = new DataGridView();
+            rButton2 = new RButton();
+            comboBox1 = new ComboBox();
+            label9 = new Label();
+            comboBox2 = new ComboBox();
+            label6 = new Label();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // Painel_Principal
@@ -148,17 +154,6 @@
             resources.ApplyResources(textBox4, "textBox4");
             textBox4.Name = "textBox4";
             // 
-            // textBox5
-            // 
-            resources.ApplyResources(textBox5, "textBox5");
-            textBox5.Name = "textBox5";
-            // 
-            // label6
-            // 
-            resources.ApplyResources(label6, "label6");
-            label6.Name = "label6";
-            label6.Click += label6_Click;
-            // 
             // label7
             // 
             resources.ApplyResources(label7, "label7");
@@ -168,22 +163,86 @@
             // 
             resources.ApplyResources(label8, "label8");
             label8.Name = "label8";
+            label8.Click += label8_Click;
             // 
             // textBox6
             // 
             resources.ApplyResources(textBox6, "textBox6");
             textBox6.Name = "textBox6";
             // 
+            // rButton1
+            // 
+            resources.ApplyResources(rButton1, "rButton1");
+            rButton1.BackColor = Color.Gold;
+            rButton1.BackgroundColor = Color.Gold;
+            rButton1.BorderColor = Color.PaleVioletRed;
+            rButton1.BorderRadius = 20;
+            rButton1.BorderSize = 0;
+            rButton1.Cursor = Cursors.Hand;
+            rButton1.FlatAppearance.BorderSize = 0;
+            rButton1.ForeColor = SystemColors.ActiveCaptionText;
+            rButton1.Name = "rButton1";
+            rButton1.TextColor = SystemColors.ActiveCaptionText;
+            rButton1.UseVisualStyleBackColor = false;
+            // 
+            // dataGridView1
+            // 
+            resources.ApplyResources(dataGridView1, "dataGridView1");
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Name = "dataGridView1";
+            // 
+            // rButton2
+            // 
+            resources.ApplyResources(rButton2, "rButton2");
+            rButton2.BackColor = Color.Gold;
+            rButton2.BackgroundColor = Color.Gold;
+            rButton2.BorderColor = Color.PaleVioletRed;
+            rButton2.BorderRadius = 20;
+            rButton2.BorderSize = 0;
+            rButton2.Cursor = Cursors.Hand;
+            rButton2.FlatAppearance.BorderSize = 0;
+            rButton2.ForeColor = SystemColors.ActiveCaptionText;
+            rButton2.Name = "rButton2";
+            rButton2.TextColor = SystemColors.ActiveCaptionText;
+            rButton2.UseVisualStyleBackColor = false;
+            // 
+            // comboBox1
+            // 
+            resources.ApplyResources(comboBox1, "comboBox1");
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Name = "comboBox1";
+            // 
+            // label9
+            // 
+            resources.ApplyResources(label9, "label9");
+            label9.Name = "label9";
+            // 
+            // comboBox2
+            // 
+            resources.ApplyResources(comboBox2, "comboBox2");
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Name = "comboBox2";
+            // 
+            // label6
+            // 
+            resources.ApplyResources(label6, "label6");
+            label6.Name = "label6";
+            // 
             // PDV
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
+            Controls.Add(label6);
+            Controls.Add(comboBox2);
+            Controls.Add(label9);
+            Controls.Add(comboBox1);
+            Controls.Add(rButton2);
+            Controls.Add(dataGridView1);
+            Controls.Add(rButton1);
             Controls.Add(textBox6);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(label6);
-            Controls.Add(textBox5);
             Controls.Add(textBox4);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -199,6 +258,7 @@
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -221,10 +281,15 @@
         private Label label4;
         private Label label5;
         private TextBox textBox4;
-        private TextBox textBox5;
-        private Label label6;
         private Label label7;
         private Label label8;
         private TextBox textBox6;
+        private RButton rButton1;
+        private DataGridView dataGridView1;
+        private RButton rButton2;
+        private ComboBox comboBox1;
+        private Label label9;
+        private ComboBox comboBox2;
+        private Label label6;
     }
 }
