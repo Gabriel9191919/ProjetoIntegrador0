@@ -141,7 +141,7 @@ namespace TelaLogin
 
         private void txtSenha_KeyDown(object sender, KeyEventArgs e)
         {
-            
+
             if (e.KeyCode == Keys.Enter)
             {
                 rButton1.PerformClick();
@@ -159,7 +159,7 @@ namespace TelaLogin
                 // mostra senha
                 txtSenha.PasswordChar = '\0';
 
-                
+
                 btnOlho.BackgroundImage = Image.FromFile("imagens/olho_aberto.png");
             }
             else
@@ -171,8 +171,16 @@ namespace TelaLogin
                 btnOlho.BackgroundImage = Image.FromFile("imagens/olho_fechado.png");
             }
         }
+
+        private void rButton2_Click(object sender, EventArgs e)
+        {
+            HomeTela gambiarra = new HomeTela();
+            gambiarra.Show();
+            this.Hide();
+
+        }
     }
-    
-    
+
+
 
 }

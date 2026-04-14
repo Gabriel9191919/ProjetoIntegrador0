@@ -42,6 +42,7 @@
             button1 = new Button();
             btnCadastrar = new RButton();
             btnOlho = new Button();
+            rButton2 = new RButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -230,12 +231,34 @@
             btnOlho.UseVisualStyleBackColor = false;
             btnOlho.Click += btnOlho_Click;
             // 
+            // rButton2
+            // 
+            rButton2.Anchor = AnchorStyles.None;
+            rButton2.BackColor = Color.Gold;
+            rButton2.BackgroundColor = Color.Gold;
+            rButton2.BorderColor = Color.PaleVioletRed;
+            rButton2.BorderRadius = 20;
+            rButton2.BorderSize = 0;
+            rButton2.Cursor = Cursors.Hand;
+            rButton2.FlatAppearance.BorderSize = 0;
+            rButton2.FlatStyle = FlatStyle.Flat;
+            rButton2.ForeColor = SystemColors.ActiveCaptionText;
+            rButton2.Location = new Point(461, 608);
+            rButton2.Name = "rButton2";
+            rButton2.Size = new Size(316, 40);
+            rButton2.TabIndex = 27;
+            rButton2.Text = "Gambiarra";
+            rButton2.TextColor = SystemColors.ActiveCaptionText;
+            rButton2.UseVisualStyleBackColor = false;
+            rButton2.Click += rButton2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(rButton2);
             Controls.Add(btnOlho);
             Controls.Add(button1);
             Controls.Add(label1);
@@ -278,5 +301,6 @@
         private RButton btnCadastrar;
         private Button button2;
         private Button btnOlho;
+        private RButton rButton2;
     }
 }

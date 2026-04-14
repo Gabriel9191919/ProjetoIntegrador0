@@ -230,6 +230,7 @@
             button9.TabIndex = 25;
             button9.Text = "SAIR";
             button9.UseVisualStyleBackColor = true;
+            button9.Click += button9_Click;
             // 
             // button2
             // 
