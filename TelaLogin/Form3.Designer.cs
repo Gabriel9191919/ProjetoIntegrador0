@@ -40,6 +40,7 @@
             label4 = new Label();
             label5 = new Label();
             pictureBox3 = new PictureBox();
+            rButton1 = new RButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -50,6 +51,7 @@
             txtvenc.Name = "txtvenc";
             txtvenc.Size = new Size(193, 29);
             txtvenc.TabIndex = 0;
+            txtvenc.KeyPress += txtvenc_KeyPress;
             // 
             // label1
             // 
@@ -62,7 +64,7 @@
             // button1
             // 
             button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(263, 323);
+            button1.Location = new Point(117, 64);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 2;
@@ -147,12 +149,34 @@
             pictureBox3.TabIndex = 13;
             pictureBox3.TabStop = false;
             // 
+            // rButton1
+            // 
+            rButton1.Anchor = AnchorStyles.None;
+            rButton1.BackColor = Color.Gold;
+            rButton1.BackgroundColor = Color.Gold;
+            rButton1.BorderColor = Color.PaleVioletRed;
+            rButton1.BorderRadius = 20;
+            rButton1.BorderSize = 0;
+            rButton1.Cursor = Cursors.Hand;
+            rButton1.FlatAppearance.BorderSize = 0;
+            rButton1.FlatStyle = FlatStyle.Flat;
+            rButton1.ForeColor = SystemColors.ActiveCaptionText;
+            rButton1.Location = new Point(159, 320);
+            rButton1.Name = "rButton1";
+            rButton1.Size = new Size(316, 40);
+            rButton1.TabIndex = 14;
+            rButton1.Text = "Adicionar";
+            rButton1.TextColor = SystemColors.ActiveCaptionText;
+            rButton1.UseVisualStyleBackColor = false;
+            rButton1.Click += rButton1_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(618, 407);
+            Controls.Add(rButton1);
             Controls.Add(pictureBox3);
             Controls.Add(label5);
             Controls.Add(label4);
@@ -186,5 +210,6 @@
         private Label label4;
         private Label label5;
         private PictureBox pictureBox3;
+        private RButton rButton1;
     }
 }

@@ -80,11 +80,19 @@ namespace TelaLogin
                 DataTable qualquercoisa = new DataTable();
                 estoque.Fill(qualquercoisa);
                 dataGridView1.DataSource = qualquercoisa;
+
             }
-            catch { }
+            catch (Exception)
+            {
+            }
         }
 
         private void button9_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

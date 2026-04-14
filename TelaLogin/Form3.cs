@@ -11,18 +11,19 @@ using System.Windows.Forms;
 
 namespace TelaLogin
 {
+
     public partial class Form3 : Form
     {
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
-        
+
         public Form3()
         {
             InitializeComponent();
+
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -32,16 +33,44 @@ namespace TelaLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void txtvenc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite apenas números e a tecla Backspace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+                return;
+            }
+
+            TextBox txt = (TextBox)sender;
+
+            // Adiciona a barra automaticamente após o 2º e o 5º caractere
+            // Formato: 00/00/0000
+            if (char.IsDigit(e.KeyChar))
+            {
+                if (txt.Text.Length == 2 || txt.Text.Length == 5)
+                {
+                    txt.Text += "/";
+                    txt.SelectionStart = txt.Text.Length;
+                }
+            }
+        }
+
+        private void rButton1_Click(object sender, EventArgs e)
+        {
             MySqlConnection con = new MySqlConnection(conexao);
-                try
+            try
             {
                 string produto = (txtproduto.Text);
-                int preco = Convert.ToInt32(txtpreco.Text);
+                double preco = Convert.ToDouble(txtpreco.Text);
                 int qtd = Convert.ToInt32(txtqtd.Text);
-                int datavenc = Convert.ToInt32(txtvenc.Text);
+                DateTime datavenc = Convert.ToDateTime(txtvenc.Text);
 
                 con.Open();
-                string sql = ("INSERT INTO estoque(Produto,Preco,Quantidade,Datadevencimento) VALUES (@produto, @preco, @quantidade, @datadevencimento)");
+                string sql = ("INSERT INTO estoque(produto,preco,quantidade,datavencimento) VALUES (@produto, @preco, @quantidade, @datavencimento)");
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 cmd.Parameters.AddWithValue("@produto", produto);
                 cmd.Parameters.AddWithValue("@preco", preco);
@@ -51,8 +80,14 @@ namespace TelaLogin
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Item cadastro com sucesso");
 
+
+
                 con.Close();
-            } catch(Exception ex) { } 
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro ao cadastrar: " + ex.Message);
+            }
             this.Close();
         }
     }

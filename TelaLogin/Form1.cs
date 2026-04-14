@@ -91,7 +91,7 @@ namespace TelaLogin
                     }
                 }
             }
-            catch (Exception ex) { }
+            catch (Exception) { }
         }
 
 
