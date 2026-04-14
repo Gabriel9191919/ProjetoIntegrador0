@@ -44,12 +44,37 @@
             label5 = new Label();
             label7 = new Label();
             label6 = new Label();
-            textBox1 = new TextBox();
-            label8 = new Label();
             button1 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
+            label9 = new Label();
+            label10 = new Label();
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            pictureBox1 = new PictureBox();
+            panel2 = new Panel();
+            panel3 = new Panel();
+            pictureBox7 = new PictureBox();
+            panel4 = new Panel();
+            pictureBox3 = new PictureBox();
+            panel5 = new Panel();
+            pictureBox4 = new PictureBox();
+            panel6 = new Panel();
+            pictureBox8 = new PictureBox();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel2.SuspendLayout();
+            panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             SuspendLayout();
             // 
             // Painel_Principal
@@ -61,181 +86,105 @@
             Painel_Principal.Controls.Add(label2);
             Painel_Principal.Controls.Add(button4);
             Painel_Principal.Controls.Add(button6);
-            Painel_Principal.Dock = DockStyle.Left;
-            Painel_Principal.Location = new Point(0, 0);
+            resources.ApplyResources(Painel_Principal, "Painel_Principal");
             Painel_Principal.Name = "Painel_Principal";
-            Painel_Principal.Size = new Size(184, 1041);
-            Painel_Principal.TabIndex = 14;
             // 
             // pictureBox2
             // 
-            pictureBox2.Anchor = AnchorStyles.None;
+            resources.ApplyResources(pictureBox2, "pictureBox2");
             pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(184, 151);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI Black", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label3, "label3");
             label3.ForeColor = Color.Red;
-            label3.Location = new Point(69, 224);
             label3.Name = "label3";
-            label3.Size = new Size(68, 32);
-            label3.TabIndex = 17;
-            label3.Text = "J&&M";
             // 
             // button5
             // 
-            button5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button5.Location = new Point(0, 411);
+            resources.ApplyResources(button5, "button5");
             button5.Name = "button5";
-            button5.Size = new Size(184, 95);
-            button5.TabIndex = 14;
-            button5.Text = "Estoque";
             button5.UseVisualStyleBackColor = true;
             button5.Click += button5_Click;
             // 
             // label2
             // 
-            label2.Font = new Font("Trebuchet MS", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(label2, "label2");
             label2.ForeColor = SystemColors.ControlDarkDark;
-            label2.Location = new Point(35, 193);
             label2.Name = "label2";
-            label2.Size = new Size(72, 31);
-            label2.TabIndex = 16;
-            label2.Text = "Adega";
             // 
             // button4
             // 
-            button4.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button4.Location = new Point(0, 300);
+            resources.ApplyResources(button4, "button4");
             button4.Name = "button4";
-            button4.Size = new Size(184, 95);
-            button4.TabIndex = 13;
-            button4.Text = "Home";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
             // button6
             // 
-            button6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button6.Location = new Point(0, 523);
+            resources.ApplyResources(button6, "button6");
             button6.Name = "button6";
-            button6.Size = new Size(184, 95);
-            button6.TabIndex = 15;
-            button6.Text = "PDV";
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
             // panel1
             // 
             panel1.BackColor = Color.Gold;
-            panel1.Location = new Point(0, 0);
+            panel1.Controls.Add(label10);
+            panel1.Controls.Add(label9);
+            resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
-            panel1.Size = new Size(1920, 100);
-            panel1.TabIndex = 25;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
-            contextMenuStrip1.Size = new Size(61, 4);
+            resources.ApplyResources(contextMenuStrip1, "contextMenuStrip1");
             // 
             // label1
             // 
-            label1.AutoSize = true;
+            resources.ApplyResources(label1, "label1");
             label1.BackColor = SystemColors.ControlDarkDark;
-            label1.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             label1.ForeColor = SystemColors.ButtonFace;
-            label1.Location = new Point(223, 231);
             label1.Name = "label1";
-            label1.Size = new Size(197, 25);
-            label1.TabIndex = 15;
-            label1.Text = "Nome do usuario:";
             // 
             // label4
             // 
-            label4.AutoSize = true;
+            resources.ApplyResources(label4, "label4");
             label4.BackColor = SystemColors.ControlDarkDark;
             label4.ForeColor = SystemColors.ButtonFace;
-            label4.Location = new Point(706, 101);
             label4.Name = "label4";
-            label4.Size = new Size(0, 15);
-            label4.TabIndex = 16;
             label4.Click += label4_Click;
             // 
             // label5
             // 
-            label5.AutoSize = true;
+            resources.ApplyResources(label5, "label5");
             label5.BackColor = SystemColors.ControlDarkDark;
-            label5.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             label5.ForeColor = SystemColors.ButtonFace;
-            label5.Location = new Point(223, 474);
             label5.Name = "label5";
-            label5.Size = new Size(335, 25);
-            label5.TabIndex = 17;
-            label5.Text = "Produto em menor quantidade:";
             // 
             // label7
             // 
-            label7.AutoSize = true;
+            resources.ApplyResources(label7, "label7");
             label7.BackColor = SystemColors.ControlDarkDark;
-            label7.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             label7.ForeColor = SystemColors.ButtonFace;
-            label7.Location = new Point(223, 303);
             label7.Name = "label7";
-            label7.Size = new Size(363, 25);
-            label7.TabIndex = 19;
-            label7.Text = "Produto mais proximo a validade:";
             // 
             // label6
             // 
-            label6.AutoSize = true;
+            resources.ApplyResources(label6, "label6");
             label6.BackColor = SystemColors.ControlDarkDark;
-            label6.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             label6.ForeColor = SystemColors.ButtonFace;
-            label6.Location = new Point(223, 385);
             label6.Name = "label6";
-            label6.Size = new Size(369, 25);
-            label6.TabIndex = 20;
-            label6.Text = "Produto mais vendido na semana:";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(1434, 844);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(458, 185);
-            textBox1.TabIndex = 21;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.BackColor = SystemColors.ControlDarkDark;
-            label8.ForeColor = SystemColors.ButtonFace;
-            label8.Location = new Point(1434, 823);
-            label8.Name = "label8";
-            label8.Size = new Size(74, 15);
-            label8.TabIndex = 22;
-            label8.Text = "Observações";
             // 
             // button1
             // 
             button1.BackColor = Color.Gold;
             button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            resources.ApplyResources(button1, "button1");
             button1.ForeColor = Color.Red;
-            button1.Location = new Point(1852, 12);
             button1.Name = "button1";
-            button1.Size = new Size(56, 29);
-            button1.TabIndex = 24;
-            button1.Text = "SAIR";
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
@@ -244,15 +193,111 @@
             timer1.Enabled = true;
             timer1.Interval = 1000;
             // 
+            // label9
+            // 
+            resources.ApplyResources(label9, "label9");
+            label9.Name = "label9";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(label10, "label10");
+            label10.Name = "label10";
+            // 
+            // pictureBox5
+            // 
+            resources.ApplyResources(pictureBox5, "pictureBox5");
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            resources.ApplyResources(pictureBox6, "pictureBox6");
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.BackColor = SystemColors.ActiveCaption;
+            resources.ApplyResources(pictureBox1, "pictureBox1");
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.TabStop = false;
+            // 
+            // panel2
+            // 
+            panel2.BackColor = SystemColors.ActiveCaption;
+            panel2.Controls.Add(pictureBox1);
+            resources.ApplyResources(panel2, "panel2");
+            panel2.Name = "panel2";
+            // 
+            // panel3
+            // 
+            panel3.BackColor = SystemColors.ActiveCaption;
+            panel3.Controls.Add(pictureBox7);
+            resources.ApplyResources(panel3, "panel3");
+            panel3.Name = "panel3";
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackColor = SystemColors.ActiveCaption;
+            resources.ApplyResources(pictureBox7, "pictureBox7");
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.TabStop = false;
+            // 
+            // panel4
+            // 
+            panel4.BackColor = SystemColors.ActiveCaption;
+            panel4.Controls.Add(pictureBox3);
+            resources.ApplyResources(panel4, "panel4");
+            panel4.Name = "panel4";
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = SystemColors.ActiveCaption;
+            resources.ApplyResources(pictureBox3, "pictureBox3");
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.TabStop = false;
+            // 
+            // panel5
+            // 
+            panel5.BackColor = SystemColors.ActiveCaption;
+            panel5.Controls.Add(pictureBox4);
+            resources.ApplyResources(panel5, "panel5");
+            panel5.Name = "panel5";
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = SystemColors.ActiveCaption;
+            resources.ApplyResources(pictureBox4, "pictureBox4");
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.TabStop = false;
+            // 
+            // panel6
+            // 
+            panel6.BackColor = SystemColors.ActiveCaption;
+            panel6.Controls.Add(pictureBox8);
+            resources.ApplyResources(panel6, "panel6");
+            panel6.Name = "panel6";
+            // 
+            // pictureBox8
+            // 
+            pictureBox8.BackColor = SystemColors.ActiveCaption;
+            resources.ApplyResources(pictureBox8, "pictureBox8");
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.TabStop = false;
+            // 
             // HomeTela
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1904, 1041);
+            Controls.Add(panel6);
+            Controls.Add(panel5);
+            Controls.Add(panel4);
+            Controls.Add(panel3);
+            Controls.Add(pictureBox6);
+            Controls.Add(pictureBox5);
+            Controls.Add(panel2);
             Controls.Add(button1);
-            Controls.Add(label8);
-            Controls.Add(textBox1);
             Controls.Add(label6);
             Controls.Add(label7);
             Controls.Add(label5);
@@ -262,11 +307,24 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "HomeTela";
-            Text = "HomeTela";
             Load += HomeTela_Load;
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel2.ResumeLayout(false);
+            panel3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -286,11 +344,22 @@
         private Label label5;
         private Label label7;
         private Label label6;
-        private TextBox textBox1;
-        private Label label8;
-        private DateTimePicker dateTimePicker1;
         private Button button1;
         private System.Windows.Forms.Timer timer1;
         private Panel panel1;
+        private Label label9;
+        private Label label10;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
+        public PictureBox pictureBox1;
+        private Panel panel2;
+        private Panel panel3;
+        public PictureBox pictureBox7;
+        private Panel panel4;
+        public PictureBox pictureBox3;
+        private Panel panel5;
+        public PictureBox pictureBox4;
+        private Panel panel6;
+        public PictureBox pictureBox8;
     }
 }
