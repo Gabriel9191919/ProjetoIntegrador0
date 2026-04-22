@@ -4,13 +4,13 @@ namespace TelaLogin
 {
     public partial class Form1 : Form
     {
-        string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
+        string conexao = "server=localhost; uid = root; pwd=; database = jm_adega;";
 
         public Form1()
         {
             InitializeComponent();
 
-
+            
 
         }
 
@@ -26,6 +26,13 @@ namespace TelaLogin
             this.WindowState = FormWindowState.Maximized;
 
 
+            if (Properties.Settings.Default.Nome)
+            {
+                txtUsuario.Text = Properties.Settings.Default.Usuariosalvo;
+                checkBox1.Checked = true;
+            }
+
+
 
 
 
@@ -36,7 +43,18 @@ namespace TelaLogin
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
+            if (checkBox1.Checked)
+            {
+                Properties.Settings.Default.Usuariosalvo = txtUsuario.Text;
+                Properties.Settings.Default.Nome = true;
+            }
+            else
+            {
+                Properties.Settings.Default.Usuariosalvo = "";
+                Properties.Settings.Default.Nome = false;
+            }
 
+            Properties.Settings.Default.Save();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -80,9 +98,16 @@ namespace TelaLogin
                     if (count > 0)
                     {
                         MessageBox.Show("Login realizado com sucesso!");
-                        HomeTela telahome = new HomeTela();
-                        telahome.Show();
+                        
+                        
                         this.Hide();
+                        Sessao.Usuario = txtUsuario.Text;
+
+                        HomeTela telahome = new HomeTela();
+
+                        telahome.Show();
+
+
 
                     }
                     else

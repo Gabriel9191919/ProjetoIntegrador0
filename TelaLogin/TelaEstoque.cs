@@ -28,6 +28,10 @@ namespace TelaLogin
 
         private void TelaEstoque_Load(object sender, EventArgs e)
         {
+
+
+
+
             MySqlConnection con = new MySqlConnection(conexao);
             try
             {

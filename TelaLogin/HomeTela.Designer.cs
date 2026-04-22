@@ -38,16 +38,14 @@
             button4 = new Button();
             button6 = new Button();
             panel1 = new Panel();
+            LbNome = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
-            label1 = new Label();
             label4 = new Label();
             label5 = new Label();
             label7 = new Label();
             label6 = new Label();
             button1 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            label9 = new Label();
-            label10 = new Label();
             pictureBox5 = new PictureBox();
             pictureBox6 = new PictureBox();
             pictureBox1 = new PictureBox();
@@ -60,6 +58,9 @@
             pictureBox4 = new PictureBox();
             panel6 = new Panel();
             pictureBox8 = new PictureBox();
+            timerRelogio = new System.Windows.Forms.Timer(components);
+            lbRelogio = new Label();
+            timer2 = new System.Windows.Forms.Timer(components);
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
@@ -132,22 +133,21 @@
             // panel1
             // 
             panel1.BackColor = Color.Gold;
-            panel1.Controls.Add(label10);
-            panel1.Controls.Add(label9);
+            panel1.Controls.Add(LbNome);
+            panel1.Controls.Add(lbRelogio);
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
+            // 
+            // LbNome
+            // 
+            resources.ApplyResources(LbNome, "LbNome");
+            LbNome.Name = "LbNome";
+            LbNome.Click += LbNome_Click;
             // 
             // contextMenuStrip1
             // 
             contextMenuStrip1.Name = "contextMenuStrip1";
             resources.ApplyResources(contextMenuStrip1, "contextMenuStrip1");
-            // 
-            // label1
-            // 
-            resources.ApplyResources(label1, "label1");
-            label1.BackColor = SystemColors.ControlDarkDark;
-            label1.ForeColor = SystemColors.ButtonFace;
-            label1.Name = "label1";
             // 
             // label4
             // 
@@ -192,16 +192,6 @@
             // 
             timer1.Enabled = true;
             timer1.Interval = 1000;
-            // 
-            // label9
-            // 
-            resources.ApplyResources(label9, "label9");
-            label9.Name = "label9";
-            // 
-            // label10
-            // 
-            resources.ApplyResources(label10, "label10");
-            label10.Name = "label10";
             // 
             // pictureBox5
             // 
@@ -285,6 +275,20 @@
             pictureBox8.Name = "pictureBox8";
             pictureBox8.TabStop = false;
             // 
+            // timerRelogio
+            // 
+            timerRelogio.Enabled = true;
+            // 
+            // lbRelogio
+            // 
+            resources.ApplyResources(lbRelogio, "lbRelogio");
+            lbRelogio.Name = "lbRelogio";
+            // 
+            // timer2
+            // 
+            timer2.Interval = 1000;
+            timer2.Tick += timer2_Tick;
+            // 
             // HomeTela
             // 
             resources.ApplyResources(this, "$this");
@@ -303,7 +307,6 @@
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(Painel_Principal);
-            Controls.Add(label1);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "HomeTela";
@@ -339,7 +342,6 @@
         private PictureBox pictureBox2;
         private Button button6;
         private ContextMenuStrip contextMenuStrip1;
-        private Label label1;
         private Label label4;
         private Label label5;
         private Label label7;
@@ -347,8 +349,6 @@
         private Button button1;
         private System.Windows.Forms.Timer timer1;
         private Panel panel1;
-        private Label label9;
-        private Label label10;
         private PictureBox pictureBox5;
         private PictureBox pictureBox6;
         public PictureBox pictureBox1;
@@ -361,5 +361,9 @@
         public PictureBox pictureBox4;
         private Panel panel6;
         public PictureBox pictureBox8;
+        public Label LbNome;
+        private System.Windows.Forms.Timer timerRelogio;
+        private Label lbRelogio;
+        private System.Windows.Forms.Timer timer2;
     }
 }
