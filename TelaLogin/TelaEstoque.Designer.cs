@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaEstoque));
             dataGridView1 = new DataGridView();
             button1 = new Button();
@@ -47,6 +48,8 @@
             button9 = new Button();
             rButton2 = new RButton();
             rButton1 = new RButton();
+            lbRelogio = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -271,12 +274,29 @@
             rButton1.TextColor = SystemColors.ActiveCaptionText;
             rButton1.UseVisualStyleBackColor = false;
             // 
+            // lbRelogio
+            // 
+            lbRelogio.AutoSize = true;
+            lbRelogio.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbRelogio.Location = new Point(1522, 9);
+            lbRelogio.Name = "lbRelogio";
+            lbRelogio.Size = new Size(68, 30);
+            lbRelogio.TabIndex = 31;
+            lbRelogio.Text = "label4";
+            // 
+            // timer1
+            // 
+            timer1.Enabled = true;
+            timer1.Interval = 1000;
+            timer1.Tick += timer1_Tick;
+            // 
             // TelaEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(lbRelogio);
             Controls.Add(rButton1);
             Controls.Add(rButton2);
             Controls.Add(button9);
@@ -322,5 +342,7 @@
         private RButton rButton2;
         public DataGridView dataGridView1;
         private RButton rButton1;
+        private Label lbRelogio;
+        private System.Windows.Forms.Timer timer1;
     }
 }

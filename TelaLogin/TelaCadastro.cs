@@ -14,7 +14,7 @@ namespace TelaLogin
 {
     public partial class TelaCadastro : Form
     {
-        string conexao = "server=localhost; uid = root; pwd=; database = jm_adega;";
+        string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
 
 
         public TelaCadastro()

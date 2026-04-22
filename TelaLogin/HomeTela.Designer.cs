@@ -33,12 +33,14 @@
             Painel_Principal = new Panel();
             pictureBox2 = new PictureBox();
             label3 = new Label();
+            BtnTrocarSessao = new Button();
             button5 = new Button();
             label2 = new Label();
             button4 = new Button();
             button6 = new Button();
             panel1 = new Panel();
             LbNome = new Label();
+            lbRelogio = new Label();
             contextMenuStrip1 = new ContextMenuStrip(components);
             label4 = new Label();
             label5 = new Label();
@@ -59,7 +61,6 @@
             panel6 = new Panel();
             pictureBox8 = new PictureBox();
             timerRelogio = new System.Windows.Forms.Timer(components);
-            lbRelogio = new Label();
             timer2 = new System.Windows.Forms.Timer(components);
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -83,6 +84,7 @@
             Painel_Principal.BackColor = Color.Gold;
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
+            Painel_Principal.Controls.Add(BtnTrocarSessao);
             Painel_Principal.Controls.Add(button5);
             Painel_Principal.Controls.Add(label2);
             Painel_Principal.Controls.Add(button4);
@@ -102,6 +104,16 @@
             resources.ApplyResources(label3, "label3");
             label3.ForeColor = Color.Red;
             label3.Name = "label3";
+            // 
+            // BtnTrocarSessao
+            // 
+            BtnTrocarSessao.BackColor = Color.Gold;
+            BtnTrocarSessao.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(BtnTrocarSessao, "BtnTrocarSessao");
+            BtnTrocarSessao.ForeColor = Color.Red;
+            BtnTrocarSessao.Name = "BtnTrocarSessao";
+            BtnTrocarSessao.UseVisualStyleBackColor = false;
+            BtnTrocarSessao.Click += BtnTrocarSessao_Click;
             // 
             // button5
             // 
@@ -143,6 +155,11 @@
             resources.ApplyResources(LbNome, "LbNome");
             LbNome.Name = "LbNome";
             LbNome.Click += LbNome_Click;
+            // 
+            // lbRelogio
+            // 
+            resources.ApplyResources(lbRelogio, "lbRelogio");
+            lbRelogio.Name = "lbRelogio";
             // 
             // contextMenuStrip1
             // 
@@ -279,11 +296,6 @@
             // 
             timerRelogio.Enabled = true;
             // 
-            // lbRelogio
-            // 
-            resources.ApplyResources(lbRelogio, "lbRelogio");
-            lbRelogio.Name = "lbRelogio";
-            // 
             // timer2
             // 
             timer2.Interval = 1000;
@@ -365,5 +377,6 @@
         private System.Windows.Forms.Timer timerRelogio;
         private Label lbRelogio;
         private System.Windows.Forms.Timer timer2;
+        private Button BtnTrocarSessao;
     }
 }

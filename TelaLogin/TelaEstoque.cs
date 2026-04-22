@@ -20,20 +20,18 @@ namespace TelaLogin
             InitializeComponent();
             attgrid objeto = new attgrid(this.dataGridView1);
             objeto.updategrid();
+
+            lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy")  +
+                  "🕒 " + DateTime.Now.ToString("HH:mm:ss");
         }
 
         private void TelaEstoque_Load(object sender, EventArgs e)
         {
-<<<<<<< HEAD
 
 
-
-
-            MySqlConnection con = new MySqlConnection(conexao);
-=======
             conectar conectar = new conectar();
             MySqlConnection con = conectar.conectando();
->>>>>>> e417a725a160dfb3b42665b0e02e21cc5616f0e1
+
             try
             {
                 con.Open();
@@ -92,6 +90,13 @@ namespace TelaLogin
         {
             Form3 telaadd = new Form3();
             telaadd.Show();
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
+                  "🕒 " + DateTime.Now.ToString("HH:mm:ss");
         }
     }
 }
