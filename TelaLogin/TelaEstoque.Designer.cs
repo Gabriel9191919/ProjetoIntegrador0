@@ -45,7 +45,8 @@
             button7 = new Button();
             button8 = new Button();
             button9 = new Button();
-            button2 = new Button();
+            rButton2 = new RButton();
+            rButton1 = new RButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -64,14 +65,10 @@
             // 
             // button1
             // 
-            button1.Cursor = Cursors.Hand;
-            button1.Location = new Point(718, 407);
+            button1.Location = new Point(0, 0);
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
-            button1.TabIndex = 1;
-            button1.Text = "Adicionar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            button1.TabIndex = 29;
             // 
             // textBox1
             // 
@@ -101,7 +98,7 @@
             label1.BackColor = Color.Transparent;
             label1.Font = new Font("Trebuchet MS", 20.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Gold;
-            label1.Location = new Point(868, 359);
+            label1.Location = new Point(863, 317);
             label1.Name = "label1";
             label1.Size = new Size(130, 35);
             label1.TabIndex = 6;
@@ -112,7 +109,7 @@
             pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(830, 212);
+            pictureBox3.Location = new Point(815, 161);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(213, 153);
             pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -233,16 +230,46 @@
             button9.UseVisualStyleBackColor = true;
             button9.Click += button9_Click;
             // 
-            // button2
+            // rButton2
             // 
-            button2.Cursor = Cursors.Hand;
-            button2.Location = new Point(895, 407);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 26;
-            button2.Text = "Atualizar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            rButton2.Anchor = AnchorStyles.None;
+            rButton2.BackColor = Color.Gold;
+            rButton2.BackgroundColor = Color.Gold;
+            rButton2.BorderColor = Color.PaleVioletRed;
+            rButton2.BorderRadius = 20;
+            rButton2.BorderSize = 0;
+            rButton2.Cursor = Cursors.Hand;
+            rButton2.FlatAppearance.BorderSize = 0;
+            rButton2.FlatStyle = FlatStyle.Flat;
+            rButton2.ForeColor = SystemColors.ActiveCaptionText;
+            rButton2.Location = new Point(646, 390);
+            rButton2.Name = "rButton2";
+            rButton2.Size = new Size(164, 40);
+            rButton2.TabIndex = 28;
+            rButton2.Text = "Adicionar";
+            rButton2.TextColor = SystemColors.ActiveCaptionText;
+            rButton2.UseVisualStyleBackColor = false;
+            rButton2.Click += rButton2_Click;
+            // 
+            // rButton1
+            // 
+            rButton1.Anchor = AnchorStyles.None;
+            rButton1.BackColor = Color.Gold;
+            rButton1.BackgroundColor = Color.Gold;
+            rButton1.BorderColor = Color.PaleVioletRed;
+            rButton1.BorderRadius = 20;
+            rButton1.BorderSize = 0;
+            rButton1.Cursor = Cursors.Hand;
+            rButton1.FlatAppearance.BorderSize = 0;
+            rButton1.FlatStyle = FlatStyle.Flat;
+            rButton1.ForeColor = SystemColors.ActiveCaptionText;
+            rButton1.Location = new Point(863, 390);
+            rButton1.Name = "rButton1";
+            rButton1.Size = new Size(164, 40);
+            rButton1.TabIndex = 30;
+            rButton1.Text = "Delete";
+            rButton1.TextColor = SystemColors.ActiveCaptionText;
+            rButton1.UseVisualStyleBackColor = false;
             // 
             // TelaEstoque
             // 
@@ -250,7 +277,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(button2);
+            Controls.Add(rButton1);
+            Controls.Add(rButton2);
             Controls.Add(button9);
             Controls.Add(button8);
             Controls.Add(button7);
@@ -276,8 +304,6 @@
         }
 
         #endregion
-
-        private DataGridView dataGridView1;
         private Button button1;
         private TextBox textBox1;
         private PictureBox pictureBox1;
@@ -293,6 +319,8 @@
         private Button button7;
         private Button button8;
         private Button button9;
-        private Button button2;
+        private RButton rButton2;
+        public DataGridView dataGridView1;
+        private RButton rButton1;
     }
 }

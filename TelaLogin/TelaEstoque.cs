@@ -18,17 +18,14 @@ namespace TelaLogin
         public TelaEstoque()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Form3 telaadd = new Form3();
-            telaadd.Show();
+            attgrid objeto = new attgrid(this.dataGridView1);
+            objeto.updategrid();
         }
 
         private void TelaEstoque_Load(object sender, EventArgs e)
         {
-            MySqlConnection con = new MySqlConnection(conexao);
+            conectar conectar = new conectar();
+            MySqlConnection con = conectar.conectando();
             try
             {
                 con.Open();
@@ -69,22 +66,8 @@ namespace TelaLogin
 
         private void button2_Click(object sender, EventArgs e)
         {
-
-            MySqlConnection con = new MySqlConnection(conexao);
-            try
-            {
-                con.Open();
-                string sql = "SELECT * FROM estoque";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataAdapter estoque = new MySqlDataAdapter(cmd);
-                DataTable qualquercoisa = new DataTable();
-                estoque.Fill(qualquercoisa);
-                dataGridView1.DataSource = qualquercoisa;
-
-            }
-            catch (Exception)
-            {
-            }
+            attgrid objeto = new attgrid(this.dataGridView1);
+            objeto.updategrid();
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -95,6 +78,12 @@ namespace TelaLogin
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void rButton2_Click(object sender, EventArgs e)
+        {
+            Form3 telaadd = new Form3();
+            telaadd.Show();
         }
     }
 }

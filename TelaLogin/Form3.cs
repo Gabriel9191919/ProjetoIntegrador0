@@ -79,15 +79,22 @@ namespace TelaLogin
 
                 cmd.ExecuteNonQuery();
                 MessageBox.Show("Item cadastro com sucesso");
-
-
-
                 con.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar: " + ex.Message);
             }
+            foreach (Form f in Application.OpenForms)
+            {
+                if (f is TelaEstoque telaReal)
+                {
+                    attgrid objeto = new attgrid(telaReal.dataGridView1);
+                    objeto.updategrid();
+                    break;
+                }
+            }
+
             this.Close();
         }
     }

@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form3));
             txtvenc = new TextBox();
             label1 = new Label();
-            button1 = new Button();
             txtqtd = new TextBox();
             txtpreco = new TextBox();
             txtproduto = new TextBox();
@@ -60,17 +59,6 @@
             label1.Name = "label1";
             label1.Size = new Size(0, 15);
             label1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            button1.ForeColor = SystemColors.ActiveCaptionText;
-            button1.Location = new Point(117, 64);
-            button1.Name = "button1";
-            button1.Size = new Size(75, 23);
-            button1.TabIndex = 2;
-            button1.Text = "Adicionar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // txtqtd
             // 
@@ -185,7 +173,6 @@
             Controls.Add(txtproduto);
             Controls.Add(txtpreco);
             Controls.Add(txtqtd);
-            Controls.Add(button1);
             Controls.Add(label1);
             Controls.Add(txtvenc);
             ForeColor = SystemColors.ControlLight;
@@ -201,7 +188,6 @@
 
         private TextBox txtvenc;
         private Label label1;
-        private Button button1;
         private TextBox txtqtd;
         private TextBox txtpreco;
         private TextBox txtproduto;
