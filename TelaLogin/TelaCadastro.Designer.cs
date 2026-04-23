@@ -38,10 +38,13 @@
             pictureBox4 = new PictureBox();
             txtsenha2 = new TextBox();
             rButton1 = new RButton();
+            label1 = new Label();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // linkLabel2
@@ -52,10 +55,10 @@
             linkLabel2.BackColor = Color.Transparent;
             linkLabel2.ForeColor = SystemColors.ActiveCaptionText;
             linkLabel2.LinkColor = Color.Gold;
-            linkLabel2.Location = new Point(1085, 660);
+            linkLabel2.Location = new Point(945, 660);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.Size = new Size(38, 15);
-            linkLabel2.TabIndex = 16;
+            linkLabel2.TabIndex = 5;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Entrar";
             linkLabel2.LinkClicked += linkLabel2_LinkClicked;
@@ -92,7 +95,7 @@
             txtsenha.PasswordChar = '*';
             txtsenha.PlaceholderText = "Senha";
             txtsenha.Size = new Size(297, 23);
-            txtsenha.TabIndex = 15;
+            txtsenha.TabIndex = 2;
             // 
             // pictureBox3
             // 
@@ -113,7 +116,7 @@
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuario";
             txtUsuario.Size = new Size(297, 23);
-            txtUsuario.TabIndex = 12;
+            txtUsuario.TabIndex = 1;
             // 
             // pictureBox4
             // 
@@ -135,7 +138,7 @@
             txtsenha2.PasswordChar = '*';
             txtsenha2.PlaceholderText = "Confirme sua senha";
             txtsenha2.Size = new Size(297, 23);
-            txtsenha2.TabIndex = 20;
+            txtsenha2.TabIndex = 3;
             // 
             // rButton1
             // 
@@ -152,11 +155,33 @@
             rButton1.Location = new Point(807, 617);
             rButton1.Name = "rButton1";
             rButton1.Size = new Size(316, 40);
-            rButton1.TabIndex = 22;
+            rButton1.TabIndex = 4;
             rButton1.Text = "Cadastrar";
             rButton1.TextColor = SystemColors.ActiveCaptionText;
             rButton1.UseVisualStyleBackColor = false;
             rButton1.Click += rButton1_Click;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.ForeColor = Color.Gold;
+            label1.Location = new Point(1713, 1047);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 15);
+            label1.TabIndex = 23;
+            label1.Text = "Powered by";
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(1724, 985);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(256, 120);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 24;
+            pictureBox5.TabStop = false;
             // 
             // TelaCadastro
             // 
@@ -164,6 +189,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(label1);
+            Controls.Add(pictureBox5);
             Controls.Add(rButton1);
             Controls.Add(pictureBox4);
             Controls.Add(txtsenha2);
@@ -181,6 +208,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -196,5 +224,7 @@
         private PictureBox pictureBox4;
         private TextBox txtsenha2;
         private RButton rButton1;
+        private Label label1;
+        private PictureBox pictureBox5;
     }
 }

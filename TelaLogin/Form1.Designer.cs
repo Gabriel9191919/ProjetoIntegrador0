@@ -69,7 +69,7 @@
             linkLabel1.Location = new Point(1015, 579);
             linkLabel1.Name = "linkLabel1";
             linkLabel1.Size = new Size(90, 15);
-            linkLabel1.TabIndex = 2;
+            linkLabel1.TabIndex = 3;
             linkLabel1.TabStop = true;
             linkLabel1.Text = "Esqueci a senha";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
@@ -83,7 +83,7 @@
             checkBox1.Location = new Point(807, 579);
             checkBox1.Name = "checkBox1";
             checkBox1.Size = new Size(92, 19);
-            checkBox1.TabIndex = 3;
+            checkBox1.TabIndex = 7;
             checkBox1.Text = "Lembrar-me";
             checkBox1.UseVisualStyleBackColor = false;
             checkBox1.CheckedChanged += checkBox1_CheckedChanged;
@@ -96,7 +96,7 @@
             txtSenha.PasswordChar = '*';
             txtSenha.PlaceholderText = "Senha";
             txtSenha.Size = new Size(297, 23);
-            txtSenha.TabIndex = 4;
+            txtSenha.TabIndex = 2;
             txtSenha.KeyDown += txtSenha_KeyDown;
             // 
             // rButton1
@@ -114,7 +114,7 @@
             rButton1.Location = new Point(807, 608);
             rButton1.Name = "rButton1";
             rButton1.Size = new Size(316, 40);
-            rButton1.TabIndex = 8;
+            rButton1.TabIndex = 4;
             rButton1.Text = "Entrar";
             rButton1.TextColor = SystemColors.ActiveCaptionText;
             rButton1.UseVisualStyleBackColor = false;
@@ -208,7 +208,7 @@
             btnCadastrar.Location = new Point(807, 666);
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(316, 40);
-            btnCadastrar.TabIndex = 8;
+            btnCadastrar.TabIndex = 5;
             btnCadastrar.Text = "Cadastro";
             btnCadastrar.TextColor = SystemColors.ActiveCaptionText;
             btnCadastrar.UseVisualStyleBackColor = false;
@@ -226,7 +226,8 @@
             btnOlho.Location = new Point(1129, 532);
             btnOlho.Name = "btnOlho";
             btnOlho.Size = new Size(24, 24);
-            btnOlho.TabIndex = 26;
+            btnOlho.TabIndex = 6;
+            btnOlho.TabStop = false;
             btnOlho.UseVisualStyleBackColor = false;
             btnOlho.Click += btnOlho_Click;
             // 
