@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,21 +8,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace TelaLogin
 {
     public partial class TelaEstoque : Form
     {
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
-        
-
-
-
-
-
-
-
 
         public TelaEstoque()
         {
@@ -52,9 +45,9 @@ namespace TelaLogin
 
 
 
-                
 
-                
+
+
 
 
 
@@ -192,7 +185,119 @@ namespace TelaLogin
                 "produto LIKE '%" + txtPesquisa.Text + "%'" +
                 " OR Convert(id_estoque, 'System.String') LIKE '%" + txtPesquisa.Text + "%'";
         }
+
+        private void btnAdicionar_Click(object sender, EventArgs e)
+        {
+
+
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um produto!");
+                return;
+            }
+
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id_estoque"].Value);
+            int quantidade = Convert.ToInt32(dataGridView1.CurrentRow.Cells["quantidade"].Value);
+
+            quantidade++;
+
+            MySqlConnection con = new MySqlConnection(conexao);
+
+            try
+            {
+                con.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "UPDATE estoque SET quantidade = @qtd WHERE id_estoque = @id", con);
+
+                cmd.Parameters.AddWithValue("@qtd", quantidade);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+
+
+            attgrid objeto = new attgrid(this.dataGridView1);
+            objeto.updategrid();
+            Aviso aviso = new Aviso(
+            "Estoque",
+            "Quantidade aumentada!",
+            new Point(Screen.PrimaryScreen.WorkingArea.Width - 320,
+                  Screen.PrimaryScreen.WorkingArea.Height - 100),
+            Color.LightSkyBlue
+    );
+
+            aviso.Show();
+
+           
+
+
+
+
+        }
+
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            
+
+
+            if (dataGridView1.CurrentRow == null)
+            {
+                MessageBox.Show("Selecione um produto!");
+                return;
+            }
+
+            int id = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id_estoque"].Value);
+            int quantidade = Convert.ToInt32(dataGridView1.CurrentRow.Cells["quantidade"].Value);
+
+            quantidade--;
+
+            MySqlConnection con = new MySqlConnection(conexao);
+
+            try
+            {
+                con.Open();
+
+                MySqlCommand cmd = new MySqlCommand(
+                    "UPDATE estoque SET quantidade = @qtd WHERE id_estoque = @id", con);
+
+                cmd.Parameters.AddWithValue("@qtd", quantidade);
+                cmd.Parameters.AddWithValue("@id", id);
+
+                cmd.ExecuteNonQuery();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+
+
+            attgrid objeto = new attgrid(this.dataGridView1);
+            objeto.updategrid();
+            Aviso aviso = new Aviso(
+            "Estoque",
+            "Quantidade Reduzida!",
+            new Point(Screen.PrimaryScreen.WorkingArea.Width - 320,
+                  Screen.PrimaryScreen.WorkingArea.Height - 100),
+            Color.LightSkyBlue
+    );
+
+            aviso.Show();
+
+
+
+        
+
+        }
     }
+
+
 }
 
 

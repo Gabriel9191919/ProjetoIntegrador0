@@ -33,7 +33,6 @@
             label1 = new Label();
             txtqtd = new TextBox();
             txtpreco = new TextBox();
-            txtproduto = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
@@ -41,6 +40,8 @@
             pictureBox3 = new PictureBox();
             rButton1 = new RButton();
             btnSair = new Button();
+            comboBox1 = new ComboBox();
+            txtproduto = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -77,14 +78,6 @@
             txtpreco.Name = "txtpreco";
             txtpreco.Size = new Size(54, 29);
             txtpreco.TabIndex = 4;
-            // 
-            // txtproduto
-            // 
-            txtproduto.Font = new Font("Segoe UI", 12F);
-            txtproduto.Location = new Point(134, 194);
-            txtproduto.Name = "txtproduto";
-            txtproduto.Size = new Size(243, 29);
-            txtproduto.TabIndex = 5;
             // 
             // label2
             // 
@@ -173,6 +166,22 @@
             btnSair.UseVisualStyleBackColor = true;
             btnSair.Click += btnSair_Click;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Location = new Point(154, 197);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(190, 23);
+            comboBox1.TabIndex = 27;
+            // 
+            // txtproduto
+            // 
+            txtproduto.Font = new Font("Segoe UI", 12F);
+            txtproduto.Location = new Point(12, 32);
+            txtproduto.Name = "txtproduto";
+            txtproduto.Size = new Size(243, 29);
+            txtproduto.TabIndex = 5;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -181,6 +190,7 @@
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(609, 407);
             ControlBox = false;
+            Controls.Add(comboBox1);
             Controls.Add(btnSair);
             Controls.Add(rButton1);
             Controls.Add(pictureBox3);
@@ -211,7 +221,6 @@
         private Label label1;
         private TextBox txtqtd;
         private TextBox txtpreco;
-        private TextBox txtproduto;
         private Label label2;
         private Label label3;
         private Label label4;
@@ -219,5 +228,7 @@
         private PictureBox pictureBox3;
         private RButton rButton1;
         private Button btnSair;
+        private ComboBox comboBox1;
+        private TextBox txtproduto;
     }
 }
