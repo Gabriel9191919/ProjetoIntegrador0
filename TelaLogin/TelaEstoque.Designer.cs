@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaEstoque));
             dataGridView1 = new DataGridView();
             button1 = new Button();
-            textBox1 = new TextBox();
+            txtPesquisa = new TextBox();
             pictureBox1 = new PictureBox();
             label1 = new Label();
             pictureBox3 = new PictureBox();
@@ -47,7 +47,7 @@
             button8 = new Button();
             button9 = new Button();
             rButton2 = new RButton();
-            rButton1 = new RButton();
+            BtnDelete = new RButton();
             lbRelogio = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -73,14 +73,15 @@
             button1.Size = new Size(75, 23);
             button1.TabIndex = 29;
             // 
-            // textBox1
+            // txtPesquisa
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(1051, 408);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(156, 22);
-            textBox1.TabIndex = 4;
+            txtPesquisa.BorderStyle = BorderStyle.None;
+            txtPesquisa.Font = new Font("Segoe UI", 12F);
+            txtPesquisa.Location = new Point(1051, 408);
+            txtPesquisa.Name = "txtPesquisa";
+            txtPesquisa.Size = new Size(156, 22);
+            txtPesquisa.TabIndex = 4;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
             // pictureBox1
             // 
@@ -254,25 +255,26 @@
             rButton2.UseVisualStyleBackColor = false;
             rButton2.Click += rButton2_Click;
             // 
-            // rButton1
+            // BtnDelete
             // 
-            rButton1.Anchor = AnchorStyles.None;
-            rButton1.BackColor = Color.Gold;
-            rButton1.BackgroundColor = Color.Gold;
-            rButton1.BorderColor = Color.PaleVioletRed;
-            rButton1.BorderRadius = 20;
-            rButton1.BorderSize = 0;
-            rButton1.Cursor = Cursors.Hand;
-            rButton1.FlatAppearance.BorderSize = 0;
-            rButton1.FlatStyle = FlatStyle.Flat;
-            rButton1.ForeColor = SystemColors.ActiveCaptionText;
-            rButton1.Location = new Point(863, 390);
-            rButton1.Name = "rButton1";
-            rButton1.Size = new Size(164, 40);
-            rButton1.TabIndex = 30;
-            rButton1.Text = "Delete";
-            rButton1.TextColor = SystemColors.ActiveCaptionText;
-            rButton1.UseVisualStyleBackColor = false;
+            BtnDelete.Anchor = AnchorStyles.None;
+            BtnDelete.BackColor = Color.Gold;
+            BtnDelete.BackgroundColor = Color.Gold;
+            BtnDelete.BorderColor = Color.PaleVioletRed;
+            BtnDelete.BorderRadius = 20;
+            BtnDelete.BorderSize = 0;
+            BtnDelete.Cursor = Cursors.Hand;
+            BtnDelete.FlatAppearance.BorderSize = 0;
+            BtnDelete.FlatStyle = FlatStyle.Flat;
+            BtnDelete.ForeColor = SystemColors.ActiveCaptionText;
+            BtnDelete.Location = new Point(863, 390);
+            BtnDelete.Name = "BtnDelete";
+            BtnDelete.Size = new Size(164, 40);
+            BtnDelete.TabIndex = 30;
+            BtnDelete.Text = "Delete";
+            BtnDelete.TextColor = SystemColors.ActiveCaptionText;
+            BtnDelete.UseVisualStyleBackColor = false;
+            BtnDelete.Click += BtnDelete_Click;
             // 
             // lbRelogio
             // 
@@ -297,7 +299,7 @@
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
             Controls.Add(lbRelogio);
-            Controls.Add(rButton1);
+            Controls.Add(BtnDelete);
             Controls.Add(rButton2);
             Controls.Add(button9);
             Controls.Add(button8);
@@ -305,7 +307,7 @@
             Controls.Add(Painel_Principal);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
-            Controls.Add(textBox1);
+            Controls.Add(txtPesquisa);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox3);
@@ -325,7 +327,7 @@
 
         #endregion
         private Button button1;
-        private TextBox textBox1;
+        private TextBox txtPesquisa;
         private PictureBox pictureBox1;
         private Label label1;
         private PictureBox pictureBox3;
@@ -341,7 +343,7 @@
         private Button button9;
         private RButton rButton2;
         public DataGridView dataGridView1;
-        private RButton rButton1;
+        private RButton BtnDelete;
         private Label lbRelogio;
         private System.Windows.Forms.Timer timer1;
     }

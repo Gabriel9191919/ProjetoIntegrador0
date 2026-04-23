@@ -40,6 +40,7 @@
             label5 = new Label();
             pictureBox3 = new PictureBox();
             rButton1 = new RButton();
+            btnSair = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -130,7 +131,7 @@
             pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(209, 12);
+            pictureBox3.Location = new Point(204, 12);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(213, 153);
             pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -149,7 +150,7 @@
             rButton1.FlatAppearance.BorderSize = 0;
             rButton1.FlatStyle = FlatStyle.Flat;
             rButton1.ForeColor = SystemColors.ActiveCaptionText;
-            rButton1.Location = new Point(159, 320);
+            rButton1.Location = new Point(154, 320);
             rButton1.Name = "rButton1";
             rButton1.Size = new Size(316, 40);
             rButton1.TabIndex = 14;
@@ -158,12 +159,29 @@
             rButton1.UseVisualStyleBackColor = false;
             rButton1.Click += rButton1_Click;
             // 
+            // btnSair
+            // 
+            btnSair.FlatAppearance.BorderSize = 0;
+            btnSair.FlatStyle = FlatStyle.Flat;
+            btnSair.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnSair.ForeColor = Color.Red;
+            btnSair.Location = new Point(541, 12);
+            btnSair.Name = "btnSair";
+            btnSair.Size = new Size(56, 29);
+            btnSair.TabIndex = 26;
+            btnSair.Text = "SAIR";
+            btnSair.UseVisualStyleBackColor = true;
+            btnSair.Click += btnSair_Click;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(618, 407);
+            ClientSize = new Size(609, 407);
+            ControlBox = false;
+            Controls.Add(btnSair);
             Controls.Add(rButton1);
             Controls.Add(pictureBox3);
             Controls.Add(label5);
@@ -176,6 +194,9 @@
             Controls.Add(label1);
             Controls.Add(txtvenc);
             ForeColor = SystemColors.ControlLight;
+            FormBorderStyle = FormBorderStyle.None;
+            Location = new Point(100, 0);
+            MaximizeBox = false;
             Name = "Form3";
             Text = "Adicionar";
             Load += Form3_Load;
@@ -197,5 +218,6 @@
         private Label label5;
         private PictureBox pictureBox3;
         private RButton rButton1;
+        private Button btnSair;
     }
 }

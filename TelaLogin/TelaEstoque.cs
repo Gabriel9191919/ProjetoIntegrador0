@@ -14,6 +14,14 @@ namespace TelaLogin
     public partial class TelaEstoque : Form
     {
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
+        
+
+
+
+
+
+
+
 
         public TelaEstoque()
         {
@@ -21,7 +29,7 @@ namespace TelaLogin
             attgrid objeto = new attgrid(this.dataGridView1);
             objeto.updategrid();
 
-            lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy")  +
+            lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
                   "🕒 " + DateTime.Now.ToString("HH:mm:ss");
         }
 
@@ -41,6 +49,17 @@ namespace TelaLogin
                 DataTable qualquercoisa = new DataTable();
                 estoque.Fill(qualquercoisa);
                 dataGridView1.DataSource = qualquercoisa;
+
+
+
+                
+
+                
+
+
+
+
+
             }
             catch { }
 
@@ -51,6 +70,9 @@ namespace TelaLogin
 
             // 3. Maximiza o form
             this.WindowState = FormWindowState.Maximized;
+
+
+
 
 
         }
@@ -89,7 +111,10 @@ namespace TelaLogin
         private void rButton2_Click(object sender, EventArgs e)
         {
             Form3 telaadd = new Form3();
-            telaadd.Show();
+            telaadd.ShowDialog();
+            telaadd.StartPosition = FormStartPosition.Manual;
+            telaadd.Location = new Point(200, 150);
+
 
         }
 
@@ -98,5 +123,79 @@ namespace TelaLogin
             lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
                   "🕒 " + DateTime.Now.ToString("HH:mm:ss");
         }
+
+        private void BtnDelete_Click(object sender, EventArgs e)
+        {
+
+            if (dataGridView1.CurrentRow != null && !dataGridView1.CurrentRow.IsNewRow)
+            {
+                // 🔥 Caixa de confirmação
+                DialogResult resultado = MessageBox.Show(
+                    "Tem certeza que deseja excluir este produto?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    int idSelecionado = Convert.ToInt32(
+                        dataGridView1.CurrentRow.Cells["id_estoque"].Value
+                    );
+
+                    MySqlConnection con = new MySqlConnection(conexao);
+
+                    try
+                    {
+                        con.Open();
+
+                        string sqlDelete = "DELETE FROM produtos WHERE id_estoque = @id_estoque";
+
+                        MySqlCommand cmd = new MySqlCommand(sqlDelete, con);
+
+                        cmd.Parameters.AddWithValue("@id_estoque", idSelecionado);
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Produto excluído com sucesso!");
+
+
+                    }
+
+                    catch (Exception ex)
+                    {
+
+                    }
+
+
+                }
+
+
+
+
+            }
+
+            else
+            {
+                MessageBox.Show("Selecione um produto para excluir.");
+
+            }
+
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+
+
+
+            (dataGridView1.DataSource as DataTable).DefaultView.RowFilter =
+                "produto LIKE '%" + txtPesquisa.Text + "%'" +
+                " OR Convert(id_estoque, 'System.String') LIKE '%" + txtPesquisa.Text + "%'";
+        }
     }
 }
+
+
+
+
+

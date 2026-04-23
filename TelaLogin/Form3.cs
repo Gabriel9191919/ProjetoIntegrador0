@@ -20,10 +20,16 @@ namespace TelaLogin
         {
             InitializeComponent();
 
+
         }
 
         private void Form3_Load(object sender, EventArgs e)
         {
+
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(1257, 150);
+
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
@@ -33,7 +39,7 @@ namespace TelaLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void txtvenc_KeyPress(object sender, KeyPressEventArgs e)
@@ -95,6 +101,11 @@ namespace TelaLogin
                 }
             }
 
+            this.Close();
+        }
+
+        private void btnSair_Click(object sender, EventArgs e)
+        {
             this.Close();
         }
     }
