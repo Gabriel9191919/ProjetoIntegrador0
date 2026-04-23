@@ -185,7 +185,7 @@ namespace TelaLogin
                 txtSenha.PasswordChar = '\0';
 
 
-                btnOlho.BackgroundImage = Image.FromFile("imagens/olho_aberto.png");
+                btnOlho.BackgroundImage = Image.FromFile("Resources/olho_aberto.png");
             }
             else
             {

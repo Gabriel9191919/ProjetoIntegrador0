@@ -43,13 +43,14 @@
             button4 = new Button();
             pictureBox2 = new PictureBox();
             button6 = new Button();
-            button7 = new Button();
-            button8 = new Button();
+            btnAdicionar = new Button();
+            btnRemover = new Button();
             button9 = new Button();
             rButton2 = new RButton();
             BtnDelete = new RButton();
             lbRelogio = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            notifyIcon1 = new NotifyIcon(components);
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -200,25 +201,27 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
-            // button7
+            // btnAdicionar
             // 
-            button7.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button7.Location = new Point(1257, 443);
-            button7.Name = "button7";
-            button7.Size = new Size(32, 30);
-            button7.TabIndex = 14;
-            button7.Text = "+";
-            button7.UseVisualStyleBackColor = true;
+            btnAdicionar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnAdicionar.Location = new Point(1257, 443);
+            btnAdicionar.Name = "btnAdicionar";
+            btnAdicionar.Size = new Size(32, 30);
+            btnAdicionar.TabIndex = 14;
+            btnAdicionar.Text = "+";
+            btnAdicionar.UseVisualStyleBackColor = true;
+            btnAdicionar.Click += btnAdicionar_Click;
             // 
-            // button8
+            // btnRemover
             // 
-            button8.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button8.Location = new Point(1257, 481);
-            button8.Name = "button8";
-            button8.Size = new Size(32, 30);
-            button8.TabIndex = 15;
-            button8.Text = "-";
-            button8.UseVisualStyleBackColor = true;
+            btnRemover.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnRemover.Location = new Point(1257, 492);
+            btnRemover.Name = "btnRemover";
+            btnRemover.Size = new Size(32, 30);
+            btnRemover.TabIndex = 15;
+            btnRemover.Text = "-";
+            btnRemover.UseVisualStyleBackColor = true;
+            btnRemover.Click += btnRemover_Click;
             // 
             // button9
             // 
@@ -292,6 +295,12 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // notifyIcon1
+            // 
+            notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
+            notifyIcon1.Text = "\r\n";
+            notifyIcon1.Visible = true;
+            // 
             // TelaEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -302,8 +311,8 @@
             Controls.Add(BtnDelete);
             Controls.Add(rButton2);
             Controls.Add(button9);
-            Controls.Add(button8);
-            Controls.Add(button7);
+            Controls.Add(btnRemover);
+            Controls.Add(btnAdicionar);
             Controls.Add(Painel_Principal);
             Controls.Add(label1);
             Controls.Add(pictureBox1);
@@ -338,13 +347,14 @@
         private PictureBox pictureBox2;
         private Label label3;
         private Label label2;
-        private Button button7;
-        private Button button8;
+        private Button btnAdicionar;
+        private Button btnRemover;
         private Button button9;
         private RButton rButton2;
         public DataGridView dataGridView1;
         private RButton BtnDelete;
         private Label lbRelogio;
         private System.Windows.Forms.Timer timer1;
+        private NotifyIcon notifyIcon1;
     }
 }
