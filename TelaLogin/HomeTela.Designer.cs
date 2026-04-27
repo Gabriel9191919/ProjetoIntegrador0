@@ -48,9 +48,6 @@
             label6 = new Label();
             button1 = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            pictureBox1 = new PictureBox();
             panel2 = new Panel();
             panel3 = new Panel();
             pictureBox7 = new PictureBox();
@@ -62,12 +59,15 @@
             pictureBox8 = new PictureBox();
             timerRelogio = new System.Windows.Forms.Timer(components);
             timer2 = new System.Windows.Forms.Timer(components);
+            pictureBox5 = new PictureBox();
+            pictureBox6 = new PictureBox();
+            panel7 = new Panel();
+            label1 = new Label();
+            panel8 = new Panel();
+            label8 = new Label();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
@@ -77,6 +77,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
+            panel7.SuspendLayout();
+            panel8.SuspendLayout();
             SuspendLayout();
             // 
             // Painel_Principal
@@ -177,21 +181,23 @@
             // label5
             // 
             resources.ApplyResources(label5, "label5");
-            label5.BackColor = SystemColors.ControlDarkDark;
+            label5.BackColor = SystemColors.ActiveCaption;
             label5.ForeColor = SystemColors.ButtonFace;
             label5.Name = "label5";
+            label5.Click += label5_Click;
             // 
             // label7
             // 
             resources.ApplyResources(label7, "label7");
-            label7.BackColor = SystemColors.ControlDarkDark;
-            label7.ForeColor = SystemColors.ButtonFace;
+            label7.BackColor = SystemColors.ActiveCaption;
+            label7.ForeColor = SystemColors.ActiveCaptionText;
             label7.Name = "label7";
+            label7.Click += label7_Click;
             // 
             // label6
             // 
             resources.ApplyResources(label6, "label6");
-            label6.BackColor = SystemColors.ControlDarkDark;
+            label6.BackColor = SystemColors.ActiveCaption;
             label6.ForeColor = SystemColors.ButtonFace;
             label6.Name = "label6";
             // 
@@ -210,36 +216,19 @@
             timer1.Enabled = true;
             timer1.Interval = 1000;
             // 
-            // pictureBox5
-            // 
-            resources.ApplyResources(pictureBox5, "pictureBox5");
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            resources.ApplyResources(pictureBox6, "pictureBox6");
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.TabStop = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = SystemColors.ActiveCaption;
-            resources.ApplyResources(pictureBox1, "pictureBox1");
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.TabStop = false;
-            // 
             // panel2
             // 
             panel2.BackColor = SystemColors.ActiveCaption;
-            panel2.Controls.Add(pictureBox1);
+            panel2.Controls.Add(label7);
             resources.ApplyResources(panel2, "panel2");
             panel2.Name = "panel2";
             // 
             // panel3
             // 
             panel3.BackColor = SystemColors.ActiveCaption;
+            panel3.Controls.Add(panel8);
             panel3.Controls.Add(pictureBox7);
+            panel3.Controls.Add(label6);
             resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
             // 
@@ -254,6 +243,7 @@
             // 
             panel4.BackColor = SystemColors.ActiveCaption;
             panel4.Controls.Add(pictureBox3);
+            panel4.Controls.Add(label5);
             resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
             // 
@@ -301,11 +291,54 @@
             timer2.Interval = 1000;
             timer2.Tick += timer2_Tick;
             // 
+            // pictureBox5
+            // 
+            resources.ApplyResources(pictureBox5, "pictureBox5");
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            resources.ApplyResources(pictureBox6, "pictureBox6");
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.TabStop = false;
+            // 
+            // panel7
+            // 
+            panel7.BackColor = Color.Gold;
+            panel7.Controls.Add(label1);
+            panel7.ForeColor = Color.Yellow;
+            resources.ApplyResources(panel7, "panel7");
+            panel7.Name = "panel7";
+            // 
+            // label1
+            // 
+            resources.ApplyResources(label1, "label1");
+            label1.BackColor = Color.Gold;
+            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.Name = "label1";
+            // 
+            // panel8
+            // 
+            panel8.BackColor = Color.Gold;
+            panel8.Controls.Add(label8);
+            panel8.ForeColor = Color.Yellow;
+            resources.ApplyResources(panel8, "panel8");
+            panel8.Name = "panel8";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(label8, "label8");
+            label8.BackColor = Color.Gold;
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Name = "label8";
+            // 
             // HomeTela
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
+            Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
@@ -314,9 +347,6 @@
             Controls.Add(pictureBox5);
             Controls.Add(panel2);
             Controls.Add(button1);
-            Controls.Add(label6);
-            Controls.Add(label7);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(Painel_Principal);
             Controls.Add(panel1);
@@ -328,18 +358,24 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel2.ResumeLayout(false);
+            panel2.PerformLayout();
             panel3.ResumeLayout(false);
+            panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel4.ResumeLayout(false);
+            panel4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -361,9 +397,6 @@
         private Button button1;
         private System.Windows.Forms.Timer timer1;
         private Panel panel1;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
-        public PictureBox pictureBox1;
         private Panel panel2;
         private Panel panel3;
         public PictureBox pictureBox7;
@@ -378,5 +411,11 @@
         private Label lbRelogio;
         private System.Windows.Forms.Timer timer2;
         private Button BtnTrocarSessao;
+        private PictureBox pictureBox5;
+        private PictureBox pictureBox6;
+        private Panel panel7;
+        private Label label1;
+        private Panel panel8;
+        private Label label8;
     }
 }
