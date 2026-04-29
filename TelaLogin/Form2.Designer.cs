@@ -55,11 +55,14 @@
             label9 = new Label();
             comboBox2 = new ComboBox();
             label6 = new Label();
-            lbRelogio = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
+            label10 = new Label();
+            LbNome = new Label();
+            panel1 = new Panel();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // Painel_Principal
@@ -231,23 +234,38 @@
             resources.ApplyResources(label6, "label6");
             label6.Name = "label6";
             // 
-            // lbRelogio
-            // 
-            resources.ApplyResources(lbRelogio, "lbRelogio");
-            lbRelogio.Name = "lbRelogio";
-            // 
             // timer1
             // 
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // label10
+            // 
+            resources.ApplyResources(label10, "label10");
+            label10.BackColor = Color.Gold;
+            label10.ForeColor = SystemColors.ActiveCaptionText;
+            label10.Name = "label10";
+            label10.Click += label10_Click;
+            // 
+            // LbNome
+            // 
+            resources.ApplyResources(LbNome, "LbNome");
+            LbNome.Name = "LbNome";
+            // 
+            // panel1
+            // 
+            resources.ApplyResources(panel1, "panel1");
+            panel1.BackColor = Color.Gold;
+            panel1.Controls.Add(LbNome);
+            panel1.Name = "panel1";
+            // 
             // PDV
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            Controls.Add(lbRelogio);
+            Controls.Add(label10);
             Controls.Add(label6);
             Controls.Add(comboBox2);
             Controls.Add(label9);
@@ -267,6 +285,7 @@
             Controls.Add(textBox1);
             Controls.Add(button1);
             Controls.Add(Painel_Principal);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PDV";
             Load += Form2_Load;
@@ -274,6 +293,8 @@
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -306,7 +327,10 @@
         private Label label9;
         private ComboBox comboBox2;
         private Label label6;
-        private Label lbRelogio;
         private System.Windows.Forms.Timer timer1;
+        private Label label10;
+        private Label lbRelogio;
+        public Label LbNome;
+        private Panel panel1;
     }
 }

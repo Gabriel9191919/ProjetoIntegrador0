@@ -50,37 +50,34 @@
             timer1 = new System.Windows.Forms.Timer(components);
             panel2 = new Panel();
             panel3 = new Panel();
-            pictureBox7 = new PictureBox();
-            panel4 = new Panel();
-            pictureBox3 = new PictureBox();
-            panel5 = new Panel();
-            pictureBox4 = new PictureBox();
-            panel6 = new Panel();
-            pictureBox8 = new PictureBox();
-            timerRelogio = new System.Windows.Forms.Timer(components);
-            timer2 = new System.Windows.Forms.Timer(components);
-            pictureBox5 = new PictureBox();
-            pictureBox6 = new PictureBox();
-            panel7 = new Panel();
-            label1 = new Label();
             panel8 = new Panel();
             label8 = new Label();
+            pictureBox7 = new PictureBox();
+            panel4 = new Panel();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            timerRelogio = new System.Windows.Forms.Timer(components);
+            timer2 = new System.Windows.Forms.Timer(components);
+            panel7 = new Panel();
+            label1 = new Label();
+            panel9 = new Panel();
+            label9 = new Label();
+            panel10 = new Panel();
+            label10 = new Label();
+            panel11 = new Panel();
+            label11 = new Label();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             panel3.SuspendLayout();
+            panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
-            panel5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            panel6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel7.SuspendLayout();
-            panel8.SuspendLayout();
+            panel9.SuspendLayout();
+            panel10.SuspendLayout();
+            panel11.SuspendLayout();
             SuspendLayout();
             // 
             // Painel_Principal
@@ -153,6 +150,7 @@
             panel1.Controls.Add(lbRelogio);
             resources.ApplyResources(panel1, "panel1");
             panel1.Name = "panel1";
+            panel1.Paint += panel1_Paint;
             // 
             // LbNome
             // 
@@ -163,6 +161,7 @@
             // lbRelogio
             // 
             resources.ApplyResources(lbRelogio, "lbRelogio");
+            lbRelogio.ForeColor = SystemColors.ActiveCaptionText;
             lbRelogio.Name = "lbRelogio";
             // 
             // contextMenuStrip1
@@ -182,7 +181,7 @@
             // 
             resources.ApplyResources(label5, "label5");
             label5.BackColor = SystemColors.ActiveCaption;
-            label5.ForeColor = SystemColors.ButtonFace;
+            label5.ForeColor = SystemColors.ActiveCaptionText;
             label5.Name = "label5";
             label5.Click += label5_Click;
             // 
@@ -198,7 +197,7 @@
             // 
             resources.ApplyResources(label6, "label6");
             label6.BackColor = SystemColors.ActiveCaption;
-            label6.ForeColor = SystemColors.ButtonFace;
+            label6.ForeColor = SystemColors.ActiveCaptionText;
             label6.Name = "label6";
             // 
             // button1
@@ -232,6 +231,21 @@
             resources.ApplyResources(panel3, "panel3");
             panel3.Name = "panel3";
             // 
+            // panel8
+            // 
+            panel8.BackColor = Color.Gold;
+            panel8.Controls.Add(label8);
+            panel8.ForeColor = Color.Yellow;
+            resources.ApplyResources(panel8, "panel8");
+            panel8.Name = "panel8";
+            // 
+            // label8
+            // 
+            resources.ApplyResources(label8, "label8");
+            label8.BackColor = Color.Gold;
+            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.Name = "label8";
+            // 
             // pictureBox7
             // 
             pictureBox7.BackColor = SystemColors.ActiveCaption;
@@ -242,45 +256,21 @@
             // panel4
             // 
             panel4.BackColor = SystemColors.ActiveCaption;
-            panel4.Controls.Add(pictureBox3);
             panel4.Controls.Add(label5);
             resources.ApplyResources(panel4, "panel4");
             panel4.Name = "panel4";
             // 
-            // pictureBox3
-            // 
-            pictureBox3.BackColor = SystemColors.ActiveCaption;
-            resources.ApplyResources(pictureBox3, "pictureBox3");
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.TabStop = false;
-            // 
             // panel5
             // 
             panel5.BackColor = SystemColors.ActiveCaption;
-            panel5.Controls.Add(pictureBox4);
             resources.ApplyResources(panel5, "panel5");
             panel5.Name = "panel5";
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.BackColor = SystemColors.ActiveCaption;
-            resources.ApplyResources(pictureBox4, "pictureBox4");
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.TabStop = false;
             // 
             // panel6
             // 
             panel6.BackColor = SystemColors.ActiveCaption;
-            panel6.Controls.Add(pictureBox8);
             resources.ApplyResources(panel6, "panel6");
             panel6.Name = "panel6";
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.BackColor = SystemColors.ActiveCaption;
-            resources.ApplyResources(pictureBox8, "pictureBox8");
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.TabStop = false;
             // 
             // timerRelogio
             // 
@@ -290,18 +280,6 @@
             // 
             timer2.Interval = 1000;
             timer2.Tick += timer2_Tick;
-            // 
-            // pictureBox5
-            // 
-            resources.ApplyResources(pictureBox5, "pictureBox5");
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            resources.ApplyResources(pictureBox6, "pictureBox6");
-            pictureBox6.Name = "pictureBox6";
-            pictureBox6.TabStop = false;
             // 
             // panel7
             // 
@@ -318,33 +296,64 @@
             label1.ForeColor = SystemColors.ActiveCaptionText;
             label1.Name = "label1";
             // 
-            // panel8
+            // panel9
             // 
-            panel8.BackColor = Color.Gold;
-            panel8.Controls.Add(label8);
-            panel8.ForeColor = Color.Yellow;
-            resources.ApplyResources(panel8, "panel8");
-            panel8.Name = "panel8";
+            panel9.BackColor = Color.Gold;
+            panel9.Controls.Add(label9);
+            panel9.ForeColor = Color.Yellow;
+            resources.ApplyResources(panel9, "panel9");
+            panel9.Name = "panel9";
             // 
-            // label8
+            // label9
             // 
-            resources.ApplyResources(label8, "label8");
-            label8.BackColor = Color.Gold;
-            label8.ForeColor = SystemColors.ActiveCaptionText;
-            label8.Name = "label8";
+            resources.ApplyResources(label9, "label9");
+            label9.BackColor = Color.Gold;
+            label9.ForeColor = SystemColors.ActiveCaptionText;
+            label9.Name = "label9";
+            // 
+            // panel10
+            // 
+            panel10.BackColor = Color.Gold;
+            panel10.Controls.Add(label10);
+            panel10.ForeColor = Color.Yellow;
+            resources.ApplyResources(panel10, "panel10");
+            panel10.Name = "panel10";
+            // 
+            // label10
+            // 
+            resources.ApplyResources(label10, "label10");
+            label10.BackColor = Color.Gold;
+            label10.ForeColor = SystemColors.ActiveCaptionText;
+            label10.Name = "label10";
+            // 
+            // panel11
+            // 
+            panel11.BackColor = Color.Gold;
+            panel11.Controls.Add(label11);
+            panel11.ForeColor = Color.Yellow;
+            resources.ApplyResources(panel11, "panel11");
+            panel11.Name = "panel11";
+            // 
+            // label11
+            // 
+            resources.ApplyResources(label11, "label11");
+            label11.BackColor = Color.Gold;
+            label11.ForeColor = SystemColors.ActiveCaptionText;
+            label11.Name = "label11";
             // 
             // HomeTela
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
+            Controls.Add(panel11);
+            Controls.Add(panel10);
+            Controls.Add(panel9);
             Controls.Add(panel7);
             Controls.Add(panel6);
             Controls.Add(panel5);
             Controls.Add(panel4);
             Controls.Add(panel3);
-            Controls.Add(pictureBox6);
-            Controls.Add(pictureBox5);
             Controls.Add(panel2);
             Controls.Add(button1);
             Controls.Add(label4);
@@ -362,20 +371,19 @@
             panel2.PerformLayout();
             panel3.ResumeLayout(false);
             panel3.PerformLayout();
+            panel8.ResumeLayout(false);
+            panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
-            panel5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            panel6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
-            panel8.ResumeLayout(false);
-            panel8.PerformLayout();
+            panel9.ResumeLayout(false);
+            panel9.PerformLayout();
+            panel10.ResumeLayout(false);
+            panel10.PerformLayout();
+            panel11.ResumeLayout(false);
+            panel11.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -401,21 +409,22 @@
         private Panel panel3;
         public PictureBox pictureBox7;
         private Panel panel4;
-        public PictureBox pictureBox3;
         private Panel panel5;
-        public PictureBox pictureBox4;
         private Panel panel6;
-        public PictureBox pictureBox8;
         public Label LbNome;
         private System.Windows.Forms.Timer timerRelogio;
         private Label lbRelogio;
         private System.Windows.Forms.Timer timer2;
         private Button BtnTrocarSessao;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
         private Panel panel7;
         private Label label1;
         private Panel panel8;
         private Label label8;
+        private Panel panel9;
+        private Label label9;
+        private Panel panel10;
+        private Label label10;
+        private Panel panel11;
+        private Label label11;
     }
 }

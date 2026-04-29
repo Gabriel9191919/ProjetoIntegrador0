@@ -15,7 +15,7 @@ namespace TelaLogin
         public PDV()
         {
             InitializeComponent();
-            lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
+            label10.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
                    "   🕒 " + DateTime.Now.ToString("HH:mm:ss");
         }
 
@@ -63,8 +63,13 @@ namespace TelaLogin
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
+            label10.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
                    "   🕒 " + DateTime.Now.ToString("HH:mm:ss");
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

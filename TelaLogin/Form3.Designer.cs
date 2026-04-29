@@ -158,11 +158,11 @@
             btnSair.FlatStyle = FlatStyle.Flat;
             btnSair.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnSair.ForeColor = Color.Red;
-            btnSair.Location = new Point(541, 12);
+            btnSair.Location = new Point(472, 12);
             btnSair.Name = "btnSair";
-            btnSair.Size = new Size(56, 29);
+            btnSair.Size = new Size(125, 29);
             btnSair.TabIndex = 26;
-            btnSair.Text = "SAIR";
+            btnSair.Text = "CANCELAR";
             btnSair.UseVisualStyleBackColor = true;
             btnSair.Click += btnSair_Click;
             // 

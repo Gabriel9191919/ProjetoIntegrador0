@@ -51,11 +51,14 @@
             lbRelogio = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             notifyIcon1 = new NotifyIcon(components);
+            panel1 = new Panel();
+            LbNome = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dataGridView1
@@ -225,6 +228,7 @@
             // 
             // button9
             // 
+            button9.BackColor = Color.Gold;
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -234,7 +238,7 @@
             button9.Size = new Size(56, 29);
             button9.TabIndex = 25;
             button9.Text = "SAIR";
-            button9.UseVisualStyleBackColor = true;
+            button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
             // 
             // rButton2
@@ -282,6 +286,7 @@
             // lbRelogio
             // 
             lbRelogio.AutoSize = true;
+            lbRelogio.BackColor = Color.Gold;
             lbRelogio.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
             lbRelogio.Location = new Point(1522, 9);
             lbRelogio.Name = "lbRelogio";
@@ -300,6 +305,25 @@
             notifyIcon1.BalloonTipIcon = ToolTipIcon.Info;
             notifyIcon1.Text = "\r\n";
             notifyIcon1.Visible = true;
+            // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Gold;
+            panel1.Controls.Add(LbNome);
+            panel1.Location = new Point(181, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1925, 151);
+            panel1.TabIndex = 50;
+            // 
+            // LbNome
+            // 
+            LbNome.AutoSize = true;
+            LbNome.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
+            LbNome.ImeMode = ImeMode.NoControl;
+            LbNome.Location = new Point(321, 45);
+            LbNome.Name = "LbNome";
+            LbNome.Size = new Size(0, 40);
+            LbNome.TabIndex = 1;
             // 
             // TelaEstoque
             // 
@@ -320,6 +344,7 @@
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(pictureBox3);
+            Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "TelaEstoque";
             Text = "TelaEstoque";
@@ -330,6 +355,8 @@
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -356,5 +383,7 @@
         private Label lbRelogio;
         private System.Windows.Forms.Timer timer1;
         private NotifyIcon notifyIcon1;
+        private Panel panel1;
+        public Label LbNome;
     }
 }

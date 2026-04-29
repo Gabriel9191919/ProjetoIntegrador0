@@ -784,7 +784,7 @@
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, -10</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 151</value>
@@ -799,7 +799,7 @@
     <value>PDV</value>
   </data>
   <data name="Painel_Principal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 1080</value>
+    <value>184, 1061</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
@@ -1001,17 +1001,41 @@
   <data name="label6.Text" xml:space="preserve">
     <value>Produto:</value>
   </data>
-  <data name="lbRelogio.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label10.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="lbRelogio.Size" type="System.Drawing.Size, System.Drawing">
-    <value>44, 15</value>
+  <data name="label10.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 15.75pt, style=Bold</value>
   </data>
-  <data name="lbRelogio.Text" xml:space="preserve">
-    <value>label10</value>
+  <data name="label10.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>138, 25</value>
+  </data>
+  <data name="label10.Text" xml:space="preserve">
+    <value>Data e Hora</value>
+  </data>
+  <data name="LbNome.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="LbNome.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Trebuchet MS, 24pt, style=Bold</value>
+  </data>
+  <data name="LbNome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="LbNome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>0, 40</value>
+  </data>
+  <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>181, 0</value>
+  </data>
+  <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1904, 141</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1920, 1080</value>
+    <value>1920, 1061</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PDV</value>
