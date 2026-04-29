@@ -70,7 +70,7 @@ namespace TelaLogin
             MySqlConnection con = new MySqlConnection(conexao);
             try
             {
-                string produto = (txtproduto.Text);
+                string produto = (comboBox1.Text);
                 double preco = Convert.ToDouble(txtpreco.Text);
                 int qtd = Convert.ToInt32(txtqtd.Text);
                 DateTime datavenc = Convert.ToDateTime(txtvenc.Text);

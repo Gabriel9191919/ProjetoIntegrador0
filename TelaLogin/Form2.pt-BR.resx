@@ -117,7 +117,23 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="BtnTrocarSessao.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BtnTrocarSessao.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt, style=Bold</value>
+  </data>
+  <data name="BtnTrocarSessao.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="BtnTrocarSessao.Size" type="System.Drawing.Size, System.Drawing">
+    <value>155, 57</value>
+  </data>
+  <data name="BtnTrocarSessao.Text" xml:space="preserve">
+    <value>Trocar de sessão</value>
+  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 224</value>
   </data>
@@ -784,7 +800,7 @@
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, -10</value>
+    <value>0, 0</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 151</value>
@@ -799,9 +815,8 @@
     <value>PDV</value>
   </data>
   <data name="Painel_Principal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 1061</value>
+    <value>184, 1080</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -927,7 +942,7 @@
     <value>Trebuchet MS, 15.75pt, style=Bold</value>
   </data>
   <data name="rButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1160, 740</value>
+    <value>1160, 750</value>
   </data>
   <data name="rButton1.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 80</value>
@@ -954,7 +969,7 @@
     <value>NoControl</value>
   </data>
   <data name="rButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 562</value>
+    <value>529, 572</value>
   </data>
   <data name="rButton2.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 56</value>
@@ -1016,16 +1031,19 @@
   <data name="label10.Text" xml:space="preserve">
     <value>Data e Hora</value>
   </data>
-  <data name="LbNome.AutoSize" type="System.Boolean, mscorlib">
+  <data name="LbNom.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="LbNome.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="LbNom.Font" type="System.Drawing.Font, System.Drawing">
     <value>Trebuchet MS, 24pt, style=Bold</value>
   </data>
-  <data name="LbNome.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="LbNom.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="LbNome.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="LbNom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>150, 45</value>
+  </data>
+  <data name="LbNom.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 40</value>
   </data>
   <data name="panel1.Location" type="System.Drawing.Point, System.Drawing">
@@ -1035,7 +1053,7 @@
     <value>1904, 141</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1920, 1061</value>
+    <value>1920, 1080</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PDV</value>

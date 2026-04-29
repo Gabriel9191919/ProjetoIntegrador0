@@ -155,6 +155,7 @@
             // LbNome
             // 
             resources.ApplyResources(LbNome, "LbNome");
+            LbNome.BackColor = Color.Gold;
             LbNome.Name = "LbNome";
             LbNome.Click += LbNome_Click;
             // 

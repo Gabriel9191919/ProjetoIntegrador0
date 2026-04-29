@@ -17,6 +17,8 @@ namespace TelaLogin
             InitializeComponent();
             label10.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
                    "   🕒 " + DateTime.Now.ToString("HH:mm:ss");
+
+            LbNom.Text = Sessao.Usuario + " Está realizando uma Venda";
         }
 
         private void button5_Click(object sender, EventArgs e)

@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PDV));
             Painel_Principal = new Panel();
+            BtnTrocarSessao = new Button();
             label3 = new Label();
             button5 = new Button();
             label2 = new Label();
@@ -57,7 +58,7 @@
             label6 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             label10 = new Label();
-            LbNome = new Label();
+            LbNom = new Label();
             panel1 = new Panel();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -69,6 +70,7 @@
             // 
             resources.ApplyResources(Painel_Principal, "Painel_Principal");
             Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.Controls.Add(BtnTrocarSessao);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(button5);
             Painel_Principal.Controls.Add(label2);
@@ -76,6 +78,15 @@
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(button6);
             Painel_Principal.Name = "Painel_Principal";
+            // 
+            // BtnTrocarSessao
+            // 
+            resources.ApplyResources(BtnTrocarSessao, "BtnTrocarSessao");
+            BtnTrocarSessao.BackColor = Color.Gold;
+            BtnTrocarSessao.FlatAppearance.BorderSize = 0;
+            BtnTrocarSessao.ForeColor = Color.Red;
+            BtnTrocarSessao.Name = "BtnTrocarSessao";
+            BtnTrocarSessao.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -119,10 +130,11 @@
             // button1
             // 
             resources.ApplyResources(button1, "button1");
+            button1.BackColor = Color.Gold;
             button1.FlatAppearance.BorderSize = 0;
             button1.ForeColor = Color.Red;
             button1.Name = "button1";
-            button1.UseVisualStyleBackColor = true;
+            button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
             // textBox1
@@ -248,16 +260,16 @@
             label10.Name = "label10";
             label10.Click += label10_Click;
             // 
-            // LbNome
+            // LbNom
             // 
-            resources.ApplyResources(LbNome, "LbNome");
-            LbNome.Name = "LbNome";
+            resources.ApplyResources(LbNom, "LbNom");
+            LbNom.Name = "LbNom";
             // 
             // panel1
             // 
             resources.ApplyResources(panel1, "panel1");
             panel1.BackColor = Color.Gold;
-            panel1.Controls.Add(LbNome);
+            panel1.Controls.Add(LbNom);
             panel1.Name = "panel1";
             // 
             // PDV
@@ -330,7 +342,8 @@
         private System.Windows.Forms.Timer timer1;
         private Label label10;
         private Label lbRelogio;
-        public Label LbNome;
+        public Label LbNom;
         private Panel panel1;
+        private Button BtnTrocarSessao;
     }
 }
