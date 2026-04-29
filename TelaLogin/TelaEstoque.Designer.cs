@@ -43,16 +43,14 @@
             button4 = new Button();
             pictureBox2 = new PictureBox();
             button6 = new Button();
-            btnAdicionar = new Button();
-            btnRemover = new Button();
             button9 = new Button();
-            rButton2 = new RButton();
-            BtnDelete = new RButton();
+            btnEstoqueDetalhado = new RButton();
             lbRelogio = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             notifyIcon1 = new NotifyIcon(components);
             panel1 = new Panel();
             LbNome = new Label();
+            btnAdd = new RButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -64,7 +62,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(646, 436);
+            dataGridView1.Location = new Point(646, 434);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.Size = new Size(594, 369);
             dataGridView1.TabIndex = 0;
@@ -81,9 +79,9 @@
             // 
             txtPesquisa.BorderStyle = BorderStyle.None;
             txtPesquisa.Font = new Font("Segoe UI", 12F);
-            txtPesquisa.Location = new Point(1051, 408);
+            txtPesquisa.Location = new Point(949, 406);
             txtPesquisa.Name = "txtPesquisa";
-            txtPesquisa.Size = new Size(156, 22);
+            txtPesquisa.Size = new Size(291, 22);
             txtPesquisa.TabIndex = 4;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged;
             // 
@@ -93,7 +91,7 @@
             pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
             pictureBox1.BackgroundImageLayout = ImageLayout.Center;
             pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Location = new Point(1213, 408);
+            pictureBox1.Location = new Point(916, 406);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(27, 22);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -204,28 +202,6 @@
             button6.UseVisualStyleBackColor = true;
             button6.Click += button6_Click;
             // 
-            // btnAdicionar
-            // 
-            btnAdicionar.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnAdicionar.Location = new Point(1257, 443);
-            btnAdicionar.Name = "btnAdicionar";
-            btnAdicionar.Size = new Size(32, 30);
-            btnAdicionar.TabIndex = 14;
-            btnAdicionar.Text = "+";
-            btnAdicionar.UseVisualStyleBackColor = true;
-            btnAdicionar.Click += btnAdicionar_Click;
-            // 
-            // btnRemover
-            // 
-            btnRemover.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnRemover.Location = new Point(1257, 492);
-            btnRemover.Name = "btnRemover";
-            btnRemover.Size = new Size(32, 30);
-            btnRemover.TabIndex = 15;
-            btnRemover.Text = "-";
-            btnRemover.UseVisualStyleBackColor = true;
-            btnRemover.Click += btnRemover_Click;
-            // 
             // button9
             // 
             button9.BackColor = Color.Gold;
@@ -233,7 +209,7 @@
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             button9.ForeColor = Color.Red;
-            button9.Location = new Point(1852, 12);
+            button9.Location = new Point(1671, 3);
             button9.Name = "button9";
             button9.Size = new Size(56, 29);
             button9.TabIndex = 25;
@@ -241,56 +217,35 @@
             button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
             // 
-            // rButton2
+            // btnEstoqueDetalhado
             // 
-            rButton2.Anchor = AnchorStyles.None;
-            rButton2.BackColor = Color.Gold;
-            rButton2.BackgroundColor = Color.Gold;
-            rButton2.BorderColor = Color.PaleVioletRed;
-            rButton2.BorderRadius = 20;
-            rButton2.BorderSize = 0;
-            rButton2.Cursor = Cursors.Hand;
-            rButton2.FlatAppearance.BorderSize = 0;
-            rButton2.FlatStyle = FlatStyle.Flat;
-            rButton2.ForeColor = SystemColors.ActiveCaptionText;
-            rButton2.Location = new Point(646, 390);
-            rButton2.Name = "rButton2";
-            rButton2.Size = new Size(164, 40);
-            rButton2.TabIndex = 28;
-            rButton2.Text = "Adicionar";
-            rButton2.TextColor = SystemColors.ActiveCaptionText;
-            rButton2.UseVisualStyleBackColor = false;
-            rButton2.Click += rButton2_Click;
-            // 
-            // BtnDelete
-            // 
-            BtnDelete.Anchor = AnchorStyles.None;
-            BtnDelete.BackColor = Color.Gold;
-            BtnDelete.BackgroundColor = Color.Gold;
-            BtnDelete.BorderColor = Color.PaleVioletRed;
-            BtnDelete.BorderRadius = 20;
-            BtnDelete.BorderSize = 0;
-            BtnDelete.Cursor = Cursors.Hand;
-            BtnDelete.FlatAppearance.BorderSize = 0;
-            BtnDelete.FlatStyle = FlatStyle.Flat;
-            BtnDelete.ForeColor = SystemColors.ActiveCaptionText;
-            BtnDelete.Location = new Point(863, 390);
-            BtnDelete.Name = "BtnDelete";
-            BtnDelete.Size = new Size(164, 40);
-            BtnDelete.TabIndex = 30;
-            BtnDelete.Text = "Delete";
-            BtnDelete.TextColor = SystemColors.ActiveCaptionText;
-            BtnDelete.UseVisualStyleBackColor = false;
-            BtnDelete.Click += BtnDelete_Click;
+            btnEstoqueDetalhado.Anchor = AnchorStyles.None;
+            btnEstoqueDetalhado.BackColor = Color.Gold;
+            btnEstoqueDetalhado.BackgroundColor = Color.Gold;
+            btnEstoqueDetalhado.BorderColor = Color.PaleVioletRed;
+            btnEstoqueDetalhado.BorderRadius = 20;
+            btnEstoqueDetalhado.BorderSize = 0;
+            btnEstoqueDetalhado.Cursor = Cursors.Hand;
+            btnEstoqueDetalhado.FlatAppearance.BorderSize = 0;
+            btnEstoqueDetalhado.FlatStyle = FlatStyle.Flat;
+            btnEstoqueDetalhado.ForeColor = SystemColors.ActiveCaptionText;
+            btnEstoqueDetalhado.Location = new Point(646, 388);
+            btnEstoqueDetalhado.Name = "btnEstoqueDetalhado";
+            btnEstoqueDetalhado.Size = new Size(213, 40);
+            btnEstoqueDetalhado.TabIndex = 28;
+            btnEstoqueDetalhado.Text = "Estoque Detalhado";
+            btnEstoqueDetalhado.TextColor = SystemColors.ActiveCaptionText;
+            btnEstoqueDetalhado.UseVisualStyleBackColor = false;
+            btnEstoqueDetalhado.Click += rButton2_Click;
             // 
             // lbRelogio
             // 
             lbRelogio.AutoSize = true;
             lbRelogio.BackColor = Color.Gold;
-            lbRelogio.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            lbRelogio.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lbRelogio.Location = new Point(1522, 9);
             lbRelogio.Name = "lbRelogio";
-            lbRelogio.Size = new Size(68, 30);
+            lbRelogio.Size = new Size(76, 25);
             lbRelogio.TabIndex = 31;
             lbRelogio.Text = "label4";
             // 
@@ -310,6 +265,7 @@
             // 
             panel1.BackColor = Color.Gold;
             panel1.Controls.Add(LbNome);
+            panel1.Controls.Add(button9);
             panel1.Location = new Point(181, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1925, 151);
@@ -325,6 +281,27 @@
             LbNome.Size = new Size(0, 40);
             LbNome.TabIndex = 1;
             // 
+            // btnAdd
+            // 
+            btnAdd.Anchor = AnchorStyles.None;
+            btnAdd.BackColor = Color.Gold;
+            btnAdd.BackgroundColor = Color.Gold;
+            btnAdd.BorderColor = Color.PaleVioletRed;
+            btnAdd.BorderRadius = 20;
+            btnAdd.BorderSize = 0;
+            btnAdd.Cursor = Cursors.Hand;
+            btnAdd.FlatAppearance.BorderSize = 0;
+            btnAdd.FlatStyle = FlatStyle.Flat;
+            btnAdd.ForeColor = SystemColors.ActiveCaptionText;
+            btnAdd.Location = new Point(825, 809);
+            btnAdd.Name = "btnAdd";
+            btnAdd.Size = new Size(213, 40);
+            btnAdd.TabIndex = 28;
+            btnAdd.Text = "Adicionar";
+            btnAdd.TextColor = SystemColors.ActiveCaptionText;
+            btnAdd.UseVisualStyleBackColor = false;
+            btnAdd.Click += btnAdd_Click;
+            // 
             // TelaEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -332,19 +309,16 @@
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
             Controls.Add(lbRelogio);
-            Controls.Add(BtnDelete);
-            Controls.Add(rButton2);
-            Controls.Add(button9);
-            Controls.Add(btnRemover);
-            Controls.Add(btnAdicionar);
+            Controls.Add(btnAdd);
+            Controls.Add(btnEstoqueDetalhado);
             Controls.Add(Painel_Principal);
-            Controls.Add(label1);
             Controls.Add(pictureBox1);
             Controls.Add(txtPesquisa);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
-            Controls.Add(pictureBox3);
             Controls.Add(panel1);
+            Controls.Add(label1);
+            Controls.Add(pictureBox3);
             FormBorderStyle = FormBorderStyle.None;
             Name = "TelaEstoque";
             Text = "TelaEstoque";
@@ -374,16 +348,14 @@
         private PictureBox pictureBox2;
         private Label label3;
         private Label label2;
-        private Button btnAdicionar;
-        private Button btnRemover;
         private Button button9;
-        private RButton rButton2;
+        private RButton btnEstoqueDetalhado;
         public DataGridView dataGridView1;
-        private RButton BtnDelete;
         private Label lbRelogio;
         private System.Windows.Forms.Timer timer1;
         private NotifyIcon notifyIcon1;
         private Panel panel1;
         public Label LbNome;
+        private RButton btnAdd;
     }
 }

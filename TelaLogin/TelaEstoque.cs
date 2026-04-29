@@ -56,18 +56,6 @@ namespace TelaLogin
             }
             catch { }
 
-            this.FormBorderStyle = FormBorderStyle.None;
-
-            // 2. Define o tamanho máximo como a área útil (sem a Taskbar)
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
-            // 3. Maximiza o form
-            this.WindowState = FormWindowState.Maximized;
-
-
-
-
-
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -103,10 +91,9 @@ namespace TelaLogin
 
         private void rButton2_Click(object sender, EventArgs e)
         {
-            Form3 telaadd = new Form3();
-            telaadd.ShowDialog();
-            telaadd.StartPosition = FormStartPosition.Manual;
-            telaadd.Location = new Point(200, 150);
+            EstoqueDetalhado estoque = new EstoqueDetalhado();
+            estoque.ShowDialog();
+            this.Close();
 
 
         }
@@ -120,59 +107,6 @@ namespace TelaLogin
         private void BtnDelete_Click(object sender, EventArgs e)
         {
 
-            if (dataGridView1.CurrentRow != null && !dataGridView1.CurrentRow.IsNewRow)
-            {
-                // 🔥 Caixa de confirmação
-                DialogResult resultado = MessageBox.Show(
-                    "Tem certeza que deseja excluir este produto?",
-                    "Confirmação",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Warning
-                );
-
-                if (resultado == DialogResult.Yes)
-                {
-                    int idSelecionado = Convert.ToInt32(
-                        dataGridView1.CurrentRow.Cells["id_estoque"].Value
-                    );
-
-                    MySqlConnection con = new MySqlConnection(conexao);
-
-                    try
-                    {
-                        con.Open();
-
-                        string sqlDelete = "DELETE FROM produtos WHERE id_estoque = @id_estoque";
-
-                        MySqlCommand cmd = new MySqlCommand(sqlDelete, con);
-
-                        cmd.Parameters.AddWithValue("@id_estoque", idSelecionado);
-
-                        cmd.ExecuteNonQuery();
-
-                        MessageBox.Show("Produto excluído com sucesso!");
-
-
-                    }
-
-                    catch (Exception ex)
-                    {
-
-                    }
-
-
-                }
-
-
-
-
-            }
-
-            else
-            {
-                MessageBox.Show("Selecione um produto para excluir.");
-
-            }
 
         }
 
@@ -234,7 +168,7 @@ namespace TelaLogin
 
             aviso.Show();
 
-           
+
 
 
 
@@ -243,7 +177,7 @@ namespace TelaLogin
 
         private void btnRemover_Click(object sender, EventArgs e)
         {
-            
+
 
 
             if (dataGridView1.CurrentRow == null)
@@ -292,7 +226,12 @@ namespace TelaLogin
 
 
 
-        
+
+
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
 
         }
     }
