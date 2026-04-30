@@ -20,7 +20,7 @@ namespace TelaLogin
         {
             InitializeComponent();
             attgrid objeto = new attgrid(this.dataGridView1);
-            objeto.updategrid();
+            objeto.updategridProdutos();
 
             lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
                   "🕒 " + DateTime.Now.ToString("HH:mm:ss");
@@ -36,23 +36,12 @@ namespace TelaLogin
             try
             {
                 con.Open();
-                string sql = "SELECT * FROM estoque";
+                string sql = "SELECT * FROM produtos";
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 MySqlDataAdapter estoque = new MySqlDataAdapter(cmd);
                 DataTable qualquercoisa = new DataTable();
                 estoque.Fill(qualquercoisa);
                 dataGridView1.DataSource = qualquercoisa;
-
-
-
-
-
-
-
-
-
-
-
             }
             catch { }
 
@@ -117,7 +106,7 @@ namespace TelaLogin
 
             (dataGridView1.DataSource as DataTable).DefaultView.RowFilter =
                 "produto LIKE '%" + txtPesquisa.Text + "%'" +
-                " OR Convert(id_estoque, 'System.String') LIKE '%" + txtPesquisa.Text + "%'";
+                " OR Convert(id_produtos, 'System.String') LIKE '%" + txtPesquisa.Text + "%'";
         }
 
         private void btnAdicionar_Click(object sender, EventArgs e)
@@ -232,12 +221,70 @@ namespace TelaLogin
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            FormAddProduto f = new FormAddProduto();
+            f.ShowDialog();
+            attgrid objeto = new attgrid(this.dataGridView1);
+            objeto.updategridProdutos();
+        }
 
+        private void btndeletep_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.CurrentRow != null && !dataGridView1.CurrentRow.IsNewRow)
+            {
+
+                DialogResult resultado = MessageBox.Show(
+                    "Tem certeza que deseja excluir este produto?",
+                    "Confirmação",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Warning
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    int idSelecionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id_produtos"].Value
+                    );
+
+                    MySqlConnection con = new MySqlConnection(conexao);
+
+                    try
+                    {
+                        con.Open();
+
+                        string sqlDelete = "DELETE FROM produtos WHERE id_produtos = @id_produtos";
+
+                        MySqlCommand cmd = new MySqlCommand(sqlDelete, con);
+
+                        cmd.Parameters.AddWithValue("@id_produtos", idSelecionado);
+
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Produto excluído com sucesso!");
+
+
+                    }
+
+                    catch (Exception ex)
+                    {
+
+                    }
+                    finally 
+                    { 
+                        attgrid at = new attgrid(this.dataGridView1);
+                        at.updategridProdutos();
+                        con.Close(); 
+                    }
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione um produto para excluir.");
+
+            }
         }
     }
-
-
 }
+
 
 
 

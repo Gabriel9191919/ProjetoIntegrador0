@@ -51,6 +51,7 @@
             panel1 = new Panel();
             LbNome = new Label();
             btnAdd = new RButton();
+            btndeletep = new RButton();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -302,12 +303,34 @@
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
+            // btndeletep
+            // 
+            btndeletep.Anchor = AnchorStyles.None;
+            btndeletep.BackColor = Color.Gold;
+            btndeletep.BackgroundColor = Color.Gold;
+            btndeletep.BorderColor = Color.PaleVioletRed;
+            btndeletep.BorderRadius = 20;
+            btndeletep.BorderSize = 0;
+            btndeletep.Cursor = Cursors.Hand;
+            btndeletep.FlatAppearance.BorderSize = 0;
+            btndeletep.FlatStyle = FlatStyle.Flat;
+            btndeletep.ForeColor = SystemColors.ActiveCaptionText;
+            btndeletep.Location = new Point(1044, 809);
+            btndeletep.Name = "btndeletep";
+            btndeletep.Size = new Size(213, 40);
+            btndeletep.TabIndex = 51;
+            btndeletep.Text = "Excluir";
+            btndeletep.TextColor = SystemColors.ActiveCaptionText;
+            btndeletep.UseVisualStyleBackColor = false;
+            btndeletep.Click += btndeletep_Click;
+            // 
             // TelaEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(btndeletep);
             Controls.Add(lbRelogio);
             Controls.Add(btnAdd);
             Controls.Add(btnEstoqueDetalhado);
@@ -357,5 +380,6 @@
         private Panel panel1;
         public Label LbNome;
         private RButton btnAdd;
+        private RButton btndeletep;
     }
 }
