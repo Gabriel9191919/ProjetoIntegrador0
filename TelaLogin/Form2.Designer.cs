@@ -33,28 +33,28 @@
             Painel_Principal = new Panel();
             BtnTrocarSessao = new Button();
             label3 = new Label();
-            button5 = new Button();
+            btnEstoque = new Button();
             label2 = new Label();
-            button4 = new Button();
+            btnHome = new Button();
             pictureBox2 = new PictureBox();
             button6 = new Button();
             button1 = new Button();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
-            textBox3 = new TextBox();
+            txtItem = new TextBox();
+            txtPreco = new TextBox();
+            txtQtd = new TextBox();
             label1 = new Label();
             label4 = new Label();
             label5 = new Label();
-            textBox4 = new TextBox();
+            txtId = new TextBox();
             label7 = new Label();
             label8 = new Label();
-            textBox6 = new TextBox();
-            rButton1 = new RButton();
-            dataGridView1 = new DataGridView();
-            rButton2 = new RButton();
-            comboBox1 = new ComboBox();
+            txtTotal = new TextBox();
+            btnVender = new RButton();
+            DvgPdv = new DataGridView();
+            bntAdd = new RButton();
+            comboProduto = new ComboBox();
             label9 = new Label();
-            comboBox2 = new ComboBox();
+            comboPagamento = new ComboBox();
             label6 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             label10 = new Label();
@@ -62,7 +62,7 @@
             panel1 = new Panel();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DvgPdv).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -72,9 +72,9 @@
             Painel_Principal.BackColor = Color.Gold;
             Painel_Principal.Controls.Add(BtnTrocarSessao);
             Painel_Principal.Controls.Add(label3);
-            Painel_Principal.Controls.Add(button5);
+            Painel_Principal.Controls.Add(btnEstoque);
             Painel_Principal.Controls.Add(label2);
-            Painel_Principal.Controls.Add(button4);
+            Painel_Principal.Controls.Add(btnHome);
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(button6);
             Painel_Principal.Name = "Painel_Principal";
@@ -94,12 +94,12 @@
             label3.ForeColor = Color.Red;
             label3.Name = "label3";
             // 
-            // button5
+            // btnEstoque
             // 
-            resources.ApplyResources(button5, "button5");
-            button5.Name = "button5";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
+            resources.ApplyResources(btnEstoque, "btnEstoque");
+            btnEstoque.Name = "btnEstoque";
+            btnEstoque.UseVisualStyleBackColor = true;
+            btnEstoque.Click += btnEstoque_Click;
             // 
             // label2
             // 
@@ -107,12 +107,12 @@
             label2.ForeColor = SystemColors.ControlDarkDark;
             label2.Name = "label2";
             // 
-            // button4
+            // btnHome
             // 
-            resources.ApplyResources(button4, "button4");
-            button4.Name = "button4";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            resources.ApplyResources(btnHome, "btnHome");
+            btnHome.Name = "btnHome";
+            btnHome.UseVisualStyleBackColor = true;
+            btnHome.Click += btnHome_Click;
             // 
             // pictureBox2
             // 
@@ -137,20 +137,20 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // textBox1
+            // txtItem
             // 
-            resources.ApplyResources(textBox1, "textBox1");
-            textBox1.Name = "textBox1";
+            resources.ApplyResources(txtItem, "txtItem");
+            txtItem.Name = "txtItem";
             // 
-            // textBox2
+            // txtPreco
             // 
-            resources.ApplyResources(textBox2, "textBox2");
-            textBox2.Name = "textBox2";
+            resources.ApplyResources(txtPreco, "txtPreco");
+            txtPreco.Name = "txtPreco";
             // 
-            // textBox3
+            // txtQtd
             // 
-            resources.ApplyResources(textBox3, "textBox3");
-            textBox3.Name = "textBox3";
+            resources.ApplyResources(txtQtd, "txtQtd");
+            txtQtd.Name = "txtQtd";
             // 
             // label1
             // 
@@ -167,10 +167,10 @@
             resources.ApplyResources(label5, "label5");
             label5.Name = "label5";
             // 
-            // textBox4
+            // txtId
             // 
-            resources.ApplyResources(textBox4, "textBox4");
-            textBox4.Name = "textBox4";
+            resources.ApplyResources(txtId, "txtId");
+            txtId.Name = "txtId";
             // 
             // label7
             // 
@@ -181,65 +181,65 @@
             // 
             resources.ApplyResources(label8, "label8");
             label8.Name = "label8";
-            label8.Click += label8_Click;
             // 
-            // textBox6
+            // txtTotal
             // 
-            resources.ApplyResources(textBox6, "textBox6");
-            textBox6.Name = "textBox6";
+            resources.ApplyResources(txtTotal, "txtTotal");
+            txtTotal.Name = "txtTotal";
             // 
-            // rButton1
+            // btnVender
             // 
-            resources.ApplyResources(rButton1, "rButton1");
-            rButton1.BackColor = Color.Gold;
-            rButton1.BackgroundColor = Color.Gold;
-            rButton1.BorderColor = Color.PaleVioletRed;
-            rButton1.BorderRadius = 20;
-            rButton1.BorderSize = 0;
-            rButton1.Cursor = Cursors.Hand;
-            rButton1.FlatAppearance.BorderSize = 0;
-            rButton1.ForeColor = SystemColors.ActiveCaptionText;
-            rButton1.Name = "rButton1";
-            rButton1.TextColor = SystemColors.ActiveCaptionText;
-            rButton1.UseVisualStyleBackColor = false;
+            resources.ApplyResources(btnVender, "btnVender");
+            btnVender.BackColor = Color.Gold;
+            btnVender.BackgroundColor = Color.Gold;
+            btnVender.BorderColor = Color.PaleVioletRed;
+            btnVender.BorderRadius = 20;
+            btnVender.BorderSize = 0;
+            btnVender.Cursor = Cursors.Hand;
+            btnVender.FlatAppearance.BorderSize = 0;
+            btnVender.ForeColor = SystemColors.ActiveCaptionText;
+            btnVender.Name = "btnVender";
+            btnVender.TextColor = SystemColors.ActiveCaptionText;
+            btnVender.UseVisualStyleBackColor = false;
+            btnVender.Click += btnVender_Click_1;
             // 
-            // dataGridView1
+            // DvgPdv
             // 
-            resources.ApplyResources(dataGridView1, "dataGridView1");
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Name = "dataGridView1";
+            resources.ApplyResources(DvgPdv, "DvgPdv");
+            DvgPdv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DvgPdv.Name = "DvgPdv";
             // 
-            // rButton2
+            // bntAdd
             // 
-            resources.ApplyResources(rButton2, "rButton2");
-            rButton2.BackColor = Color.Gold;
-            rButton2.BackgroundColor = Color.Gold;
-            rButton2.BorderColor = Color.PaleVioletRed;
-            rButton2.BorderRadius = 20;
-            rButton2.BorderSize = 0;
-            rButton2.Cursor = Cursors.Hand;
-            rButton2.FlatAppearance.BorderSize = 0;
-            rButton2.ForeColor = SystemColors.ActiveCaptionText;
-            rButton2.Name = "rButton2";
-            rButton2.TextColor = SystemColors.ActiveCaptionText;
-            rButton2.UseVisualStyleBackColor = false;
+            resources.ApplyResources(bntAdd, "bntAdd");
+            bntAdd.BackColor = Color.Gold;
+            bntAdd.BackgroundColor = Color.Gold;
+            bntAdd.BorderColor = Color.PaleVioletRed;
+            bntAdd.BorderRadius = 20;
+            bntAdd.BorderSize = 0;
+            bntAdd.Cursor = Cursors.Hand;
+            bntAdd.FlatAppearance.BorderSize = 0;
+            bntAdd.ForeColor = SystemColors.ActiveCaptionText;
+            bntAdd.Name = "bntAdd";
+            bntAdd.TextColor = SystemColors.ActiveCaptionText;
+            bntAdd.UseVisualStyleBackColor = false;
             // 
-            // comboBox1
+            // comboProduto
             // 
-            resources.ApplyResources(comboBox1, "comboBox1");
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Name = "comboBox1";
+            resources.ApplyResources(comboProduto, "comboProduto");
+            comboProduto.FormattingEnabled = true;
+            comboProduto.Name = "comboProduto";
             // 
             // label9
             // 
             resources.ApplyResources(label9, "label9");
             label9.Name = "label9";
             // 
-            // comboBox2
+            // comboPagamento
             // 
-            resources.ApplyResources(comboBox2, "comboBox2");
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Name = "comboBox2";
+            resources.ApplyResources(comboPagamento, "comboPagamento");
+            comboPagamento.FormattingEnabled = true;
+            comboPagamento.Name = "comboPagamento";
             // 
             // label6
             // 
@@ -250,7 +250,6 @@
             // 
             timer1.Enabled = true;
             timer1.Interval = 1000;
-            timer1.Tick += timer1_Tick;
             // 
             // label10
             // 
@@ -258,7 +257,6 @@
             label10.BackColor = Color.Gold;
             label10.ForeColor = SystemColors.ActiveCaptionText;
             label10.Name = "label10";
-            label10.Click += label10_Click;
             // 
             // LbNom
             // 
@@ -279,22 +277,22 @@
             BackColor = SystemColors.ControlDarkDark;
             Controls.Add(label10);
             Controls.Add(label6);
-            Controls.Add(comboBox2);
+            Controls.Add(comboPagamento);
             Controls.Add(label9);
-            Controls.Add(comboBox1);
-            Controls.Add(rButton2);
-            Controls.Add(dataGridView1);
-            Controls.Add(rButton1);
-            Controls.Add(textBox6);
+            Controls.Add(comboProduto);
+            Controls.Add(bntAdd);
+            Controls.Add(DvgPdv);
+            Controls.Add(btnVender);
+            Controls.Add(txtTotal);
             Controls.Add(label8);
             Controls.Add(label7);
-            Controls.Add(textBox4);
+            Controls.Add(txtId);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label1);
-            Controls.Add(textBox3);
-            Controls.Add(textBox2);
-            Controls.Add(textBox1);
+            Controls.Add(txtQtd);
+            Controls.Add(txtPreco);
+            Controls.Add(txtItem);
             Controls.Add(button1);
             Controls.Add(Painel_Principal);
             Controls.Add(panel1);
@@ -304,7 +302,7 @@
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DvgPdv).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -316,28 +314,28 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private Panel Painel_Principal;
         private Label label3;
-        private Button button5;
+        private Button btnEstoque;
         private Label label2;
-        private Button button4;
+        private Button btnHome;
         private PictureBox pictureBox2;
         private Button button6;
         private Button button1;
-        private TextBox textBox1;
-        private TextBox textBox2;
-        private TextBox textBox3;
+        private TextBox txtItem;
+        private TextBox txtPreco;
+        private TextBox txtQtd;
         private Label label1;
         private Label label4;
         private Label label5;
-        private TextBox textBox4;
+        private TextBox txtId;
         private Label label7;
         private Label label8;
-        private TextBox textBox6;
-        private RButton rButton1;
-        private DataGridView dataGridView1;
-        private RButton rButton2;
-        private ComboBox comboBox1;
+        private TextBox txtTotal;
+        private RButton btnVender;
+        private DataGridView DvgPdv;
+        private RButton bntAdd;
+        private ComboBox comboProduto;
         private Label label9;
-        private ComboBox comboBox2;
+        private ComboBox comboPagamento;
         private Label label6;
         private System.Windows.Forms.Timer timer1;
         private Label label10;
