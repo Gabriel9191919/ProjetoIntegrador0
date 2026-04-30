@@ -136,6 +136,7 @@
             Controls.Add(txtproduto);
             FormBorderStyle = FormBorderStyle.None;
             Name = "FormAddProduto";
+            StartPosition = FormStartPosition.Manual;
             Text = "FormAddProduto";
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);

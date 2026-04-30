@@ -17,6 +17,8 @@ namespace TelaLogin
         public FormAddProduto()
         {
             InitializeComponent();
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point(1257, 350);
         }
 
         private void btnSair_Click(object sender, EventArgs e)

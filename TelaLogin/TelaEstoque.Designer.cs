@@ -32,8 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaEstoque));
             dataGridView1 = new DataGridView();
             button1 = new Button();
-            txtPesquisa = new TextBox();
-            pictureBox1 = new PictureBox();
             label1 = new Label();
             pictureBox3 = new PictureBox();
             Painel_Principal = new Panel();
@@ -52,8 +50,8 @@
             LbNome = new Label();
             btnAdd = new RButton();
             btndeletep = new RButton();
+            textBox1 = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -75,29 +73,6 @@
             button1.Name = "button1";
             button1.Size = new Size(75, 23);
             button1.TabIndex = 29;
-            // 
-            // txtPesquisa
-            // 
-            txtPesquisa.BorderStyle = BorderStyle.None;
-            txtPesquisa.Font = new Font("Segoe UI", 12F);
-            txtPesquisa.Location = new Point(949, 406);
-            txtPesquisa.Name = "txtPesquisa";
-            txtPesquisa.Size = new Size(291, 22);
-            txtPesquisa.TabIndex = 4;
-            txtPesquisa.TextChanged += txtPesquisa_TextChanged;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.BackColor = SystemColors.Window;
-            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
-            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
-            pictureBox1.Cursor = Cursors.Hand;
-            pictureBox1.Location = new Point(916, 406);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(27, 22);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
             // 
             // label1
             // 
@@ -230,9 +205,9 @@
             btnEstoqueDetalhado.FlatAppearance.BorderSize = 0;
             btnEstoqueDetalhado.FlatStyle = FlatStyle.Flat;
             btnEstoqueDetalhado.ForeColor = SystemColors.ActiveCaptionText;
-            btnEstoqueDetalhado.Location = new Point(646, 388);
+            btnEstoqueDetalhado.Location = new Point(847, 822);
             btnEstoqueDetalhado.Name = "btnEstoqueDetalhado";
-            btnEstoqueDetalhado.Size = new Size(213, 40);
+            btnEstoqueDetalhado.Size = new Size(198, 40);
             btnEstoqueDetalhado.TabIndex = 28;
             btnEstoqueDetalhado.Text = "Estoque Detalhado";
             btnEstoqueDetalhado.TextColor = SystemColors.ActiveCaptionText;
@@ -294,9 +269,9 @@
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = SystemColors.ActiveCaptionText;
-            btnAdd.Location = new Point(825, 809);
+            btnAdd.Location = new Point(646, 388);
             btnAdd.Name = "btnAdd";
-            btnAdd.Size = new Size(213, 40);
+            btnAdd.Size = new Size(164, 40);
             btnAdd.TabIndex = 28;
             btnAdd.Text = "Adicionar";
             btnAdd.TextColor = SystemColors.ActiveCaptionText;
@@ -315,14 +290,24 @@
             btndeletep.FlatAppearance.BorderSize = 0;
             btndeletep.FlatStyle = FlatStyle.Flat;
             btndeletep.ForeColor = SystemColors.ActiveCaptionText;
-            btndeletep.Location = new Point(1044, 809);
+            btndeletep.Location = new Point(829, 388);
             btndeletep.Name = "btndeletep";
-            btndeletep.Size = new Size(213, 40);
+            btndeletep.Size = new Size(164, 40);
             btndeletep.TabIndex = 51;
             btndeletep.Text = "Excluir";
             btndeletep.TextColor = SystemColors.ActiveCaptionText;
             btndeletep.UseVisualStyleBackColor = false;
             btndeletep.Click += btndeletep_Click;
+            // 
+            // textBox1
+            // 
+            textBox1.BorderStyle = BorderStyle.None;
+            textBox1.Font = new Font("Segoe UI", 12F);
+            textBox1.Location = new Point(999, 399);
+            textBox1.Name = "textBox1";
+            textBox1.PlaceholderText = "Pesquisar";
+            textBox1.Size = new Size(213, 22);
+            textBox1.TabIndex = 52;
             // 
             // TelaEstoque
             // 
@@ -330,13 +315,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(textBox1);
             Controls.Add(btndeletep);
             Controls.Add(lbRelogio);
             Controls.Add(btnAdd);
             Controls.Add(btnEstoqueDetalhado);
             Controls.Add(Painel_Principal);
-            Controls.Add(pictureBox1);
-            Controls.Add(txtPesquisa);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
             Controls.Add(panel1);
@@ -347,7 +331,6 @@
             Text = "TelaEstoque";
             Load += TelaEstoque_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
@@ -360,8 +343,6 @@
 
         #endregion
         private Button button1;
-        private TextBox txtPesquisa;
-        private PictureBox pictureBox1;
         private Label label1;
         private PictureBox pictureBox3;
         private Panel Painel_Principal;
@@ -381,5 +362,6 @@
         public Label LbNome;
         private RButton btnAdd;
         private RButton btndeletep;
+        private TextBox textBox1;
     }
 }
