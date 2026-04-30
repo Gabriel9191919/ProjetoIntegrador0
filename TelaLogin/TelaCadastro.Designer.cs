@@ -117,6 +117,8 @@
             txtUsuario.PlaceholderText = "Usuario";
             txtUsuario.Size = new Size(297, 23);
             txtUsuario.TabIndex = 1;
+            txtUsuario.TextChanged += txtUsuario_TextChanged;
+            txtUsuario.KeyPress += txtUsuario_KeyPress;
             // 
             // pictureBox4
             // 
