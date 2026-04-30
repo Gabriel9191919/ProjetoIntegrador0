@@ -137,20 +137,26 @@
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 224</value>
   </data>
-  <data name="button5.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnEstoque.Font" type="System.Drawing.Font, System.Drawing">
     <value>Trebuchet MS, 12pt, style=Bold</value>
   </data>
-  <data name="button5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 411</value>
+  <data name="btnEstoque.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 95</value>
+  </data>
+  <data name="btnEstoque.Text" xml:space="preserve">
+    <value>Estoque</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>35, 193</value>
   </data>
-  <data name="button4.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnHome.Font" type="System.Drawing.Font, System.Drawing">
     <value>Trebuchet MS, 12pt, style=Bold</value>
   </data>
-  <data name="button4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 300</value>
+  <data name="btnHome.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 95</value>
+  </data>
+  <data name="btnHome.Text" xml:space="preserve">
+    <value>Home</value>
   </data>
   <data name="pictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -800,7 +806,7 @@
 </value>
   </data>
   <data name="pictureBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
+    <value>0, -10</value>
   </data>
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 151</value>
@@ -815,7 +821,7 @@
     <value>PDV</value>
   </data>
   <data name="Painel_Principal.Size" type="System.Drawing.Size, System.Drawing">
-    <value>184, 1080</value>
+    <value>184, 1061</value>
   </data>
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
@@ -829,22 +835,13 @@
   <data name="button1.Text" xml:space="preserve">
     <value>SAIR</value>
   </data>
-  <data name="textBox1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 372</value>
-  </data>
-  <data name="textBox1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 23</value>
   </data>
-  <data name="textBox2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 414</value>
-  </data>
-  <data name="textBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtPreco.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 23</value>
   </data>
-  <data name="textBox3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>666, 456</value>
-  </data>
-  <data name="textBox3.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtQtd.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 23</value>
   </data>
   <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
@@ -893,9 +890,6 @@
   <data name="label5.Text" xml:space="preserve">
     <value>Quantidade:</value>
   </data>
-  <data name="textBox4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>577, 263</value>
-  </data>
   <data name="label7.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -926,55 +920,43 @@
   <data name="label8.Text" xml:space="preserve">
     <value>Total a Pagar:</value>
   </data>
-  <data name="textBox6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>691, 787</value>
-  </data>
-  <data name="textBox6.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="txtTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 23</value>
   </data>
-  <data name="rButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="btnVender.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="rButton1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="btnVender.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="rButton1.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="btnVender.Font" type="System.Drawing.Font, System.Drawing">
     <value>Trebuchet MS, 15.75pt, style=Bold</value>
   </data>
-  <data name="rButton1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1160, 750</value>
-  </data>
-  <data name="rButton1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="btnVender.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 80</value>
   </data>
-  <data name="rButton1.Text" xml:space="preserve">
+  <data name="btnVender.Text" xml:space="preserve">
     <value>Finalizar</value>
   </data>
-  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>1037, 261</value>
-  </data>
-  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="DvgPdv.Size" type="System.Drawing.Size, System.Drawing">
     <value>350, 415</value>
   </data>
-  <data name="rButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+  <data name="bntAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="rButton2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+  <data name="bntAdd.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
-  <data name="rButton2.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="bntAdd.Font" type="System.Drawing.Font, System.Drawing">
     <value>Trebuchet MS, 15.75pt, style=Bold</value>
   </data>
-  <data name="rButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+  <data name="bntAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
-  <data name="rButton2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 572</value>
-  </data>
-  <data name="rButton2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="bntAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 56</value>
   </data>
-  <data name="rButton2.Text" xml:space="preserve">
+  <data name="bntAdd.Text" xml:space="preserve">
     <value>Adicionar</value>
   </data>
   <data name="label9.AutoSize" type="System.Boolean, mscorlib">
@@ -992,7 +974,7 @@
   <data name="label9.Text" xml:space="preserve">
     <value>Forma de pagamento:</value>
   </data>
-  <data name="comboBox2.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="comboPagamento.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 23</value>
   </data>
   <data name="label6.AutoSize" type="System.Boolean, mscorlib">
@@ -1053,7 +1035,7 @@
     <value>1904, 141</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>1920, 1080</value>
+    <value>1920, 1061</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>PDV</value>
