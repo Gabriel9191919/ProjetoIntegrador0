@@ -50,7 +50,7 @@
             LbNome = new Label();
             btnAdd = new RButton();
             btndeletep = new RButton();
-            textBox1 = new TextBox();
+            txtPesquisa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
@@ -299,15 +299,15 @@
             btndeletep.UseVisualStyleBackColor = false;
             btndeletep.Click += btndeletep_Click;
             // 
-            // textBox1
+            // txtPesquisa
             // 
-            textBox1.BorderStyle = BorderStyle.None;
-            textBox1.Font = new Font("Segoe UI", 12F);
-            textBox1.Location = new Point(999, 399);
-            textBox1.Name = "textBox1";
-            textBox1.PlaceholderText = "Pesquisar";
-            textBox1.Size = new Size(213, 22);
-            textBox1.TabIndex = 52;
+            txtPesquisa.BorderStyle = BorderStyle.None;
+            txtPesquisa.Font = new Font("Segoe UI", 12F);
+            txtPesquisa.Location = new Point(999, 399);
+            txtPesquisa.Name = "txtPesquisa";
+            txtPesquisa.PlaceholderText = "Pesquisar";
+            txtPesquisa.Size = new Size(213, 22);
+            txtPesquisa.TabIndex = 52;
             // 
             // TelaEstoque
             // 
@@ -315,7 +315,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
-            Controls.Add(textBox1);
+            Controls.Add(txtPesquisa);
             Controls.Add(btndeletep);
             Controls.Add(lbRelogio);
             Controls.Add(btnAdd);
@@ -362,6 +362,6 @@
         public Label LbNome;
         private RButton btnAdd;
         private RButton btndeletep;
-        private TextBox textBox1;
+        private TextBox txtPesquisa;
     }
 }
