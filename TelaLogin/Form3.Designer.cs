@@ -41,7 +41,6 @@
             rButton1 = new RButton();
             btnSair = new Button();
             comboBox1 = new ComboBox();
-            txtproduto = new TextBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
             // 
@@ -174,14 +173,6 @@
             comboBox1.Size = new Size(190, 23);
             comboBox1.TabIndex = 27;
             // 
-            // txtproduto
-            // 
-            txtproduto.Font = new Font("Segoe UI", 12F);
-            txtproduto.Location = new Point(12, 32);
-            txtproduto.Name = "txtproduto";
-            txtproduto.Size = new Size(243, 29);
-            txtproduto.TabIndex = 5;
-            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -198,7 +189,6 @@
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(txtproduto);
             Controls.Add(txtpreco);
             Controls.Add(txtqtd);
             Controls.Add(label1);
@@ -229,6 +219,5 @@
         private RButton rButton1;
         private Button btnSair;
         private ComboBox comboBox1;
-        private TextBox txtproduto;
     }
 }

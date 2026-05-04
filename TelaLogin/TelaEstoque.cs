@@ -267,11 +267,11 @@ namespace TelaLogin
                     {
 
                     }
-                    finally 
-                    { 
+                    finally
+                    {
                         attgrid at = new attgrid(this.dataGridView1);
                         at.updategridProdutos();
-                        con.Close(); 
+                        con.Close();
                     }
 
                 }
@@ -281,6 +281,18 @@ namespace TelaLogin
                 MessageBox.Show("Selecione um produto para excluir.");
 
             }
+        }
+
+        private void txtPesquisa_TextChanged_1(object sender, EventArgs e)
+        {
+
+            try
+            {
+                (dataGridView1.DataSource as DataTable).DefaultView.RowFilter =
+                    $"produto LIKE '%{txtPesquisa.Text}%' " +
+                    $"OR Convert(id_produtos, 'System.String') LIKE '%{txtPesquisa.Text}%'";
+            }
+            catch { }
         }
     }
 }

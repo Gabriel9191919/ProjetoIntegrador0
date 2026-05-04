@@ -362,6 +362,7 @@
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             Name = "HomeTela";
+            WindowState = FormWindowState.Maximized;
             Load += HomeTela_Load;
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();

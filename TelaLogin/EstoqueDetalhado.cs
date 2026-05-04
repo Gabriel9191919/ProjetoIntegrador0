@@ -47,8 +47,8 @@ namespace TelaLogin
                         p.produto,
                         p.precoproduto,
                         e.quantidade,
-                        e.datavencimento,
-                        e.valortotal
+                        e.datavencimento
+                        
                     FROM estoque e
                     INNER JOIN produtos p 
                         ON e.id_produtodoestoque = p.id_produtos";
@@ -111,7 +111,7 @@ namespace TelaLogin
                         }
 
                         MessageBox.Show("Produto excluído com sucesso!");
-                        CarregarEstoque(); // 🔄 atualiza grid
+                        CarregarEstoque(); 
                     }
                     catch (Exception ex)
                     {

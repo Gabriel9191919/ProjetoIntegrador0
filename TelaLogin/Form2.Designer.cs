@@ -31,7 +31,6 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PDV));
             Painel_Principal = new Panel();
-            BtnTrocarSessao = new Button();
             label3 = new Label();
             btnEstoque = new Button();
             label2 = new Label();
@@ -39,10 +38,8 @@
             pictureBox2 = new PictureBox();
             button6 = new Button();
             button1 = new Button();
-            txtItem = new TextBox();
             txtPreco = new TextBox();
             txtQtd = new TextBox();
-            label1 = new Label();
             label4 = new Label();
             label5 = new Label();
             txtId = new TextBox();
@@ -70,7 +67,6 @@
             // 
             resources.ApplyResources(Painel_Principal, "Painel_Principal");
             Painel_Principal.BackColor = Color.Gold;
-            Painel_Principal.Controls.Add(BtnTrocarSessao);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(btnEstoque);
             Painel_Principal.Controls.Add(label2);
@@ -78,15 +74,6 @@
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(button6);
             Painel_Principal.Name = "Painel_Principal";
-            // 
-            // BtnTrocarSessao
-            // 
-            resources.ApplyResources(BtnTrocarSessao, "BtnTrocarSessao");
-            BtnTrocarSessao.BackColor = Color.Gold;
-            BtnTrocarSessao.FlatAppearance.BorderSize = 0;
-            BtnTrocarSessao.ForeColor = Color.Red;
-            BtnTrocarSessao.Name = "BtnTrocarSessao";
-            BtnTrocarSessao.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -137,11 +124,6 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // txtItem
-            // 
-            resources.ApplyResources(txtItem, "txtItem");
-            txtItem.Name = "txtItem";
-            // 
             // txtPreco
             // 
             resources.ApplyResources(txtPreco, "txtPreco");
@@ -151,11 +133,7 @@
             // 
             resources.ApplyResources(txtQtd, "txtQtd");
             txtQtd.Name = "txtQtd";
-            // 
-            // label1
-            // 
-            resources.ApplyResources(label1, "label1");
-            label1.Name = "label1";
+            txtQtd.TextChanged += txtQtd_TextChanged;
             // 
             // label4
             // 
@@ -171,6 +149,7 @@
             // 
             resources.ApplyResources(txtId, "txtId");
             txtId.Name = "txtId";
+            txtId.TextChanged += txtId_TextChanged;
             // 
             // label7
             // 
@@ -186,6 +165,7 @@
             // 
             resources.ApplyResources(txtTotal, "txtTotal");
             txtTotal.Name = "txtTotal";
+            txtTotal.ReadOnly = true;
             // 
             // btnVender
             // 
@@ -223,12 +203,14 @@
             bntAdd.Name = "bntAdd";
             bntAdd.TextColor = SystemColors.ActiveCaptionText;
             bntAdd.UseVisualStyleBackColor = false;
+            bntAdd.Click += bntAdd_Click;
             // 
             // comboProduto
             // 
             resources.ApplyResources(comboProduto, "comboProduto");
             comboProduto.FormattingEnabled = true;
             comboProduto.Name = "comboProduto";
+            comboProduto.SelectedIndexChanged += comboProduto_SelectedIndexChanged;
             // 
             // label9
             // 
@@ -240,6 +222,7 @@
             resources.ApplyResources(comboPagamento, "comboPagamento");
             comboPagamento.FormattingEnabled = true;
             comboPagamento.Name = "comboPagamento";
+            comboPagamento.SelectedIndexChanged += comboPagamento_SelectedIndexChanged;
             // 
             // label6
             // 
@@ -289,15 +272,14 @@
             Controls.Add(txtId);
             Controls.Add(label5);
             Controls.Add(label4);
-            Controls.Add(label1);
             Controls.Add(txtQtd);
             Controls.Add(txtPreco);
-            Controls.Add(txtItem);
             Controls.Add(button1);
             Controls.Add(Painel_Principal);
             Controls.Add(panel1);
             FormBorderStyle = FormBorderStyle.None;
             Name = "PDV";
+            WindowState = FormWindowState.Maximized;
             Load += Form2_Load;
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
@@ -320,10 +302,8 @@
         private PictureBox pictureBox2;
         private Button button6;
         private Button button1;
-        private TextBox txtItem;
         private TextBox txtPreco;
         private TextBox txtQtd;
-        private Label label1;
         private Label label4;
         private Label label5;
         private TextBox txtId;
@@ -342,6 +322,5 @@
         private Label lbRelogio;
         public Label LbNom;
         private Panel panel1;
-        private Button BtnTrocarSessao;
     }
 }

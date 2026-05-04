@@ -124,7 +124,8 @@ namespace TelaLogin
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-
+            EsqueciSenha tela = new EsqueciSenha();
+            tela.ShowDialog();
         }
 
         private void label1_Click(object sender, EventArgs e)

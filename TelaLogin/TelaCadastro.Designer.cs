@@ -36,7 +36,7 @@
             pictureBox3 = new PictureBox();
             txtUsuario = new TextBox();
             pictureBox4 = new PictureBox();
-            txtsenha2 = new TextBox();
+            txtConfirmarSenha = new TextBox();
             rButton1 = new RButton();
             label1 = new Label();
             pictureBox5 = new PictureBox();
@@ -132,15 +132,15 @@
             pictureBox4.TabIndex = 21;
             pictureBox4.TabStop = false;
             // 
-            // txtsenha2
+            // txtConfirmarSenha
             // 
-            txtsenha2.Anchor = AnchorStyles.None;
-            txtsenha2.Location = new Point(826, 571);
-            txtsenha2.Name = "txtsenha2";
-            txtsenha2.PasswordChar = '*';
-            txtsenha2.PlaceholderText = "Confirme sua senha";
-            txtsenha2.Size = new Size(297, 23);
-            txtsenha2.TabIndex = 3;
+            txtConfirmarSenha.Anchor = AnchorStyles.None;
+            txtConfirmarSenha.Location = new Point(826, 571);
+            txtConfirmarSenha.Name = "txtConfirmarSenha";
+            txtConfirmarSenha.PasswordChar = '*';
+            txtConfirmarSenha.PlaceholderText = "Confirme sua senha";
+            txtConfirmarSenha.Size = new Size(297, 23);
+            txtConfirmarSenha.TabIndex = 3;
             // 
             // rButton1
             // 
@@ -195,7 +195,7 @@
             Controls.Add(pictureBox5);
             Controls.Add(rButton1);
             Controls.Add(pictureBox4);
-            Controls.Add(txtsenha2);
+            Controls.Add(txtConfirmarSenha);
             Controls.Add(linkLabel2);
             Controls.Add(pictureBox1);
             Controls.Add(pictureBox2);
@@ -224,7 +224,7 @@
         private PictureBox pictureBox3;
         private TextBox txtUsuario;
         private PictureBox pictureBox4;
-        private TextBox txtsenha2;
+        private TextBox txtConfirmarSenha;
         private RButton rButton1;
         private Label label1;
         private PictureBox pictureBox5;

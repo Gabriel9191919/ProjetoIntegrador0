@@ -308,6 +308,7 @@
             txtPesquisa.PlaceholderText = "Pesquisar";
             txtPesquisa.Size = new Size(213, 22);
             txtPesquisa.TabIndex = 52;
+            txtPesquisa.TextChanged += txtPesquisa_TextChanged_1;
             // 
             // TelaEstoque
             // 

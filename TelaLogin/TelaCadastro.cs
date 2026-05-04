@@ -36,7 +36,7 @@ namespace TelaLogin
 
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
                 string.IsNullOrWhiteSpace(txtsenha.Text) ||
-                string.IsNullOrWhiteSpace(txtsenha2.Text))
+                string.IsNullOrWhiteSpace(txtConfirmarSenha.Text))
             {
                 MessageBox.Show("Preencha todos os campos!");
                 return;
@@ -55,7 +55,7 @@ namespace TelaLogin
             }
 
 
-            if (txtsenha.Text != txtsenha2.Text)
+            if (txtsenha.Text != txtConfirmarSenha.Text)
             {
                 MessageBox.Show("Senhas não conferem!");
                 return;

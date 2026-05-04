@@ -117,23 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BtnTrocarSessao.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
-    <value>Flat</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BtnTrocarSessao.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt, style=Bold</value>
-  </data>
-  <data name="BtnTrocarSessao.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
-    <value>NoControl</value>
-  </data>
-  <data name="BtnTrocarSessao.Size" type="System.Drawing.Size, System.Drawing">
-    <value>155, 57</value>
-  </data>
-  <data name="BtnTrocarSessao.Text" xml:space="preserve">
-    <value>Trocar de sessão</value>
-  </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>69, 224</value>
   </data>
@@ -823,6 +807,7 @@
   <data name="Painel_Principal.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 1061</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -835,31 +820,19 @@
   <data name="button1.Text" xml:space="preserve">
     <value>SAIR</value>
   </data>
-  <data name="txtItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>231, 23</value>
+  <data name="txtPreco.Location" type="System.Drawing.Point, System.Drawing">
+    <value>666, 338</value>
   </data>
   <data name="txtPreco.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 23</value>
   </data>
+  <data name="txtQtd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>666, 380</value>
+  </data>
   <data name="txtQtd.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 23</value>
   </data>
-  <data name="label1.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Trebuchet MS, 15.75pt, style=Bold</value>
-  </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 368</value>
-  </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>64, 27</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="label1.TabIndex" type="System.Int32, mscorlib">
-    <value>29</value>
-  </data>
-  <data name="label1.Text" xml:space="preserve">
-    <value>Item:</value>
-  </data>
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -867,7 +840,7 @@
     <value>Trebuchet MS, 15.75pt, style=Bold</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 412</value>
+    <value>529, 338</value>
   </data>
   <data name="label4.Size" type="System.Drawing.Size, System.Drawing">
     <value>76, 27</value>
@@ -882,7 +855,7 @@
     <value>Trebuchet MS, 15.75pt, style=Bold</value>
   </data>
   <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>529, 452</value>
+    <value>529, 374</value>
   </data>
   <data name="label5.Size" type="System.Drawing.Size, System.Drawing">
     <value>131, 27</value>
@@ -912,13 +885,16 @@
     <value>Trebuchet MS, 20.25pt, style=Bold</value>
   </data>
   <data name="label8.Location" type="System.Drawing.Point, System.Drawing">
-    <value>509, 774</value>
+    <value>1037, 719</value>
   </data>
   <data name="label8.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 35</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>Total a Pagar:</value>
+  </data>
+  <data name="txtTotal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1219, 728</value>
   </data>
   <data name="txtTotal.Size" type="System.Drawing.Size, System.Drawing">
     <value>186, 23</value>
@@ -932,6 +908,9 @@
   <data name="btnVender.Font" type="System.Drawing.Font, System.Drawing">
     <value>Trebuchet MS, 15.75pt, style=Bold</value>
   </data>
+  <data name="btnVender.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1195, 851</value>
+  </data>
   <data name="btnVender.Size" type="System.Drawing.Size, System.Drawing">
     <value>227, 80</value>
   </data>
@@ -939,7 +918,7 @@
     <value>Finalizar</value>
   </data>
   <data name="DvgPdv.Size" type="System.Drawing.Size, System.Drawing">
-    <value>350, 415</value>
+    <value>385, 415</value>
   </data>
   <data name="bntAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -968,11 +947,17 @@
   <data name="label9.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="label9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1037, 688</value>
+  </data>
   <data name="label9.Size" type="System.Drawing.Size, System.Drawing">
     <value>224, 27</value>
   </data>
   <data name="label9.Text" xml:space="preserve">
     <value>Forma de pagamento:</value>
+  </data>
+  <data name="comboPagamento.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1258, 692</value>
   </data>
   <data name="comboPagamento.Size" type="System.Drawing.Size, System.Drawing">
     <value>147, 23</value>

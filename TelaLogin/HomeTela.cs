@@ -95,7 +95,13 @@ namespace TelaLogin
 
                 // Ordenamos pela data de vencimento (a menor/mais antiga primeiro)
                 // Buscamos o nome do produto e a respectiva data
-                string sql = "SELECT produto, datavencimento FROM estoque ORDER BY datavencimento ASC LIMIT 1;";
+                string sql = @"
+            SELECT p.produto, e.datavencimento 
+            FROM estoque e
+            INNER JOIN produtos p 
+            ON e.id_produtodoestoque = p.id_produtos
+            ORDER BY e.datavencimento ASC 
+            LIMIT 1;";
 
                 MySqlCommand cmd = new MySqlCommand(sql, con);
                 MySqlDataReader reader = cmd.ExecuteReader();
@@ -163,7 +169,13 @@ namespace TelaLogin
             try
             {
                 con.Open();
-                string sql = "SELECT produto, quantidade FROM estoque ORDER BY quantidade ASC LIMIT 1;";
+                string sql = @"
+            SELECT p.produto, e.quantidade 
+                FROM estoque e
+            INNER JOIN produtos p 
+            ON e.id_produtodoestoque = p.id_produtos
+            ORDER BY e.quantidade ASC 
+                    LIMIT 1;";
                 MySqlCommand cmd = new MySqlCommand(sql, con);
 
                 MySqlDataReader reader = cmd.ExecuteReader();
