@@ -70,6 +70,11 @@ namespace TelaLogin
                 wait.Start();
             }
         }
+
+        private void panelLado_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 
 

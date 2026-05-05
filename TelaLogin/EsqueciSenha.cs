@@ -14,7 +14,6 @@ namespace TelaLogin
 
     public partial class EsqueciSenha : Form
     {
-        string conexao = "server=localhost;uid=root;pwd=;database=adega_jm;";
 
         public EsqueciSenha()
         {
@@ -38,7 +37,53 @@ namespace TelaLogin
                 return;
             }
 
-            using (MySqlConnection con = new MySqlConnection(conexao))
+
+            if (txtNovaSenha.Text.Length < 4)
+            {
+                MessageBox.Show("A senha deve ter no mínimo 4 caracteres!");
+                return;
+            }
+            if (txtNovaSenha.Text.Length > 8)
+            {
+                MessageBox.Show("A senha deve ter no maximo 8 caracteres!");
+                return;
+            }
+
+            //Bloqueia senhas iguais
+            // 1. A query procura se existe um registro com o MESMO usuário E a MESMA senha
+            conectar conectar = new conectar();
+            MySqlConnection con = conectar.conectando();
+            string verify = "SELECT COUNT(*) FROM Login WHERE usuario = @usuario AND senha = @senha";
+
+            using (MySqlCommand cmdverify = new MySqlCommand(verify, con))
+            {
+                // 2. Parâmetros (Substitua pelos nomes das suas variáveis/controles)
+                cmdverify.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                cmdverify.Parameters.AddWithValue("@senha", txtNovaSenha.Text);
+
+                try
+                {
+                    
+                    if (con.State == ConnectionState.Closed) con.Open();
+
+                    // 3. Executa a contagem
+                    int count = Convert.ToInt32(cmdverify.ExecuteScalar());
+
+                    if (count > 0)
+                    {
+                        // Se encontrou 1 registro, significa que a "nova" senha é igual à atual
+                        MessageBox.Show("A nova senha não pode ser igual à senha atual!", " Atenção");
+                    }
+                    con.Close();
+                    return;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro de conexão: " + ex.Message);
+                }
+
+            }
+
             {
                 try
                 {
@@ -56,7 +101,7 @@ namespace TelaLogin
                         MessageBox.Show("Usuário não encontrado!");
                         return;
                     }
-
+                   
                     // 🔄 Atualiza senha
                     string update = "UPDATE Login SET senha = @senha WHERE usuario = @usuario";
                     MySqlCommand cmdUpdate = new MySqlCommand(update, con);

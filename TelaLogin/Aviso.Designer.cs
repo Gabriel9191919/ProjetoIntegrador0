@@ -55,6 +55,7 @@
             panelLado.Name = "panelLado";
             panelLado.Size = new Size(300, 80);
             panelLado.TabIndex = 1;
+            panelLado.Paint += panelLado_Paint;
             // 
             // lblTexto
             // 

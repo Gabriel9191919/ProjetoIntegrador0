@@ -77,7 +77,7 @@ namespace TelaLogin
             if (string.IsNullOrWhiteSpace(txtUsuario.Text) ||
                 string.IsNullOrWhiteSpace(txtSenha.Text))
             {
-                MessageBox.Show("Preencha todos os campos!");
+                MessageBox.Show("Não possui cadastro?, realize seu cadastro clicando em CADASTRAR", "Prencha todos os campos!");
                 return;
             }
 

@@ -27,7 +27,7 @@ namespace TelaLogin
         {
             Form1 telaLogin = new Form1();
             telaLogin.Show();
-            this.Hide();
+            this.Close();
         }
 
         private void rButton1_Click(object sender, EventArgs e)
@@ -53,6 +53,7 @@ namespace TelaLogin
                 MessageBox.Show("A senha deve ter no maximo 8 caracteres!");
                 return;
             }
+
 
 
             if (txtsenha.Text != txtConfirmarSenha.Text)

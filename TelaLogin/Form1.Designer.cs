@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             txtUsuario = new TextBox();
             linkLabel1 = new LinkLabel();
@@ -42,6 +43,7 @@
             button1 = new Button();
             btnCadastrar = new RButton();
             btnOlho = new Button();
+            Timer = new System.Windows.Forms.Timer(components);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -209,7 +211,7 @@
             btnCadastrar.Name = "btnCadastrar";
             btnCadastrar.Size = new Size(316, 40);
             btnCadastrar.TabIndex = 5;
-            btnCadastrar.Text = "Cadastro";
+            btnCadastrar.Text = "Cadastrar";
             btnCadastrar.TextColor = SystemColors.ActiveCaptionText;
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
@@ -254,7 +256,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Login";
+            Text = "00000000";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -279,5 +281,6 @@
         private RButton btnCadastrar;
         private Button button2;
         private Button btnOlho;
+        private System.Windows.Forms.Timer Timer;
     }
 }
