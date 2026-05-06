@@ -37,7 +37,7 @@
             txtNovaSenha = new TextBox();
             pictureBox3 = new PictureBox();
             txtUsuario = new TextBox();
-            
+            btnAlterar = new RButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -137,9 +137,26 @@
             txtUsuario.Size = new Size(297, 23);
             txtUsuario.TabIndex = 22;
             // 
-            // btnAlterarSenha
+            // btnAlterar
             // 
-            
+            btnAlterar.Anchor = AnchorStyles.None;
+            btnAlterar.BackColor = Color.Gold;
+            btnAlterar.BackgroundColor = Color.Gold;
+            btnAlterar.BorderColor = Color.PaleVioletRed;
+            btnAlterar.BorderRadius = 20;
+            btnAlterar.BorderSize = 0;
+            btnAlterar.Cursor = Cursors.Hand;
+            btnAlterar.FlatAppearance.BorderSize = 0;
+            btnAlterar.FlatStyle = FlatStyle.Flat;
+            btnAlterar.ForeColor = SystemColors.ActiveCaptionText;
+            btnAlterar.Location = new Point(822, 650);
+            btnAlterar.Name = "btnAlterar";
+            btnAlterar.Size = new Size(297, 40);
+            btnAlterar.TabIndex = 31;
+            btnAlterar.Text = "Alterar senha";
+            btnAlterar.TextColor = SystemColors.ActiveCaptionText;
+            btnAlterar.UseVisualStyleBackColor = false;
+            btnAlterar.Click += btnAlterar_Click;
             // 
             // EsqueciSenha
             // 
@@ -147,7 +164,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1904, 1041);
-            
+            Controls.Add(btnAlterar);
             Controls.Add(pictureBox4);
             Controls.Add(txtsenha2);
             Controls.Add(lbVoltar);
@@ -180,6 +197,6 @@
         private TextBox txtNovaSenha;
         private PictureBox pictureBox3;
         private TextBox txtUsuario;
-       
+        private RButton btnAlterar;
     }
 }
