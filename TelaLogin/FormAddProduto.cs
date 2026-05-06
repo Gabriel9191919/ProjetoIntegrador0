@@ -13,7 +13,7 @@ namespace TelaLogin
 {
     public partial class FormAddProduto : Form
     {
-        private AutoLogoff auto;
+        
         public FormAddProduto()
         {
             InitializeComponent();
@@ -64,7 +64,18 @@ namespace TelaLogin
 
         private void FormAddProduto_Load(object sender, EventArgs e)
         {
-            auto = new AutoLogoff(this, 60);
+            SessaoTimer.Iniciar(this);
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnMouseMove(e);
+        }
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnKeyPress(e);
         }
 
         private void textBoxValor_KeyPress(object sender, KeyPressEventArgs e)

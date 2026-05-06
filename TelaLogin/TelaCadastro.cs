@@ -17,7 +17,7 @@ namespace TelaLogin
     {
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
 
-        private AutoLogoff auto;
+        
         public TelaCadastro()
         {
             InitializeComponent();
@@ -118,7 +118,7 @@ namespace TelaLogin
 
         private void TelaCadastro_Load(object sender, EventArgs e)
         {
-            auto = new AutoLogoff(this, 60);
+            SessaoTimer.Iniciar(this);
 
             this.FormBorderStyle = FormBorderStyle.None;
 
@@ -161,8 +161,20 @@ namespace TelaLogin
             {
                 txtUsuario.Text = ""; 
             }
+
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnMouseMove(e);
+        }
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnKeyPress(e);
         }
     }
-    }
+}
 
 

@@ -8,7 +8,7 @@ namespace TelaLogin
     public partial class PDV : Form
     {
         string conexao = "server=localhost;uid=root;pwd=;database=adega_jm;";
-        private AutoLogoff auto ;
+        
         public PDV()
         {
             InitializeComponent();
@@ -21,7 +21,7 @@ namespace TelaLogin
 
         private void Form2_Load(object sender, EventArgs e)
         {
-            auto = new AutoLogoff(this, 60);
+            SessaoTimer.Iniciar(this);
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.WindowState = FormWindowState.Maximized;
@@ -342,6 +342,17 @@ namespace TelaLogin
         private void comboPagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnMouseMove(e);
+        }
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnKeyPress(e);
         }
 
     }
