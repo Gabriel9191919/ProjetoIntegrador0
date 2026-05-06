@@ -15,7 +15,7 @@ namespace TelaLogin
     public partial class TelaEstoque : Form
     {
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
-        private AutoLogoff auto;
+        
         public TelaEstoque()
         {
             InitializeComponent();
@@ -28,7 +28,7 @@ namespace TelaLogin
 
         private void TelaEstoque_Load(object sender, EventArgs e)
         {
-            auto = new AutoLogoff(this, 60);
+            SessaoTimer.Iniciar(this);
 
             conectar conectar = new conectar();
             MySqlConnection con = conectar.conectando();

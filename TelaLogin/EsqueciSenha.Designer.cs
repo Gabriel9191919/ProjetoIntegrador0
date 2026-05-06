@@ -49,7 +49,7 @@
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.BackColor = Color.Transparent;
             pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(785, 603);
+            pictureBox4.Location = new Point(797, 580);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(30, 23);
             pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -59,7 +59,7 @@
             // txtsenha2
             // 
             txtsenha2.Anchor = AnchorStyles.None;
-            txtsenha2.Location = new Point(822, 603);
+            txtsenha2.Location = new Point(834, 580);
             txtsenha2.Name = "txtsenha2";
             txtsenha2.PasswordChar = '*';
             txtsenha2.PlaceholderText = "Confirme sua senha";
@@ -74,7 +74,7 @@
             lbVoltar.BackColor = Color.Transparent;
             lbVoltar.ForeColor = SystemColors.ActiveCaptionText;
             lbVoltar.LinkColor = Color.Gold;
-            lbVoltar.Location = new Point(942, 712);
+            lbVoltar.Location = new Point(968, 689);
             lbVoltar.Name = "lbVoltar";
             lbVoltar.Size = new Size(37, 15);
             lbVoltar.TabIndex = 26;
@@ -87,7 +87,7 @@
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.Transparent;
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(785, 526);
+            pictureBox1.Location = new Point(797, 503);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(29, 20);
             pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -99,7 +99,7 @@
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(785, 565);
+            pictureBox2.Location = new Point(797, 542);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(30, 23);
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -109,7 +109,7 @@
             // txtNovaSenha
             // 
             txtNovaSenha.Anchor = AnchorStyles.None;
-            txtNovaSenha.Location = new Point(822, 565);
+            txtNovaSenha.Location = new Point(834, 542);
             txtNovaSenha.Name = "txtNovaSenha";
             txtNovaSenha.PasswordChar = '*';
             txtNovaSenha.PlaceholderText = "Nova Senha";
@@ -121,7 +121,7 @@
             pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(803, 333);
+            pictureBox3.Location = new Point(807, 301);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(316, 140);
             pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -131,7 +131,7 @@
             // txtUsuario
             // 
             txtUsuario.Anchor = AnchorStyles.None;
-            txtUsuario.Location = new Point(822, 526);
+            txtUsuario.Location = new Point(834, 503);
             txtUsuario.Name = "txtUsuario";
             txtUsuario.PlaceholderText = "Usuario";
             txtUsuario.Size = new Size(297, 23);
@@ -149,7 +149,7 @@
             btnAlterar.FlatAppearance.BorderSize = 0;
             btnAlterar.FlatStyle = FlatStyle.Flat;
             btnAlterar.ForeColor = SystemColors.ActiveCaptionText;
-            btnAlterar.Location = new Point(822, 650);
+            btnAlterar.Location = new Point(834, 627);
             btnAlterar.Name = "btnAlterar";
             btnAlterar.Size = new Size(297, 40);
             btnAlterar.TabIndex = 31;
@@ -163,7 +163,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
-            ClientSize = new Size(1904, 1041);
+            ClientSize = new Size(1920, 1080);
             Controls.Add(btnAlterar);
             Controls.Add(pictureBox4);
             Controls.Add(txtsenha2);
@@ -176,6 +176,7 @@
             ForeColor = SystemColors.ControlDarkDark;
             FormBorderStyle = FormBorderStyle.None;
             Name = "EsqueciSenha";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "EsqueciSenha";
             Load += EsqueciSenha_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();

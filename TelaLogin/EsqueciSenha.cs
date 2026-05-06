@@ -125,13 +125,12 @@ namespace TelaLogin
 
         private void lbVoltar_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Form1 login = new Form1();
-            login.ShowDialog();
             this.Close();
         }
 
         private void EsqueciSenha_Load(object sender, EventArgs e)
         {
+            SessaoTimer.Iniciar(this);
 
         }
 

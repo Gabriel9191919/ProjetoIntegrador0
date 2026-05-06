@@ -9,7 +9,7 @@ namespace TelaLogin
     public partial class EstoqueDetalhado : Form
     {
         string conexao = "server=localhost;uid=root;pwd=;database=adega_jm;";
-        private AutoLogoff auto;
+        
         public EstoqueDetalhado()
         {
             InitializeComponent();
@@ -19,7 +19,7 @@ namespace TelaLogin
         {
             AtualizarRelogio();
             CarregarEstoque();
-            auto = new AutoLogoff(this, 60);
+            SessaoTimer.Iniciar(this);
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -171,6 +171,17 @@ namespace TelaLogin
         private void button9_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnMouseMove(e);
+        }
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnKeyPress(e);
         }
     }
 }

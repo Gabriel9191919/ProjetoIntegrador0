@@ -1,49 +1,66 @@
 ﻿using System;
 using System.Windows.Forms;
-using TelaLogin;
 
-public class AutoLogoff
+namespace TelaLogin
 {
-    private System.Windows.Forms.Timer timer;
-    private int tempo = 0;
-    private int limite;
-    private Form formAtual;
-
-    public AutoLogoff(Form form, int segundos)
+    public static class SessaoTimer
     {
-        formAtual = form;
-        limite = segundos;
+        private static System.Windows.Forms.Timer timer;
+        private static int tempo = 0;
 
-        timer = new System.Windows.Forms.Timer();
-        timer.Interval = 1000;
-        timer.Tick += Tick;
-        timer.Start();
+        public static int TempoLimite = 60; 
 
-        // eventos do form
-        form.MouseMove += Resetar;
-        form.KeyPress += Resetar;
-        form.Click += Resetar;
-    }
+        private static Form formAtual;
 
-    private void Tick(object sender, EventArgs e)
-    {
-        tempo++;
-
-        if (tempo >= limite)
+        
+        public static void Iniciar(Form form)
         {
-            timer.Stop();
+            formAtual = form;
 
-            MessageBox.Show("Sessão expirada!");
+            if (timer == null)
+            {
+                timer = new System.Windows.Forms.Timer();
+                timer.Interval = 1000; 
+                timer.Tick += Tick;
+            }
 
-            Form1 login = new Form1();
-            login.Show();
-
-            formAtual.Close();
+            timer.Start();
         }
-    }
 
-    private void Resetar(object sender, EventArgs e)
-    {
-        tempo = 0;
+        // 🔄 Atualiza qual tela está ativa
+        public static void AtualizarForm(Form form)
+        {
+            formAtual = form;
+        }
+
+        // ⏲️ Contador
+        private static void Tick(object sender, EventArgs e)
+        {
+            tempo++;
+
+            if (tempo >= TempoLimite)
+            {
+                timer.Stop();
+
+                MessageBox.Show("Sessão expirada por inatividade!");
+
+
+                foreach (Form f in Application.OpenForms.Cast<Form>().ToList())
+                {
+                    if (!(f is Form1))
+                        f.Close();
+                }
+
+
+                Form1 login = new Form1();
+                login.Show();
+            }
+        }
+
+     
+        public static void Resetar()
+        {
+            tempo = 0;
+        }
     }
 }

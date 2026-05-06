@@ -14,7 +14,7 @@ namespace TelaLogin
 
     public partial class Form3 : Form
     {
-        private AutoLogoff auto;
+        
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
 
         public Form3()
@@ -27,7 +27,7 @@ namespace TelaLogin
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            auto = new AutoLogoff(this, 60);
+            SessaoTimer.Iniciar(this);
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(1257, 150);
             CarregarProdutos();
@@ -142,6 +142,18 @@ namespace TelaLogin
             {
                 MessageBox.Show("Erro ao carregar produtos: " + ex.Message);
             }
+
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnMouseMove(e);
+        }
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnKeyPress(e);
         }
 
     }

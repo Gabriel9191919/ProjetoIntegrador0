@@ -13,7 +13,7 @@ namespace TelaLogin
 {
     public partial class HomeTela : Form
     {
-        private AutoLogoff auto;
+        
 
         private string nomeUsuario;
         public HomeTela()
@@ -83,7 +83,7 @@ namespace TelaLogin
 
         private void HomeTela_Load(object sender, EventArgs e)
         {
-            auto = new AutoLogoff(this, 60);
+            SessaoTimer.Iniciar(this);
 
             LbNome.Text = "Bem-vindo, " + Sessao.Usuario;
 
@@ -248,6 +248,17 @@ namespace TelaLogin
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        protected override void OnMouseMove(MouseEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnMouseMove(e);
+        }
+
+        protected override void OnKeyPress(KeyPressEventArgs e)
+        {
+            SessaoTimer.Resetar();
+            base.OnKeyPress(e);
         }
     }
 
