@@ -8,7 +8,7 @@ namespace TelaLogin
     public partial class PDV : Form
     {
         string conexao = "server=localhost;uid=root;pwd=;database=adega_jm;";
-        
+
         public PDV()
         {
             InitializeComponent();
@@ -299,8 +299,9 @@ namespace TelaLogin
 
         private void bntAdd_Click(object sender, EventArgs e)
         {
+
             if (comboProduto.SelectedValue == null ||
-        string.IsNullOrWhiteSpace(txtQtd.Text))
+                string.IsNullOrWhiteSpace(txtQtd.Text))
             {
                 MessageBox.Show("Preencha os campos!");
                 return;
@@ -310,15 +311,53 @@ namespace TelaLogin
             string produto = comboProduto.Text;
             decimal preco = Convert.ToDecimal(txtPreco.Text);
             int qtd = Convert.ToInt32(txtQtd.Text);
-            decimal total = preco * qtd;
 
-            DvgPdv.Rows.Add(id, produto, preco, qtd, total);
+            using (MySqlConnection con = new MySqlConnection(conexao))
+            {
+                try
+                {
+                    con.Open();
 
-            // limpar campos
-            txtQtd.Clear();
-            txtTotal.Clear();
-            AtualizarTotalGeral();
+                    // 🔎 BUSCAR ESTOQUE
+                    string sql = "SELECT quantidade FROM estoque WHERE id_produtodoestoque = @id";
+                    MySqlCommand cmd = new MySqlCommand(sql, con);
+                    cmd.Parameters.AddWithValue("@id", id);
+
+                    object resultado = cmd.ExecuteScalar();
+
+                    if (resultado == null)
+                    {
+                        MessageBox.Show("Produto não encontrado no estoque!");
+                        return;
+                    }
+
+                    int estoqueAtual = Convert.ToInt32(resultado);
+
+                    // 🔥 VALIDAÇÃO
+                    if (qtd > estoqueAtual)
+                    {
+                        MessageBox.Show($"Estoque insuficiente! Disponível: {estoqueAtual}");
+                        return;
+                    }
+
+                    // ✅ SE PASSAR, ADICIONA
+                    decimal total = preco * qtd;
+                    DvgPdv.Rows.Add(id, produto, preco, qtd, total);
+
+                    // limpar campos
+                    txtQtd.Clear();
+                    txtTotal.Clear();
+
+                    AtualizarTotalGeral();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Erro: " + ex.Message);
+                }
+            }
         }
+
+
         private void AtualizarTotalGeral()
         {
             decimal total = 0;
@@ -355,6 +394,13 @@ namespace TelaLogin
             base.OnKeyPress(e);
         }
 
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            TelaEstoque estoque = new();
+            estoque.ShowDialog();
+            this.Close();
+
+        }
     }
 }
 

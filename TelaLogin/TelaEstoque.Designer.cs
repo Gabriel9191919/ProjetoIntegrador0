@@ -36,13 +36,13 @@
             pictureBox3 = new PictureBox();
             Painel_Principal = new Panel();
             label3 = new Label();
-            button5 = new Button();
+            btnEstoque = new Button();
             label2 = new Label();
             button4 = new Button();
             pictureBox2 = new PictureBox();
-            button6 = new Button();
+            button2 = new Button();
+            btnProdutos = new Button();
             button9 = new Button();
-            btnEstoqueDetalhado = new RButton();
             lbRelogio = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             notifyIcon1 = new NotifyIcon(components);
@@ -103,11 +103,12 @@
             // 
             Painel_Principal.BackColor = Color.Gold;
             Painel_Principal.Controls.Add(label3);
-            Painel_Principal.Controls.Add(button5);
+            Painel_Principal.Controls.Add(btnEstoque);
             Painel_Principal.Controls.Add(label2);
             Painel_Principal.Controls.Add(button4);
             Painel_Principal.Controls.Add(pictureBox2);
-            Painel_Principal.Controls.Add(button6);
+            Painel_Principal.Controls.Add(button2);
+            Painel_Principal.Controls.Add(btnProdutos);
             Painel_Principal.Dock = DockStyle.Left;
             Painel_Principal.Location = new Point(0, 0);
             Painel_Principal.Name = "Painel_Principal";
@@ -125,15 +126,16 @@
             label3.TabIndex = 17;
             label3.Text = "J&&M";
             // 
-            // button5
+            // btnEstoque
             // 
-            button5.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button5.Location = new Point(0, 411);
-            button5.Name = "button5";
-            button5.Size = new Size(184, 95);
-            button5.TabIndex = 14;
-            button5.Text = "Estoque";
-            button5.UseVisualStyleBackColor = true;
+            btnEstoque.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnEstoque.Location = new Point(0, 411);
+            btnEstoque.Name = "btnEstoque";
+            btnEstoque.Size = new Size(184, 95);
+            btnEstoque.TabIndex = 14;
+            btnEstoque.Text = "Estoque";
+            btnEstoque.UseVisualStyleBackColor = true;
+            btnEstoque.Click += button5_Click;
             // 
             // label2
             // 
@@ -168,16 +170,27 @@
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
-            // button6
+            // button2
             // 
-            button6.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button6.Location = new Point(0, 523);
-            button6.Name = "button6";
-            button6.Size = new Size(184, 95);
-            button6.TabIndex = 15;
-            button6.Text = "PDV";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            button2.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button2.Location = new Point(0, 634);
+            button2.Name = "button2";
+            button2.Size = new Size(184, 95);
+            button2.TabIndex = 15;
+            button2.Text = "PDV";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button6_Click;
+            // 
+            // btnProdutos
+            // 
+            btnProdutos.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnProdutos.Location = new Point(0, 523);
+            btnProdutos.Name = "btnProdutos";
+            btnProdutos.Size = new Size(184, 95);
+            btnProdutos.TabIndex = 15;
+            btnProdutos.Text = "Produtos";
+            btnProdutos.UseVisualStyleBackColor = true;
+            btnProdutos.Click += btnProdutos_Click;
             // 
             // button9
             // 
@@ -193,27 +206,6 @@
             button9.Text = "SAIR";
             button9.UseVisualStyleBackColor = false;
             button9.Click += button9_Click;
-            // 
-            // btnEstoqueDetalhado
-            // 
-            btnEstoqueDetalhado.Anchor = AnchorStyles.None;
-            btnEstoqueDetalhado.BackColor = Color.Gold;
-            btnEstoqueDetalhado.BackgroundColor = Color.Gold;
-            btnEstoqueDetalhado.BorderColor = Color.PaleVioletRed;
-            btnEstoqueDetalhado.BorderRadius = 20;
-            btnEstoqueDetalhado.BorderSize = 0;
-            btnEstoqueDetalhado.Cursor = Cursors.Hand;
-            btnEstoqueDetalhado.FlatAppearance.BorderSize = 0;
-            btnEstoqueDetalhado.FlatStyle = FlatStyle.Flat;
-            btnEstoqueDetalhado.ForeColor = SystemColors.ActiveCaptionText;
-            btnEstoqueDetalhado.Location = new Point(847, 822);
-            btnEstoqueDetalhado.Name = "btnEstoqueDetalhado";
-            btnEstoqueDetalhado.Size = new Size(198, 40);
-            btnEstoqueDetalhado.TabIndex = 28;
-            btnEstoqueDetalhado.Text = "Estoque Detalhado";
-            btnEstoqueDetalhado.TextColor = SystemColors.ActiveCaptionText;
-            btnEstoqueDetalhado.UseVisualStyleBackColor = false;
-            btnEstoqueDetalhado.Click += rButton2_Click;
             // 
             // lbRelogio
             // 
@@ -321,7 +313,6 @@
             Controls.Add(btndeletep);
             Controls.Add(lbRelogio);
             Controls.Add(btnAdd);
-            Controls.Add(btnEstoqueDetalhado);
             Controls.Add(Painel_Principal);
             Controls.Add(button1);
             Controls.Add(dataGridView1);
@@ -348,14 +339,13 @@
         private Label label1;
         private PictureBox pictureBox3;
         private Panel Painel_Principal;
-        private Button button6;
-        private Button button5;
+        private Button btnProdutos;
+        private Button btnEstoque;
         private Button button4;
         private PictureBox pictureBox2;
         private Label label3;
         private Label label2;
         private Button button9;
-        private RButton btnEstoqueDetalhado;
         public DataGridView dataGridView1;
         private Label lbRelogio;
         private System.Windows.Forms.Timer timer1;
@@ -365,5 +355,6 @@
         private RButton btnAdd;
         private RButton btndeletep;
         private TextBox txtPesquisa;
+        private Button button2;
     }
 }

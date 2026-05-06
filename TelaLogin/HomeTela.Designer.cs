@@ -37,7 +37,7 @@
             button5 = new Button();
             label2 = new Label();
             button4 = new Button();
-            button6 = new Button();
+            btnProdutos = new Button();
             panel1 = new Panel();
             LbNome = new Label();
             lbRelogio = new Label();
@@ -66,6 +66,7 @@
             label10 = new Label();
             panel11 = new Panel();
             label11 = new Label();
+            button2 = new Button();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
@@ -89,7 +90,8 @@
             Painel_Principal.Controls.Add(button5);
             Painel_Principal.Controls.Add(label2);
             Painel_Principal.Controls.Add(button4);
-            Painel_Principal.Controls.Add(button6);
+            Painel_Principal.Controls.Add(button2);
+            Painel_Principal.Controls.Add(btnProdutos);
             resources.ApplyResources(Painel_Principal, "Painel_Principal");
             Painel_Principal.Name = "Painel_Principal";
             // 
@@ -136,12 +138,12 @@
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
-            // button6
+            // btnProdutos
             // 
-            resources.ApplyResources(button6, "button6");
-            button6.Name = "button6";
-            button6.UseVisualStyleBackColor = true;
-            button6.Click += button6_Click;
+            resources.ApplyResources(btnProdutos, "btnProdutos");
+            btnProdutos.Name = "btnProdutos";
+            btnProdutos.UseVisualStyleBackColor = true;
+            btnProdutos.Click += btnProdutos_Click;
             // 
             // panel1
             // 
@@ -342,6 +344,13 @@
             label11.ForeColor = SystemColors.ActiveCaptionText;
             label11.Name = "label11";
             // 
+            // button2
+            // 
+            resources.ApplyResources(button2, "button2");
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button6_Click;
+            // 
             // HomeTela
             // 
             resources.ApplyResources(this, "$this");
@@ -398,7 +407,7 @@
         private Label label2;
         private Button button4;
         private PictureBox pictureBox2;
-        private Button button6;
+        private Button btnProdutos;
         private ContextMenuStrip contextMenuStrip1;
         private Label label4;
         private Label label5;
@@ -428,5 +437,6 @@
         private Label label10;
         private Panel panel11;
         private Label label11;
+        private Button button2;
     }
 }

@@ -13,7 +13,7 @@ namespace TelaLogin
 {
     public partial class HomeTela : Form
     {
-        
+
 
         private string nomeUsuario;
         public HomeTela()
@@ -49,7 +49,7 @@ namespace TelaLogin
 
         private void button5_Click(object sender, EventArgs e)
         {
-            TelaEstoque telaEstoque = new TelaEstoque();
+            EstoqueDetalhado telaEstoque = new EstoqueDetalhado();
             telaEstoque.Show();
             this.Hide();
         }
@@ -259,6 +259,14 @@ namespace TelaLogin
         {
             SessaoTimer.Resetar();
             base.OnKeyPress(e);
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            TelaEstoque estoque = new();
+            estoque.ShowDialog();
+            this.Close();
+
         }
     }
 

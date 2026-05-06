@@ -9,7 +9,7 @@ namespace TelaLogin
     public partial class EstoqueDetalhado : Form
     {
         string conexao = "server=localhost;uid=root;pwd=;database=adega_jm;";
-        
+
         public EstoqueDetalhado()
         {
             InitializeComponent();
@@ -112,7 +112,7 @@ namespace TelaLogin
                         }
 
                         MessageBox.Show("Produto excluído com sucesso!");
-                        CarregarEstoque(); 
+                        CarregarEstoque();
                     }
                     catch (Exception ex)
                     {
@@ -147,7 +147,7 @@ namespace TelaLogin
 
         private void btnEstoque_Click(object sender, EventArgs e)
         {
-            new TelaEstoque().ShowDialog();
+            new EstoqueDetalhado().ShowDialog();
             this.Close();
         }
 
@@ -182,6 +182,13 @@ namespace TelaLogin
         {
             SessaoTimer.Resetar();
             base.OnKeyPress(e);
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            TelaEstoque estoque = new TelaEstoque();
+            estoque.ShowDialog();
+            this.Close();
         }
     }
 }

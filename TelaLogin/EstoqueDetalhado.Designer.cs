@@ -43,14 +43,14 @@
             label2 = new Label();
             btnHome = new Button();
             pictureBox2 = new PictureBox();
-            btnPdv = new Button();
+            button1 = new Button();
+            btnProdutos = new Button();
             panel1 = new Panel();
             button9 = new Button();
             lbRelogio = new Label();
             label4 = new Label();
             btnSair = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            btnestoqueSimples = new RButton();
             ((System.ComponentModel.ISupportInitialize)dvgEstoque).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
@@ -162,7 +162,8 @@
             Painel_Principal.Controls.Add(label2);
             Painel_Principal.Controls.Add(btnHome);
             Painel_Principal.Controls.Add(pictureBox2);
-            Painel_Principal.Controls.Add(btnPdv);
+            Painel_Principal.Controls.Add(button1);
+            Painel_Principal.Controls.Add(btnProdutos);
             Painel_Principal.Dock = DockStyle.Left;
             Painel_Principal.Location = new Point(0, 0);
             Painel_Principal.Name = "Painel_Principal";
@@ -224,16 +225,27 @@
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
-            // btnPdv
+            // button1
             // 
-            btnPdv.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            btnPdv.Location = new Point(0, 523);
-            btnPdv.Name = "btnPdv";
-            btnPdv.Size = new Size(184, 95);
-            btnPdv.TabIndex = 15;
-            btnPdv.Text = "PDV";
-            btnPdv.UseVisualStyleBackColor = true;
-            btnPdv.Click += btnPdv_Click;
+            button1.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button1.Location = new Point(0, 633);
+            button1.Name = "button1";
+            button1.Size = new Size(184, 95);
+            button1.TabIndex = 15;
+            button1.Text = "PDV";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += btnPdv_Click;
+            // 
+            // btnProdutos
+            // 
+            btnProdutos.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            btnProdutos.Location = new Point(0, 521);
+            btnProdutos.Name = "btnProdutos";
+            btnProdutos.Size = new Size(184, 95);
+            btnProdutos.TabIndex = 15;
+            btnProdutos.Text = "Produtos";
+            btnProdutos.UseVisualStyleBackColor = true;
+            btnProdutos.Click += btnProdutos_Click;
             // 
             // panel1
             // 
@@ -304,27 +316,6 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // btnestoqueSimples
-            // 
-            btnestoqueSimples.Anchor = AnchorStyles.None;
-            btnestoqueSimples.BackColor = Color.Gold;
-            btnestoqueSimples.BackgroundColor = Color.Gold;
-            btnestoqueSimples.BorderColor = Color.PaleVioletRed;
-            btnestoqueSimples.BorderRadius = 20;
-            btnestoqueSimples.BorderSize = 0;
-            btnestoqueSimples.Cursor = Cursors.Hand;
-            btnestoqueSimples.FlatAppearance.BorderSize = 0;
-            btnestoqueSimples.FlatStyle = FlatStyle.Flat;
-            btnestoqueSimples.ForeColor = SystemColors.ActiveCaptionText;
-            btnestoqueSimples.Location = new Point(847, 822);
-            btnestoqueSimples.Name = "btnestoqueSimples";
-            btnestoqueSimples.Size = new Size(198, 40);
-            btnestoqueSimples.TabIndex = 38;
-            btnestoqueSimples.Text = "Estoque Simples";
-            btnestoqueSimples.TextColor = SystemColors.ActiveCaptionText;
-            btnestoqueSimples.UseVisualStyleBackColor = false;
-            btnestoqueSimples.Click += btnestoqueSimples_Click;
-            // 
             // EstoqueDetalhado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -334,7 +325,6 @@
             Controls.Add(Painel_Principal);
             Controls.Add(panel1);
             Controls.Add(BtnDelete);
-            Controls.Add(btnestoqueSimples);
             Controls.Add(btnAdd);
             Controls.Add(label1);
             Controls.Add(txtPesquisa);
@@ -373,13 +363,13 @@
         private Label label2;
         private Button btnHome;
         private PictureBox pictureBox2;
-        private Button btnPdv;
+        private Button btnProdutos;
         private Panel panel1;
         public Label label4;
         private Label lbRelogio;
         private Button btnSair;
         private System.Windows.Forms.Timer timer1;
-        private RButton btnestoqueSimples;
         private Button button9;
+        private Button button1;
     }
 }

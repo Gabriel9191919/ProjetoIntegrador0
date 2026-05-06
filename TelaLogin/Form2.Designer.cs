@@ -36,7 +36,7 @@
             label2 = new Label();
             btnHome = new Button();
             pictureBox2 = new PictureBox();
-            button6 = new Button();
+            btnProdutos = new Button();
             button1 = new Button();
             txtPreco = new TextBox();
             txtQtd = new TextBox();
@@ -57,6 +57,7 @@
             label10 = new Label();
             LbNom = new Label();
             panel1 = new Panel();
+            button2 = new Button();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DvgPdv).BeginInit();
@@ -72,7 +73,8 @@
             Painel_Principal.Controls.Add(label2);
             Painel_Principal.Controls.Add(btnHome);
             Painel_Principal.Controls.Add(pictureBox2);
-            Painel_Principal.Controls.Add(button6);
+            Painel_Principal.Controls.Add(button2);
+            Painel_Principal.Controls.Add(btnProdutos);
             Painel_Principal.Name = "Painel_Principal";
             // 
             // label3
@@ -108,11 +110,12 @@
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
             // 
-            // button6
+            // btnProdutos
             // 
-            resources.ApplyResources(button6, "button6");
-            button6.Name = "button6";
-            button6.UseVisualStyleBackColor = true;
+            resources.ApplyResources(btnProdutos, "btnProdutos");
+            btnProdutos.Name = "btnProdutos";
+            btnProdutos.UseVisualStyleBackColor = true;
+            btnProdutos.Click += btnProdutos_Click;
             // 
             // button1
             // 
@@ -253,6 +256,12 @@
             panel1.Controls.Add(LbNom);
             panel1.Name = "panel1";
             // 
+            // button2
+            // 
+            resources.ApplyResources(button2, "button2");
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // PDV
             // 
             resources.ApplyResources(this, "$this");
@@ -300,7 +309,7 @@
         private Label label2;
         private Button btnHome;
         private PictureBox pictureBox2;
-        private Button button6;
+        private Button btnProdutos;
         private Button button1;
         private TextBox txtPreco;
         private TextBox txtQtd;
@@ -322,5 +331,6 @@
         private Label lbRelogio;
         public Label LbNom;
         private Panel panel1;
+        private Button button2;
     }
 }

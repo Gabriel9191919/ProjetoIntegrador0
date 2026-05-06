@@ -15,7 +15,7 @@ namespace TelaLogin
     public partial class TelaEstoque : Form
     {
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
-        
+
         public TelaEstoque()
         {
             InitializeComponent();
@@ -231,7 +231,6 @@ namespace TelaLogin
         {
             if (dataGridView1.CurrentRow != null && !dataGridView1.CurrentRow.IsNewRow)
             {
-
                 DialogResult resultado = MessageBox.Show(
                     "Tem certeza que deseja excluir este produto?",
                     "Confirmação",
@@ -241,47 +240,52 @@ namespace TelaLogin
 
                 if (resultado == DialogResult.Yes)
                 {
-                    int idSelecionado = Convert.ToInt32(dataGridView1.CurrentRow.Cells["id_produtos"].Value
-                    );
-
-                    MySqlConnection con = new MySqlConnection(conexao);
-
                     try
                     {
-                        con.Open();
+                        int idSelecionado = Convert.ToInt32(
+                            dataGridView1.CurrentRow.Cells["id_produtos"].Value
+                        );
 
-                        string sqlDelete = "DELETE FROM produtos WHERE id_produtos = @id_produtos";
+                        using (MySqlConnection con = new MySqlConnection(conexao))
+                        {
+                            con.Open();
 
-                        MySqlCommand cmd = new MySqlCommand(sqlDelete, con);
+                            string sqlDelete = "DELETE FROM produtos WHERE id_produtos = @id";
 
-                        cmd.Parameters.AddWithValue("@id_produtos", idSelecionado);
+                            MySqlCommand cmd = new MySqlCommand(sqlDelete, con);
+                            cmd.Parameters.AddWithValue("@id", idSelecionado);
 
-                        cmd.ExecuteNonQuery();
+                            int linhas = cmd.ExecuteNonQuery();
 
-                        MessageBox.Show("Produto excluído com sucesso!");
-
-
+                            if (linhas > 0)
+                            {
+                                MessageBox.Show("Produto excluído com sucesso!");
+                            }
+                            else
+                            {
+                                MessageBox.Show("Nenhum produto foi excluído.");
+                            }
+                        }
                     }
-
                     catch (Exception ex)
                     {
-
+                        MessageBox.Show("Erro ao excluir: " + ex.Message);
                     }
                     finally
                     {
                         attgrid at = new attgrid(this.dataGridView1);
                         at.updategridProdutos();
-                        con.Close();
                     }
-
                 }
-            }
-            else
+                else
             {
                 MessageBox.Show("Selecione um produto para excluir.");
 
             }
+            }
         }
+            
+        
 
         private void txtPesquisa_TextChanged_1(object sender, EventArgs e)
         {
@@ -293,6 +297,21 @@ namespace TelaLogin
                     $"OR Convert(id_produtos, 'System.String') LIKE '%{txtPesquisa.Text}%'";
             }
             catch { }
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            TelaEstoque estoque = new TelaEstoque();
+            estoque.ShowDialog();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            EstoqueDetalhado tela = new EstoqueDetalhado();
+            tela.ShowDialog();
+            this.Close();
+
         }
     }
 }

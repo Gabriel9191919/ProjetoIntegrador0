@@ -795,19 +795,44 @@
   <data name="pictureBox2.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 151</value>
   </data>
-  <data name="button6.Font" type="System.Drawing.Font, System.Drawing">
+  <data name="button2.Font" type="System.Drawing.Font, System.Drawing">
     <value>Trebuchet MS, 12pt, style=Bold</value>
   </data>
-  <data name="button6.Location" type="System.Drawing.Point, System.Drawing">
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 635</value>
+  </data>
+  <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 95</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="button2.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="button2.Text" xml:space="preserve">
+    <value>PDV</value>
+  </data>
+  <data name="btnProdutos.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Trebuchet MS, 12pt, style=Bold</value>
+  </data>
+  <data name="btnProdutos.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 523</value>
   </data>
-  <data name="button6.Text" xml:space="preserve">
-    <value>PDV</value>
+  <data name="btnProdutos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>184, 95</value>
+  </data>
+  <data name="btnProdutos.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="btnProdutos.Text" xml:space="preserve">
+    <value>Produtos</value>
   </data>
   <data name="Painel_Principal.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 1061</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="button1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Flat</value>
   </data>
@@ -832,7 +857,6 @@
   <data name="txtQtd.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 23</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
