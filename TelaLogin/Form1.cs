@@ -5,7 +5,7 @@ namespace TelaLogin
     public partial class Form1 : Form
     {
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
-        private AutoLogoff auto;
+        
         public Form1()
         {
             InitializeComponent();
@@ -16,7 +16,7 @@ namespace TelaLogin
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            auto = new AutoLogoff(this, 60);
+            
 
             this.FormBorderStyle = FormBorderStyle.None;
 

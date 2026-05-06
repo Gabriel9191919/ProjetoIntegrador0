@@ -37,6 +37,7 @@
             txtNovaSenha = new TextBox();
             pictureBox3 = new PictureBox();
             txtUsuario = new TextBox();
+            
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -136,12 +137,17 @@
             txtUsuario.Size = new Size(297, 23);
             txtUsuario.TabIndex = 22;
             // 
+            // btnAlterarSenha
+            // 
+            
+            // 
             // EsqueciSenha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1904, 1041);
+            
             Controls.Add(pictureBox4);
             Controls.Add(txtsenha2);
             Controls.Add(lbVoltar);
@@ -174,5 +180,6 @@
         private TextBox txtNovaSenha;
         private PictureBox pictureBox3;
         private TextBox txtUsuario;
+       
     }
 }
