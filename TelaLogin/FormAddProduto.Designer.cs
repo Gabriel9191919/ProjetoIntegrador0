@@ -138,6 +138,7 @@
             Name = "FormAddProduto";
             StartPosition = FormStartPosition.Manual;
             Text = "FormAddProduto";
+            Load += FormAddProduto_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ResumeLayout(false);
             PerformLayout();

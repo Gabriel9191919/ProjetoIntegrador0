@@ -14,6 +14,7 @@ namespace TelaLogin
 
     public partial class EsqueciSenha : Form
     {
+        private AutoLogoff auto;
 
         public EsqueciSenha()
         {
@@ -63,7 +64,7 @@ namespace TelaLogin
 
                 try
                 {
-                    
+
                     if (con.State == ConnectionState.Closed) con.Open();
 
                     // 3. Executa a contagem
@@ -101,7 +102,7 @@ namespace TelaLogin
                         MessageBox.Show("Usuário não encontrado!");
                         return;
                     }
-                   
+
                     // 🔄 Atualiza senha
                     string update = "UPDATE Login SET senha = @senha WHERE usuario = @usuario";
                     MySqlCommand cmdUpdate = new MySqlCommand(update, con);
@@ -127,6 +128,11 @@ namespace TelaLogin
             Form1 login = new Form1();
             login.ShowDialog();
             this.Close();
+        }
+
+        private void EsqueciSenha_Load(object sender, EventArgs e)
+        {
+            auto = new AutoLogoff(this, 60); 
         }
     }
 }

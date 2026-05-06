@@ -8,7 +8,7 @@ namespace TelaLogin
     public partial class PDV : Form
     {
         string conexao = "server=localhost;uid=root;pwd=;database=adega_jm;";
-
+        private AutoLogoff auto ;
         public PDV()
         {
             InitializeComponent();
@@ -21,6 +21,7 @@ namespace TelaLogin
 
         private void Form2_Load(object sender, EventArgs e)
         {
+            auto = new AutoLogoff(this, 60);
             this.FormBorderStyle = FormBorderStyle.None;
             this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
             this.WindowState = FormWindowState.Maximized;

@@ -13,7 +13,7 @@ namespace TelaLogin
 {
     public partial class FormAddProduto : Form
     {
-
+        private AutoLogoff auto;
         public FormAddProduto()
         {
             InitializeComponent();
@@ -44,7 +44,7 @@ namespace TelaLogin
                 MessageBox.Show("Produto cadastro com sucesso");
                 con.Close();
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 MessageBox.Show("Erro ao cadastrar: " + ex.Message);
             }
@@ -60,6 +60,11 @@ namespace TelaLogin
             }
 
 
+        }
+
+        private void FormAddProduto_Load(object sender, EventArgs e)
+        {
+            auto = new AutoLogoff(this, 60);
         }
     }
 }

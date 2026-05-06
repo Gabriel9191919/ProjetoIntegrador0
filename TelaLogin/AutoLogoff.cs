@@ -1,53 +1,49 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
+using TelaLogin;
 
-namespace TelaLogin
+public class AutoLogoff
 {
-    internal class AutoLogoff
+    private System.Windows.Forms.Timer timer;
+    private int tempo = 0;
+    private int limite;
+    private Form formAtual;
+
+    public AutoLogoff(Form form, int segundos)
     {
-        public partial class Form1 : Form
+        formAtual = form;
+        limite = segundos;
+
+        timer = new System.Windows.Forms.Timer();
+        timer.Interval = 1000;
+        timer.Tick += Tick;
+        timer.Start();
+
+        // eventos do form
+        form.MouseMove += Resetar;
+        form.KeyPress += Resetar;
+        form.Click += Resetar;
+    }
+
+    private void Tick(object sender, EventArgs e)
+    {
+        tempo++;
+
+        if (tempo >= limite)
         {
-            private Timer timerInatividade;
+            timer.Stop();
 
-            public Form1()
-            {
-                InitializeComponent();
-                ConfigurarTimer();
-            }
+            MessageBox.Show("Sessão expirada!");
 
-            private void ConfigurarTimer()
-            {
-                timerInatividade = new Timer();
-                timerInatividade.Interval = 60000; // 1 minuto
-                timerInatividade.Tick += (s, e) => VoltarTela();
-                timerInatividade.Start();
-            }
+            Form1 login = new Form1();
+            login.Show();
 
-            private void VoltarTela()
-            {
-                timerInatividade.Stop();
-
-                // Lógica para voltar
-                Form1 home = new Form1();
-                home.Show();
-                this.Close();
-            }
-
-            // Sobrescreve o filtro de mensagens para detectar qualquer clique no Form
-            protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
-            {
-                ResetarTimer();
-                return base.ProcessCmdKey(ref msg, keyData);
-            }
-
-            private void ResetarTimer()
-            {
-                timerInatividade.Stop();
-                timerInatividade.Start();
-            }
+            formAtual.Close();
         }
+    }
+
+    private void Resetar(object sender, EventArgs e)
+    {
+        tempo = 0;
     }
 }

@@ -9,7 +9,7 @@ namespace TelaLogin
     public partial class EstoqueDetalhado : Form
     {
         string conexao = "server=localhost;uid=root;pwd=;database=adega_jm;";
-
+        private AutoLogoff auto;
         public EstoqueDetalhado()
         {
             InitializeComponent();
@@ -19,6 +19,7 @@ namespace TelaLogin
         {
             AtualizarRelogio();
             CarregarEstoque();
+            auto = new AutoLogoff(this, 60);
         }
 
         private void timer1_Tick(object sender, EventArgs e)

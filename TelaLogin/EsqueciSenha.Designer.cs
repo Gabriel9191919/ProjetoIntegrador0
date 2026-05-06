@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EsqueciSenha));
-            btnAlterarSenha = new RButton();
             pictureBox4 = new PictureBox();
             txtsenha2 = new TextBox();
             lbVoltar = new LinkLabel();
@@ -43,27 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             SuspendLayout();
-            // 
-            // btnAlterarSenha
-            // 
-            btnAlterarSenha.Anchor = AnchorStyles.None;
-            btnAlterarSenha.BackColor = Color.Gold;
-            btnAlterarSenha.BackgroundColor = Color.Gold;
-            btnAlterarSenha.BorderColor = Color.PaleVioletRed;
-            btnAlterarSenha.BorderRadius = 20;
-            btnAlterarSenha.BorderSize = 0;
-            btnAlterarSenha.Cursor = Cursors.Hand;
-            btnAlterarSenha.FlatAppearance.BorderSize = 0;
-            btnAlterarSenha.FlatStyle = FlatStyle.Flat;
-            btnAlterarSenha.ForeColor = SystemColors.ActiveCaptionText;
-            btnAlterarSenha.Location = new Point(803, 649);
-            btnAlterarSenha.Name = "btnAlterarSenha";
-            btnAlterarSenha.Size = new Size(316, 40);
-            btnAlterarSenha.TabIndex = 25;
-            btnAlterarSenha.Text = "Trocar a Senha";
-            btnAlterarSenha.TextColor = SystemColors.ActiveCaptionText;
-            btnAlterarSenha.UseVisualStyleBackColor = false;
-            btnAlterarSenha.Click += btnAlterarSenha_Click;
             // 
             // pictureBox4
             // 
@@ -164,7 +142,6 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1904, 1041);
-            Controls.Add(btnAlterarSenha);
             Controls.Add(pictureBox4);
             Controls.Add(txtsenha2);
             Controls.Add(lbVoltar);
@@ -177,6 +154,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "EsqueciSenha";
             Text = "EsqueciSenha";
+            Load += EsqueciSenha_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

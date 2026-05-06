@@ -14,6 +14,7 @@ namespace TelaLogin
 
     public partial class Form3 : Form
     {
+        private AutoLogoff auto;
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
 
         public Form3()
@@ -26,7 +27,7 @@ namespace TelaLogin
 
         private void Form3_Load(object sender, EventArgs e)
         {
-
+            auto = new AutoLogoff(this, 60);
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point(1257, 150);
             CarregarProdutos();

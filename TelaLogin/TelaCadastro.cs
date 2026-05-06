@@ -17,7 +17,7 @@ namespace TelaLogin
     {
         string conexao = "server=localhost; uid = root; pwd=; database = adega_jm;";
 
-
+        private AutoLogoff auto;
         public TelaCadastro()
         {
             InitializeComponent();
@@ -118,7 +118,7 @@ namespace TelaLogin
 
         private void TelaCadastro_Load(object sender, EventArgs e)
         {
-
+            auto = new AutoLogoff(this, 60);
 
             this.FormBorderStyle = FormBorderStyle.None;
 

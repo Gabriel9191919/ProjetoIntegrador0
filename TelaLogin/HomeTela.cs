@@ -13,6 +13,8 @@ namespace TelaLogin
 {
     public partial class HomeTela : Form
     {
+        private AutoLogoff auto;
+
         private string nomeUsuario;
         public HomeTela()
         {
@@ -81,7 +83,8 @@ namespace TelaLogin
 
         private void HomeTela_Load(object sender, EventArgs e)
         {
-            //Bem-vindo(Nome)
+            auto = new AutoLogoff(this, 60);
+
             LbNome.Text = "Bem-vindo, " + Sessao.Usuario;
 
             //Menor data de vencimento
