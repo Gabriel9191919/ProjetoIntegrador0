@@ -77,5 +77,21 @@ namespace TelaLogin
             SessaoTimer.Resetar();
             base.OnKeyPress(e);
         }
+
+        private void textBoxValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite apenas números, controle (backspace) e a vírgula decimal
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true; // Ignora o caractere digitado
+            }
+
+            // Impede que o usuário digite mais de uma vírgula
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
     }
 }
