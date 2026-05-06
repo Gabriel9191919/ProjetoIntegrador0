@@ -81,6 +81,7 @@
             txtPreco.PlaceholderText = "R$";
             txtPreco.Size = new Size(79, 29);
             txtPreco.TabIndex = 27;
+            txtPreco.KeyPress += textBoxValor_KeyPress;
             // 
             // label1
             // 

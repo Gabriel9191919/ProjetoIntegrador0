@@ -51,7 +51,9 @@
             txtvenc.Name = "txtvenc";
             txtvenc.Size = new Size(193, 29);
             txtvenc.TabIndex = 0;
+            txtvenc.TextChanged += txtvenc_TextChanged;
             txtvenc.KeyPress += txtvenc_KeyPress;
+            txtvenc.Leave += txtvenc_Leave;
             // 
             // label1
             // 
@@ -69,6 +71,7 @@
             txtqtd.Size = new Size(41, 29);
             txtqtd.TabIndex = 3;
             txtqtd.TextChanged += textBox2_TextChanged;
+            txtqtd.KeyPress += txtqtd_KeyPress;
             // 
             // txtpreco
             // 
@@ -77,6 +80,7 @@
             txtpreco.Name = "txtpreco";
             txtpreco.Size = new Size(54, 29);
             txtpreco.TabIndex = 4;
+            txtpreco.KeyPress += txtpreco_KeyPress;
             // 
             // label2
             // 

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace TelaLogin
 {
@@ -20,7 +21,7 @@ namespace TelaLogin
         public Form3()
         {
             InitializeComponent();
-            
+
 
 
         }
@@ -67,7 +68,7 @@ namespace TelaLogin
 
         private void rButton1_Click(object sender, EventArgs e)
         {
-             
+
             try
             {
                 if (comboBox1.SelectedValue == null ||
@@ -96,10 +97,10 @@ namespace TelaLogin
                     cmd.Parameters.AddWithValue("@qtd", qtd);
                     cmd.Parameters.AddWithValue("@data", datavenc);
 
-                    
-                    
 
-                    
+
+
+
                     cmd.Parameters.AddWithValue("@idproduto", comboBox1.SelectedValue);
 
                     cmd.ExecuteNonQuery();
@@ -144,5 +145,65 @@ namespace TelaLogin
             }
         }
 
+        private void txtqtd_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            // Permite apenas números, controle (backspace) e a vírgula decimal
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true; // Ignora o caractere digitado
+            }
+
+            // Impede que o usuário digite mais de uma vírgula
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtpreco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permite apenas números, controle (backspace) e a vírgula decimal
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true; // Ignora o caractere digitado
+            }
+
+            // Impede que o usuário digite mais de uma vírgula
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf(',') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtvenc_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtvenc_Leave(object sender, EventArgs e)
+        {
+            // 1. Tenta converter o texto para uma data válida
+            if (DateTime.TryParse(txtvenc.Text, out DateTime dataDigitada))
+            {
+                int ano = dataDigitada.Year;
+
+                // 2. Valida se o ANO está entre 1500 e 3000
+                if (ano < 2000 || ano > 3000)
+                {
+                    MessageBox.Show("O ano da data deve estar entre 2000 e 3000.", "Ano Inválido");
+                    txtvenc.Focus();
+                    return;
+                }
+
+                // 3. Se quiser formatar visualmente para o usuário
+                txtvenc.Text = dataDigitada.ToString("dd/MM/yyyy");
+            }
+            else if (!string.IsNullOrWhiteSpace(txtvenc.Text))
+            {
+                MessageBox.Show("Por favor, digite uma data válida (DD/MM/AAAA).");
+                txtvenc.Focus();
+            }
+        }
     }
 }
