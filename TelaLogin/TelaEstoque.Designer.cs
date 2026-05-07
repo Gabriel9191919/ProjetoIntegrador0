@@ -49,7 +49,6 @@
             panel1 = new Panel();
             LbNome = new Label();
             btnAdd = new RButton();
-            btnAlterar = new RButton();
             txtPesquisa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -66,6 +65,8 @@
             dataGridView1.Size = new Size(594, 369);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+            dataGridView1.EditingControlShowing += dataGridView1_EditingControlShowing;
             // 
             // button1
             // 
@@ -261,7 +262,7 @@
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = SystemColors.ActiveCaptionText;
-            btnAdd.Location = new Point(646, 388);
+            btnAdd.Location = new Point(666, 388);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(164, 40);
             btnAdd.TabIndex = 28;
@@ -270,35 +271,14 @@
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
-            // btnAlterar
-            // 
-            btnAlterar.Anchor = AnchorStyles.None;
-            btnAlterar.BackColor = Color.Gold;
-            btnAlterar.BackgroundColor = Color.Gold;
-            btnAlterar.BorderColor = Color.PaleVioletRed;
-            btnAlterar.BorderRadius = 20;
-            btnAlterar.BorderSize = 0;
-            btnAlterar.Cursor = Cursors.Hand;
-            btnAlterar.FlatAppearance.BorderSize = 0;
-            btnAlterar.FlatStyle = FlatStyle.Flat;
-            btnAlterar.ForeColor = SystemColors.ActiveCaptionText;
-            btnAlterar.Location = new Point(829, 388);
-            btnAlterar.Name = "btnAlterar";
-            btnAlterar.Size = new Size(164, 40);
-            btnAlterar.TabIndex = 51;
-            btnAlterar.Text = "Salvar Alterações";
-            btnAlterar.TextColor = SystemColors.ActiveCaptionText;
-            btnAlterar.UseVisualStyleBackColor = false;
-            btnAlterar.Click += btnAlterar_Click;
-            // 
             // txtPesquisa
             // 
             txtPesquisa.BorderStyle = BorderStyle.None;
             txtPesquisa.Font = new Font("Segoe UI", 12F);
-            txtPesquisa.Location = new Point(999, 399);
+            txtPesquisa.Location = new Point(927, 396);
             txtPesquisa.Name = "txtPesquisa";
             txtPesquisa.PlaceholderText = "Pesquisar";
-            txtPesquisa.Size = new Size(213, 22);
+            txtPesquisa.Size = new Size(243, 22);
             txtPesquisa.TabIndex = 52;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged_1;
             // 
@@ -309,7 +289,6 @@
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
             Controls.Add(txtPesquisa);
-            Controls.Add(btnAlterar);
             Controls.Add(lbRelogio);
             Controls.Add(btnAdd);
             Controls.Add(Painel_Principal);
@@ -352,7 +331,6 @@
         private Panel panel1;
         public Label LbNome;
         private RButton btnAdd;
-        private RButton btnAlterar;
         private TextBox txtPesquisa;
         private Button button2;
     }

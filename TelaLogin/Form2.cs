@@ -300,6 +300,7 @@ namespace TelaLogin
         private void bntAdd_Click(object sender, EventArgs e)
         {
 
+            
             if (comboProduto.SelectedValue == null ||
                 string.IsNullOrWhiteSpace(txtQtd.Text))
             {
@@ -308,53 +309,85 @@ namespace TelaLogin
             }
 
             int id = Convert.ToInt32(comboProduto.SelectedValue);
+
             string produto = comboProduto.Text;
+
             decimal preco = Convert.ToDecimal(txtPreco.Text);
-            int qtd = Convert.ToInt32(txtQtd.Text);
+
+            int qtdNova = Convert.ToInt32(txtQtd.Text);
+
+            decimal total = preco * qtdNova;
+
+            int estoque = 0;
+
+            // ====================================
+            // BUSCAR ESTOQUE NO BANCO
+            // ====================================
 
             using (MySqlConnection con = new MySqlConnection(conexao))
             {
-                try
+                con.Open();
+
+                string sql = @"
+        SELECT quantidade
+        FROM estoque
+        WHERE id_produtodoestoque = @id";
+
+                MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                cmd.Parameters.AddWithValue("@id", id);
+
+                object resultado = cmd.ExecuteScalar();
+
+                if (resultado != null)
                 {
-                    con.Open();
-
-                    // 🔎 BUSCAR ESTOQUE
-                    string sql = "SELECT quantidade FROM estoque WHERE id_produtodoestoque = @id";
-                    MySqlCommand cmd = new MySqlCommand(sql, con);
-                    cmd.Parameters.AddWithValue("@id", id);
-
-                    object resultado = cmd.ExecuteScalar();
-
-                    if (resultado == null)
-                    {
-                        MessageBox.Show("Produto não encontrado no estoque!");
-                        return;
-                    }
-
-                    int estoqueAtual = Convert.ToInt32(resultado);
-
-                    // 🔥 VALIDAÇÃO
-                    if (qtd > estoqueAtual)
-                    {
-                        MessageBox.Show($"Estoque insuficiente! Disponível: {estoqueAtual}");
-                        return;
-                    }
-
-                    // ✅ SE PASSAR, ADICIONA
-                    decimal total = preco * qtd;
-                    DvgPdv.Rows.Add(id, produto, preco, qtd, total);
-
-                    // limpar campos
-                    txtQtd.Clear();
-                    txtTotal.Clear();
-
-                    AtualizarTotalGeral();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Erro: " + ex.Message);
+                    estoque = Convert.ToInt32(resultado);
                 }
             }
+
+            // ====================================
+            // SOMAR O QUE JÁ TEM NO CARRINHO
+            // ====================================
+
+            int qtdCarrinho = 0;
+
+            foreach (DataGridViewRow row in DvgPdv.Rows)
+            {
+                if (row.Cells["id"].Value != null)
+                {
+                    int idGrid = Convert.ToInt32(row.Cells["id"].Value);
+
+                    if (idGrid == id)
+                    {
+                        qtdCarrinho += Convert.ToInt32(row.Cells["qtd"].Value);
+                    }
+                }
+            }
+
+            // ====================================
+            // VALIDAR ESTOQUE
+            // ====================================
+
+            if (qtdCarrinho + qtdNova > estoque)
+            {
+                MessageBox.Show(
+                    "Estoque insuficiente!\n" +
+                    "Disponível: " + (estoque - qtdCarrinho));
+
+                return;
+            }
+
+            // ====================================
+            // ADICIONAR NO GRID
+            // ====================================
+
+            DvgPdv.Rows.Add(id, produto, preco, qtdNova, total);
+
+            txtQtd.Clear();
+
+            txtTotal.Clear();
+
+            AtualizarTotalGeral();
         }
 
 

@@ -322,7 +322,48 @@ namespace TelaLogin
 
         private void btnAlterar_Click(object sender, EventArgs e)
         {
-           
+
+            
+
+               
+        }
+        private void TxtPreco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+
+            if (!char.IsDigit(e.KeyChar) &&
+                e.KeyChar != (char)8 &&
+                e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            // impede mais de uma vírgula
+            TextBox txt = sender as TextBox;
+
+            if (e.KeyChar == ',' && txt.Text.Contains(","))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            if (dataGridView1.CurrentCell.OwningColumn.Name == "precoproduto")
+            {
+                TextBox txt = e.Control as TextBox;
+
+                if (txt != null)
+                {
+                    txt.KeyPress -= TxtPreco_KeyPress;
+                    txt.KeyPress += TxtPreco_KeyPress;
+                }
+            }
+        }
+
+        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+
             try
             {
                 using (MySqlConnection con = new MySqlConnection(conexao))
@@ -343,10 +384,10 @@ namespace TelaLogin
                             row.Cells["precoproduto"].Value);
 
                         string sql = @"
-                UPDATE produtos
-                SET produto = @produto,
-                    precoproduto = @preco
-                WHERE id_produtos = @id";
+                                UPDATE produtos
+                                SET produto = @produto,
+                                precoproduto = @preco
+                                WHERE id_produtos = @id";
 
                         MySqlCommand cmd = new MySqlCommand(sql, con);
 
@@ -356,7 +397,15 @@ namespace TelaLogin
 
                         cmd.ExecuteNonQuery();
                     }
+                    
+                    string sql1 = "SELECT * FROM produtos";
+                        MySqlCommand cmd1 = new MySqlCommand(sql1, con);
+                        MySqlDataAdapter estoque = new MySqlDataAdapter(cmd1);
+                        DataTable qualquercoisa = new DataTable();
+                        estoque.Fill(qualquercoisa);
+                        dataGridView1.DataSource = qualquercoisa;
                 }
+                        
 
                 MessageBox.Show("Alterações salvas!");
             }
@@ -364,9 +413,14 @@ namespace TelaLogin
             {
                 MessageBox.Show("Erro: " + ex.Message);
             }
+
+            
+               
+            
         }
     }
-    }
+}
+
 
 
 
