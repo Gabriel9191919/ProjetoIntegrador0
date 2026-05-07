@@ -36,6 +36,7 @@
             label2 = new Label();
             btnHome = new Button();
             pictureBox2 = new PictureBox();
+            button2 = new Button();
             btnProdutos = new Button();
             button1 = new Button();
             txtPreco = new TextBox();
@@ -57,7 +58,7 @@
             label10 = new Label();
             LbNom = new Label();
             panel1 = new Panel();
-            button2 = new Button();
+            button3 = new Button();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)DvgPdv).BeginInit();
@@ -68,6 +69,7 @@
             // 
             resources.ApplyResources(Painel_Principal, "Painel_Principal");
             Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(btnEstoque);
             Painel_Principal.Controls.Add(label2);
@@ -109,6 +111,12 @@
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Name = "pictureBox2";
             pictureBox2.TabStop = false;
+            // 
+            // button2
+            // 
+            resources.ApplyResources(button2, "button2");
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = true;
             // 
             // btnProdutos
             // 
@@ -256,11 +264,12 @@
             panel1.Controls.Add(LbNom);
             panel1.Name = "panel1";
             // 
-            // button2
+            // button3
             // 
-            resources.ApplyResources(button2, "button2");
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = true;
+            resources.ApplyResources(button3, "button3");
+            button3.Name = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // PDV
             // 
@@ -332,5 +341,6 @@
         public Label LbNom;
         private Panel panel1;
         private Button button2;
+        private Button button3;
     }
 }

@@ -1,6 +1,7 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Numerics;
 using System.Windows.Forms;
 
 namespace TelaLogin
@@ -30,22 +31,14 @@ namespace TelaLogin
 
             txtPreco.ReadOnly = true;
 
+            DvgPdv.Columns.Clear();
             DvgPdv.Columns.Add("id", "ID");
             DvgPdv.Columns.Add("produto", "Produto");
             DvgPdv.Columns.Add("preco", "Preço");
             DvgPdv.Columns.Add("qtd", "Qtd");
             DvgPdv.Columns.Add("total", "Total");
 
-            comboPagamento.Items.AddRange(new string[]
-{
-                "Dinheiro",
-                "Pix",
-                "Cartão",
-                "Débito",
-                "Crédito"
-                        });
-
-
+            comboPagamento.Items.AddRange(new string[] { "Dinheiro", "Pix", "Cartão", "Débito", "Crédito" });
         }
 
         //  CARREGA PRODUTOS NA COMBOBOX
@@ -56,9 +49,7 @@ namespace TelaLogin
                 using (MySqlConnection con = new MySqlConnection(conexao))
                 {
                     con.Open();
-
                     string sql = "SELECT id_produtos, produto, precoproduto FROM produtos";
-
                     MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
                     DataTable dt = new DataTable();
                     da.Fill(dt);
@@ -68,19 +59,16 @@ namespace TelaLogin
                     comboProduto.ValueMember = "id_produtos";
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Erro ao carregar produtos: " + ex.Message);
-            }
+            catch (Exception ex) { MessageBox.Show("Erro ao carregar produtos: " + ex.Message); }
         }
 
         // 💰 PREÇO AUTOMÁTICO
         private void comboBoxProduto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboProduto.SelectedItem != null)
+            if (comboProduto.SelectedItem is DataRowView row)
             {
-                DataRowView row = comboProduto.SelectedItem as DataRowView;
-                txtPreco.Text = row["precoproduto"].ToString();
+                txtPreco.Text = Convert.ToDecimal(row["precoproduto"]).ToString("F2");
+                txtId.Text = row["id_produtos"].ToString();
             }
         }
 
@@ -162,7 +150,6 @@ namespace TelaLogin
 
         private void btnVender_Click_1(object sender, EventArgs e)
         {
-
             if (DvgPdv.Rows.Count == 0)
             {
                 MessageBox.Show("Adicione produtos na venda!");
@@ -178,89 +165,74 @@ namespace TelaLogin
             using (MySqlConnection con = new MySqlConnection(conexao))
             {
                 con.Open();
+                // 1. MUDANÇA: Iniciamos uma Transação. Se algo der errado nos itens, a Venda também é cancelada.
                 MySqlTransaction trans = con.BeginTransaction();
 
                 try
                 {
+                    // 2. MUDANÇA: Calcular o total da nota percorrendo o Grid
+                    decimal totalGeralDaNota = 0;
                     foreach (DataGridViewRow row in DvgPdv.Rows)
                     {
-                        //  ignora linha vazia
                         if (row.IsNewRow) continue;
-
-                        int id = Convert.ToInt32(row.Cells["id"].Value);
-                        decimal preco = Convert.ToDecimal(row.Cells["preco"].Value);
-                        int qtd = Convert.ToInt32(row.Cells["qtd"].Value);
-                        decimal total = Convert.ToDecimal(row.Cells["total"].Value);
-
-                        //  VERIFICAR ESTOQUE
-                        string check = "SELECT quantidade FROM estoque WHERE id_produtodoestoque = @id";
-                        MySqlCommand cmdCheck = new MySqlCommand(check, con, trans);
-                        cmdCheck.Parameters.AddWithValue("@id", id);
-
-                        object resultado = cmdCheck.ExecuteScalar();
-
-                        if (resultado == null)
-                            throw new Exception("Produto não encontrado no estoque!");
-
-                        int estoqueAtual = Convert.ToInt32(resultado);
-
-                        if (qtd > estoqueAtual)
-                            throw new Exception($"Estoque insuficiente para o produto ID {id}");
-
-                        // 🧾 INSERT NA TABELA PDV
-                        string sql = @"
-                INSERT INTO pdv
-                (id_produtopdv, precopdv, quantidadepdv, formadepagamento, totalpagarpdv)
-                VALUES
-                (@id, @preco, @qtd, @pagamento, @total)";
-
-                        MySqlCommand cmd = new MySqlCommand(sql, con, trans);
-
-                        cmd.Parameters.AddWithValue("@id", id);
-                        cmd.Parameters.AddWithValue("@preco", preco);
-                        cmd.Parameters.AddWithValue("@qtd", qtd);
-                        cmd.Parameters.AddWithValue("@pagamento", comboPagamento.Text);
-                        cmd.Parameters.AddWithValue("@total", total);
-
-                        cmd.ExecuteNonQuery();
-
-                        // 📦 ATUALIZAR ESTOQUE
-                        string update = @"
-                            UPDATE estoque 
-                            SET quantidade = quantidade - @qtd 
-                            WHERE id_produtodoestoque = @id";
-
-                        MySqlCommand cmd2 = new MySqlCommand(update, con, trans);
-
-                        cmd2.Parameters.AddWithValue("@qtd", qtd);
-                        cmd2.Parameters.AddWithValue("@id", id);
-
-                        int linhasAfetadas = cmd2.ExecuteNonQuery();
-
-                        if (linhasAfetadas == 0)
-                            throw new Exception("Erro ao atualizar o estoque!");
+                        totalGeralDaNota += Convert.ToDecimal(row.Cells["total"].Value);
                     }
 
-                    //  CONFIRMA TUDO
+                    // 3. MUDANÇA: Inserir primeiro na tabela MESTRE (vendas)
+                    string sqlVenda = "INSERT INTO vendas (total_venda, forma_pagamento) VALUES (@total, @pagamento)";
+                    MySqlCommand cmdVenda = new MySqlCommand(sqlVenda, con, trans);
+                    cmdVenda.Parameters.AddWithValue("@total", totalGeralDaNota);
+                    cmdVenda.Parameters.AddWithValue("@pagamento", comboPagamento.Text);
+                    cmdVenda.ExecuteNonQuery();
+
+                    // 4. MUDANÇA CHAVE: Capturar o ID da venda que o MySQL acabou de gerar
+                    long idVendaGerada = cmdVenda.LastInsertedId;
+
+                    // 5. MUDANÇA: Agora percorremos o Grid para salvar cada item vinculado a esse ID
+                    foreach (DataGridViewRow row in DvgPdv.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        int idProd = Convert.ToInt32(row.Cells["id"].Value);
+                        decimal precoUnit = Convert.ToDecimal(row.Cells["preco"].Value);
+                        int qtd = Convert.ToInt32(row.Cells["qtd"].Value);
+
+                        // Inserir na tabela DETALHE (itens_venda)
+                        string sqlItens = @"INSERT INTO itens_venda (id_venda, id_produto, quantidade, preco_unitario_venda) 
+                                            VALUES (@idVenda, @idProd, @qtd, @preco)";
+
+                        MySqlCommand cmdItens = new MySqlCommand(sqlItens, con, trans);
+                        cmdItens.Parameters.AddWithValue("@idVenda", idVendaGerada); // <-- O vínculo da nota
+                        cmdItens.Parameters.AddWithValue("@idProd", idProd);
+                        cmdItens.Parameters.AddWithValue("@qtd", qtd);
+                        cmdItens.Parameters.AddWithValue("@preco", precoUnit);
+                        cmdItens.ExecuteNonQuery();
+
+                        // 6. MUDANÇA: Baixar o estoque aqui dentro do loop
+                        string updateEstoque = "UPDATE estoque SET quantidade = quantidade - @qtd WHERE id_produtodoestoque = @idProd";
+                        MySqlCommand cmdEstoque = new MySqlCommand(updateEstoque, con, trans);
+                        cmdEstoque.Parameters.AddWithValue("@qtd", qtd);
+                        cmdEstoque.Parameters.AddWithValue("@idProd", idProd);
+                        cmdEstoque.ExecuteNonQuery();
+                    }
+
+                    // Se tudo correu bem até aqui, confirma no Banco de Dados
                     trans.Commit();
+                    MessageBox.Show($"Venda #{idVendaGerada} (Nota Fiscal) registrada com sucesso!");
 
-                    MessageBox.Show("Venda finalizada com sucesso!");
-
-                    //  limpar tela
+                    // Limpar interface
                     DvgPdv.Rows.Clear();
-                    txtTotal.Clear();
+                    txtTotal.Text = "Total: R$ 0,00";
                     txtQtd.Clear();
-                    txtPreco.Clear();
                 }
                 catch (Exception ex)
                 {
-
+                    // Se der qualquer erro (ex: falta de estoque de um item), desfaz tudo
                     trans.Rollback();
-                    MessageBox.Show("Erro na venda: " + ex.Message);
+                    MessageBox.Show("Erro ao processar venda: " + ex.Message);
                 }
             }
         }
-
 
         private void btnHome_Click(object sender, EventArgs e)
         {
@@ -299,110 +271,82 @@ namespace TelaLogin
 
         private void bntAdd_Click(object sender, EventArgs e)
         {
-
-            
-            if (comboProduto.SelectedValue == null ||
-                string.IsNullOrWhiteSpace(txtQtd.Text))
+            // 1. VALIDAÇÃO INICIAL: Verifica se os campos básicos estão preenchidos
+            if (comboProduto.SelectedValue == null || string.IsNullOrWhiteSpace(txtQtd.Text))
             {
-                MessageBox.Show("Preencha os campos!");
+                MessageBox.Show("Por favor, selecione um produto e informe a quantidade!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
-            int id = Convert.ToInt32(comboProduto.SelectedValue);
-
-            string produto = comboProduto.Text;
-
-            decimal preco = Convert.ToDecimal(txtPreco.Text);
-
-            int qtdNova = Convert.ToInt32(txtQtd.Text);
-
-            decimal total = preco * qtdNova;
-
-            int estoque = 0;
-
-            // ====================================
-            // BUSCAR ESTOQUE NO BANCO
-            // ====================================
-
-            using (MySqlConnection con = new MySqlConnection(conexao))
+            try
             {
-                con.Open();
+                // 2. CAPTURA DE DADOS: Coleta as informações dos controles
+                int idProduto = Convert.ToInt32(comboProduto.SelectedValue);
+                string nomeProduto = comboProduto.Text;
+                decimal precoUnitario = Convert.ToDecimal(txtPreco.Text);
+                int quantidadeSolicitada = Convert.ToInt32(txtQtd.Text);
+                int estoqueDisponivelNoBanco = 0;
 
-                string sql = @"
-        SELECT quantidade
-        FROM estoque
-        WHERE id_produtodoestoque = @id";
-
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-
-                cmd.Parameters.AddWithValue("@id", id);
-
-                object resultado = cmd.ExecuteScalar();
-
-                if (resultado != null)
+                // 3. CONSULTA AO BANCO: Verifica a quantidade real disponível no estoque agora
+                using (MySqlConnection con = new MySqlConnection(conexao))
                 {
-                    estoque = Convert.ToInt32(resultado);
-                }
-            }
+                    con.Open();
+                    string sqlEstoque = "SELECT quantidade FROM estoque WHERE id_produtodoestoque = @id";
+                    MySqlCommand cmd = new MySqlCommand(sqlEstoque, con);
+                    cmd.Parameters.AddWithValue("@id", idProduto);
 
-            // ====================================
-            // SOMAR O QUE JÁ TEM NO CARRINHO
-            // ====================================
-
-            int qtdCarrinho = 0;
-
-            foreach (DataGridViewRow row in DvgPdv.Rows)
-            {
-                if (row.Cells["id"].Value != null)
-                {
-                    int idGrid = Convert.ToInt32(row.Cells["id"].Value);
-
-                    if (idGrid == id)
+                    object resultado = cmd.ExecuteScalar();
+                    if (resultado != null)
                     {
-                        qtdCarrinho += Convert.ToInt32(row.Cells["qtd"].Value);
+                        estoqueDisponivelNoBanco = Convert.ToInt32(resultado);
                     }
                 }
+
+                // 4. VERIFICAÇÃO DO CARRINHO (GRID): Soma o que já foi adicionado na tela
+                int quantidadeJaNoCarrinho = 0;
+                foreach (DataGridViewRow row in DvgPdv.Rows)
+                {
+                    if (row.Cells["id"].Value != null && Convert.ToInt32(row.Cells["id"].Value) == idProduto)
+                    {
+                        quantidadeJaNoCarrinho += Convert.ToInt32(row.Cells["qtd"].Value);
+                    }
+                }
+
+                // 5. VALIDAÇÃO FINAL DE ESTOQUE: Bloqueia se a soma (Carrinho + Novo) for maior que o Banco
+                if (quantidadeJaNoCarrinho + quantidadeSolicitada > estoqueDisponivelNoBanco)
+                {
+                    int saldoReal = estoqueDisponivelNoBanco - quantidadeJaNoCarrinho;
+                    MessageBox.Show($"Estoque insuficiente!\n\nDisponível no sistema: {estoqueDisponivelNoBanco}\nJá no carrinho: {quantidadeJaNoCarrinho}\nSaldo para adicionar: {saldoReal}",
+                                    "Estoque Baixo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+
+                // 6. ADIÇÃO AO DATAGRIDVIEW: Calcula o total do item e joga na lista
+                decimal totalItem = precoUnitario * quantidadeSolicitada;
+                DvgPdv.Rows.Add(idProduto, nomeProduto, precoUnitario, quantidadeSolicitada, totalItem);
+
+                // 7. ATUALIZAÇÃO DA INTERFACE: Limpa campos e atualiza o total da nota
+                txtQtd.Clear();
+                txtTotal.Clear(); // Limpa o subtotal da caixa de texto se houver
+                AtualizarTotalGeral(); // Chama sua função que soma a coluna 'total' do Grid
+
+                comboProduto.Focus(); // Volta o foco para facilitar a próxima venda
             }
-
-            // ====================================
-            // VALIDAR ESTOQUE
-            // ====================================
-
-            if (qtdCarrinho + qtdNova > estoque)
+            catch (Exception ex)
             {
-                MessageBox.Show(
-                    "Estoque insuficiente!\n" +
-                    "Disponível: " + (estoque - qtdCarrinho));
-
-                return;
+                MessageBox.Show("Erro ao adicionar produto: " + ex.Message, "Erro técnico", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            // ====================================
-            // ADICIONAR NO GRID
-            // ====================================
-
-            DvgPdv.Rows.Add(id, produto, preco, qtdNova, total);
-
-            txtQtd.Clear();
-
-            txtTotal.Clear();
-
-            AtualizarTotalGeral();
         }
 
 
         private void AtualizarTotalGeral()
         {
             decimal total = 0;
-
             foreach (DataGridViewRow row in DvgPdv.Rows)
             {
                 if (row.Cells["total"].Value != null)
-                {
                     total += Convert.ToDecimal(row.Cells["total"].Value);
-                }
             }
-
             txtTotal.Text = "Total: R$ " + total.ToString("F2");
         }
 
@@ -413,7 +357,11 @@ namespace TelaLogin
 
         private void comboPagamento_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboProduto.SelectedItem is DataRowView row)
+            {
+                txtPreco.Text = Convert.ToDecimal(row["precoproduto"]).ToString("F2");
+                txtId.Text = row["id_produtos"].ToString();
+            }
         }
         protected override void OnMouseMove(MouseEventArgs e)
         {
@@ -433,6 +381,13 @@ namespace TelaLogin
             estoque.ShowDialog();
             this.Close();
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form5 telarela = new Form5();
+            telarela.ShowDialog();
+            this.Close();
         }
     }
 }
