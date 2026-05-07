@@ -29,6 +29,7 @@ namespace TelaLogin
         private void TelaEstoque_Load(object sender, EventArgs e)
         {
             SessaoTimer.Iniciar(this);
+            dataGridView1.Columns["id_produtos"].ReadOnly = true;
 
             conectar conectar = new conectar();
             MySqlConnection con = conectar.conectando();
@@ -232,7 +233,7 @@ namespace TelaLogin
             if (dataGridView1.CurrentRow != null && !dataGridView1.CurrentRow.IsNewRow)
             {
                 DialogResult resultado = MessageBox.Show(
-                    "Tem certeza que deseja excluir este produto?",
+                    "Deseja remover este item do estoque?",
                     "Confirmação",
                     MessageBoxButtons.YesNo,
                     MessageBoxIcon.Warning
@@ -242,7 +243,7 @@ namespace TelaLogin
                 {
                     try
                     {
-                        int idSelecionado = Convert.ToInt32(
+                        int idproduto = Convert.ToInt32(
                             dataGridView1.CurrentRow.Cells["id_produtos"].Value
                         );
 
@@ -250,21 +251,16 @@ namespace TelaLogin
                         {
                             con.Open();
 
-                            string sqlDelete = "DELETE FROM produtos WHERE id_produtos = @id";
-
-                            MySqlCommand cmd = new MySqlCommand(sqlDelete, con);
-                            cmd.Parameters.AddWithValue("@id", idSelecionado);
+                            string sql = "DELETE FROM produtos WHERE id_produtos = @id";
+                            MySqlCommand cmd = new MySqlCommand(sql, con);
+                            cmd.Parameters.AddWithValue("@id", idproduto);
 
                             int linhas = cmd.ExecuteNonQuery();
 
                             if (linhas > 0)
-                            {
-                                MessageBox.Show("Produto excluído com sucesso!");
-                            }
+                                MessageBox.Show("Item removido do estoque!");
                             else
-                            {
-                                MessageBox.Show("Nenhum produto foi excluído.");
-                            }
+                                MessageBox.Show("Nada foi removido (id não encontrado).");
                         }
                     }
                     catch (Exception ex)
@@ -277,15 +273,25 @@ namespace TelaLogin
                         at.updategridProdutos();
                     }
                 }
-                else
-            {
-                MessageBox.Show("Selecione um produto para excluir.");
 
-            }
+                else
+                {
+                    MessageBox.Show("Selecione um produto para excluir.");
+
+                }
             }
         }
-            
-        
+
+
+
+
+
+
+
+
+
+
+
 
         private void txtPesquisa_TextChanged_1(object sender, EventArgs e)
         {
@@ -313,8 +319,55 @@ namespace TelaLogin
             this.Close();
 
         }
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {
+           
+            try
+            {
+                using (MySqlConnection con = new MySqlConnection(conexao))
+                {
+                    con.Open();
+
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
+                    {
+                        if (row.IsNewRow) continue;
+
+                        int id = Convert.ToInt32(
+                            row.Cells["id_produtos"].Value);
+
+                        string produto =
+                            row.Cells["produto"].Value.ToString();
+
+                        decimal preco = Convert.ToDecimal(
+                            row.Cells["precoproduto"].Value);
+
+                        string sql = @"
+                UPDATE produtos
+                SET produto = @produto,
+                    precoproduto = @preco
+                WHERE id_produtos = @id";
+
+                        MySqlCommand cmd = new MySqlCommand(sql, con);
+
+                        cmd.Parameters.AddWithValue("@produto", produto);
+                        cmd.Parameters.AddWithValue("@preco", preco);
+                        cmd.Parameters.AddWithValue("@id", id);
+
+                        cmd.ExecuteNonQuery();
+                    }
+                }
+
+                MessageBox.Show("Alterações salvas!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+        }
     }
-}
+    }
+
 
 
 

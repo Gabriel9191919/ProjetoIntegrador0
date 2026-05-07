@@ -49,7 +49,7 @@
             panel1 = new Panel();
             LbNome = new Label();
             btnAdd = new RButton();
-            btndeletep = new RButton();
+            btnAlterar = new RButton();
             txtPesquisa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -63,7 +63,6 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(646, 434);
             dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
             dataGridView1.Size = new Size(594, 369);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
@@ -271,26 +270,26 @@
             btnAdd.UseVisualStyleBackColor = false;
             btnAdd.Click += btnAdd_Click;
             // 
-            // btndeletep
+            // btnAlterar
             // 
-            btndeletep.Anchor = AnchorStyles.None;
-            btndeletep.BackColor = Color.Gold;
-            btndeletep.BackgroundColor = Color.Gold;
-            btndeletep.BorderColor = Color.PaleVioletRed;
-            btndeletep.BorderRadius = 20;
-            btndeletep.BorderSize = 0;
-            btndeletep.Cursor = Cursors.Hand;
-            btndeletep.FlatAppearance.BorderSize = 0;
-            btndeletep.FlatStyle = FlatStyle.Flat;
-            btndeletep.ForeColor = SystemColors.ActiveCaptionText;
-            btndeletep.Location = new Point(829, 388);
-            btndeletep.Name = "btndeletep";
-            btndeletep.Size = new Size(164, 40);
-            btndeletep.TabIndex = 51;
-            btndeletep.Text = "Excluir";
-            btndeletep.TextColor = SystemColors.ActiveCaptionText;
-            btndeletep.UseVisualStyleBackColor = false;
-            btndeletep.Click += btndeletep_Click;
+            btnAlterar.Anchor = AnchorStyles.None;
+            btnAlterar.BackColor = Color.Gold;
+            btnAlterar.BackgroundColor = Color.Gold;
+            btnAlterar.BorderColor = Color.PaleVioletRed;
+            btnAlterar.BorderRadius = 20;
+            btnAlterar.BorderSize = 0;
+            btnAlterar.Cursor = Cursors.Hand;
+            btnAlterar.FlatAppearance.BorderSize = 0;
+            btnAlterar.FlatStyle = FlatStyle.Flat;
+            btnAlterar.ForeColor = SystemColors.ActiveCaptionText;
+            btnAlterar.Location = new Point(829, 388);
+            btnAlterar.Name = "btnAlterar";
+            btnAlterar.Size = new Size(164, 40);
+            btnAlterar.TabIndex = 51;
+            btnAlterar.Text = "Salvar Alterações";
+            btnAlterar.TextColor = SystemColors.ActiveCaptionText;
+            btnAlterar.UseVisualStyleBackColor = false;
+            btnAlterar.Click += btnAlterar_Click;
             // 
             // txtPesquisa
             // 
@@ -310,7 +309,7 @@
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
             Controls.Add(txtPesquisa);
-            Controls.Add(btndeletep);
+            Controls.Add(btnAlterar);
             Controls.Add(lbRelogio);
             Controls.Add(btnAdd);
             Controls.Add(Painel_Principal);
@@ -353,7 +352,7 @@
         private Panel panel1;
         public Label LbNome;
         private RButton btnAdd;
-        private RButton btndeletep;
+        private RButton btnAlterar;
         private TextBox txtPesquisa;
         private Button button2;
     }
