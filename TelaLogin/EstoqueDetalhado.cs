@@ -20,6 +20,8 @@ namespace TelaLogin
             AtualizarRelogio();
             CarregarEstoque();
             SessaoTimer.Iniciar(this);
+            EstilizarGrid();
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -76,7 +78,8 @@ namespace TelaLogin
 
             telaadd.ShowDialog();
 
-            CarregarEstoque(); // 🔄 atualiza grid
+            CarregarEstoque();
+            
         }
 
         // ❌ DELETAR CORRIGIDO
@@ -190,5 +193,107 @@ namespace TelaLogin
             estoque.ShowDialog();
             this.Close();
         }
+        private void EstilizarGrid()
+        {
+            // ====================================
+            // APARÊNCIA GERAL
+            // ====================================
+
+            dvgEstoque.BorderStyle = BorderStyle.None;
+
+            dvgEstoque.BackgroundColor = Color.Black;
+
+            dvgEstoque.EnableHeadersVisualStyles = false;
+
+            dvgEstoque.RowHeadersVisible = false;
+
+            dvgEstoque.AllowUserToAddRows = false;
+
+            dvgEstoque.AllowUserToResizeRows = false;
+
+            dvgEstoque.MultiSelect = false;
+
+            dvgEstoque.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            // ====================================
+            // CABEÇALHO
+            // ====================================
+
+            dvgEstoque.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dvgEstoque.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.Black;
+
+            dvgEstoque.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dvgEstoque.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dvgEstoque.ColumnHeadersHeight = 35;
+
+            // ====================================
+            // LINHAS
+            // ====================================
+
+            dvgEstoque.DefaultCellStyle.BackColor =
+                Color.Black;
+
+            dvgEstoque.DefaultCellStyle.ForeColor =
+                Color.White;
+
+            dvgEstoque.DefaultCellStyle.Font =
+                new Font("Segoe UI", 10);
+
+            // ====================================
+            // SELEÇÃO
+            // ====================================
+
+            dvgEstoque.DefaultCellStyle.SelectionBackColor =
+                Color.White;
+
+            dvgEstoque.DefaultCellStyle.SelectionForeColor =
+                Color.Black;
+
+            // ====================================
+            // GRID
+            // ====================================
+
+            dvgEstoque.GridColor = Color.DimGray;
+
+            // ====================================
+            // LINHAS ALTERNADAS
+            // ====================================
+
+            dvgEstoque.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(20, 20, 20);
+
+            // ====================================
+            // AUTO AJUSTE
+            // ====================================
+
+            dvgEstoque.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            // ====================================
+            // ALTURA DAS LINHAS
+            // ====================================
+
+            dvgEstoque.RowTemplate.Height = 30;
+
+            // ====================================
+            // TIRAR FOCO AZUL
+            // ====================================
+
+            dvgEstoque.DefaultCellStyle.SelectionBackColor =
+                Color.White;
+
+            dvgEstoque.DefaultCellStyle.SelectionForeColor =
+                Color.Black;
+        }
+
+
     }
 }

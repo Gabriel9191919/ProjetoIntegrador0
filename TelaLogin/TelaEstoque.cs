@@ -45,6 +45,7 @@ namespace TelaLogin
                 dataGridView1.DataSource = qualquercoisa;
             }
             catch { }
+            EstilizarGrid();
 
         }
 
@@ -417,6 +418,106 @@ namespace TelaLogin
             
                
             
+        }
+        private void EstilizarGrid()
+        {
+            // ====================================
+            // APARÊNCIA GERAL
+            // ====================================
+
+            dataGridView1.BorderStyle = BorderStyle.None;
+
+            dataGridView1.BackgroundColor = Color.Black;
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.RowHeadersVisible = false;
+
+            dataGridView1.AllowUserToAddRows = false;
+
+            dataGridView1.AllowUserToResizeRows = false;
+
+            dataGridView1.MultiSelect = false;
+
+            dataGridView1.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            // ====================================
+            // CABEÇALHO
+            // ====================================
+
+            dataGridView1.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.Black;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dataGridView1.ColumnHeadersHeight = 35;
+
+            // ====================================
+            // LINHAS
+            // ====================================
+
+            dataGridView1.DefaultCellStyle.BackColor =
+                Color.Black;
+
+            dataGridView1.DefaultCellStyle.ForeColor =
+                Color.White;
+
+            dataGridView1.DefaultCellStyle.Font =
+                new Font("Segoe UI", 10);
+
+            // ====================================
+            // SELEÇÃO
+            // ====================================
+
+            dataGridView1.DefaultCellStyle.SelectionBackColor =
+                Color.White;
+
+            dataGridView1.DefaultCellStyle.SelectionForeColor =
+                Color.Black;
+
+            // ====================================
+            // GRID
+            // ====================================
+
+            dataGridView1.GridColor = Color.DimGray;
+
+            // ====================================
+            // LINHAS ALTERNADAS
+            // ====================================
+
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(20, 20, 20);
+
+            // ====================================
+            // AUTO AJUSTE
+            // ====================================
+
+            dataGridView1.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            // ====================================
+            // ALTURA DAS LINHAS
+            // ====================================
+
+            dataGridView1.RowTemplate.Height = 30;
+
+            // ====================================
+            // TIRAR FOCO AZUL
+            // ====================================
+
+            dataGridView1.DefaultCellStyle.SelectionBackColor =
+                Color.White;
+
+            dataGridView1.DefaultCellStyle.SelectionForeColor =
+                Color.Black;
         }
     }
 }
