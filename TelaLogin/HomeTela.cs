@@ -14,7 +14,7 @@ namespace TelaLogin
     public partial class HomeTela : Form
     {
 
-
+        bool darkMode = false;
         private string nomeUsuario;
         public HomeTela()
         {
@@ -33,6 +33,9 @@ namespace TelaLogin
 
             lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
                    "   🕒 " + DateTime.Now.ToString("HH:mm:ss");
+
+
+
 
         }
 
@@ -268,6 +271,104 @@ namespace TelaLogin
             this.Close();
 
         }
-    }
 
+        private void panel12_Click(object sender, EventArgs e)
+        {
+            timerToggle.Start();
+
+        }
+
+        private void timerToggle_Tick(object sender, EventArgs e)
+        {
+             if (!darkMode)
+            {
+                btnModo.Left += 2;
+
+                if (btnModo.Left >= 33)
+                {
+                    timerToggle.Stop();
+
+                    darkMode = true;
+
+                    panel12.BackColor = Color.MediumSlateBlue;
+
+                    AtivarDarkMode();
+                }
+            }
+            else
+            {
+                btnModo.Left -= 2;
+
+                if (btnModo.Left <= 2)
+                {
+                    timerToggle.Stop();
+
+                    darkMode = false;
+
+                    panel12.BackColor = Color.Gray;
+
+                    AtivarLightMode();
+                }
+            
+            }
+
+            }
+        private void AtivarDarkMode()
+        {
+            this.BackColor = SystemColors.ControlText;
+
+            foreach (Control c in Painel_Principal.Controls)
+            {
+                if (c is Button)
+                {
+                    Button btn = (Button)c;
+
+                    btn.UseVisualStyleBackColor = false;
+
+                    btn.FlatStyle = FlatStyle.Flat;
+
+                    btn.FlatAppearance.BorderSize = 0;
+
+                    btn.BackColor = Color.FromArgb(45, 45, 48);
+
+                    btn.ForeColor = Color.White;
+
+                    btn.FlatAppearance.MouseOverBackColor =
+                        Color.FromArgb(70, 70, 70);
+
+                    btn.Cursor = Cursors.Hand;
+
+                }
+            }
+        }
+        private void AtivarLightMode()
+        {
+            this.BackColor = SystemColors.ControlDarkDark;
+            
+            foreach (Control c in Painel_Principal.Controls)
+            {
+                if (c is Button)
+                {
+                    Button btn = (Button)c;
+
+                    btn.UseVisualStyleBackColor = false;
+
+                    btn.FlatStyle = FlatStyle.Flat;
+
+                    btn.FlatAppearance.BorderSize = 0;
+
+                    btn.BackColor = SystemColors.Control;
+
+                    btn.ForeColor = Color.Black;
+
+                    btn.FlatAppearance.MouseOverBackColor =
+                        Color.LightGray;
+
+                    btn.Cursor = Cursors.Hand;
+                }
+            }
+        }
+    }
 }
+
+

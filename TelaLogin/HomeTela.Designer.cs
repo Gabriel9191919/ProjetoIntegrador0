@@ -31,17 +31,19 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTela));
             Painel_Principal = new Panel();
+            panel12 = new Panel();
+            btnModo = new Button();
             pictureBox2 = new PictureBox();
             label3 = new Label();
             BtnTrocarSessao = new Button();
             button5 = new Button();
             label2 = new Label();
             button4 = new Button();
+            button2 = new Button();
             btnProdutos = new Button();
             panel1 = new Panel();
             LbNome = new Label();
             lbRelogio = new Label();
-            contextMenuStrip1 = new ContextMenuStrip(components);
             label4 = new Label();
             label5 = new Label();
             label7 = new Label();
@@ -66,8 +68,9 @@
             label10 = new Label();
             panel11 = new Panel();
             label11 = new Label();
-            button2 = new Button();
+            timerToggle = new System.Windows.Forms.Timer(components);
             Painel_Principal.SuspendLayout();
+            panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
@@ -84,6 +87,7 @@
             // Painel_Principal
             // 
             Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.Controls.Add(panel12);
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(BtnTrocarSessao);
@@ -94,6 +98,20 @@
             Painel_Principal.Controls.Add(btnProdutos);
             resources.ApplyResources(Painel_Principal, "Painel_Principal");
             Painel_Principal.Name = "Painel_Principal";
+            // 
+            // panel12
+            // 
+            panel12.BackColor = Color.Gray;
+            panel12.Controls.Add(btnModo);
+            resources.ApplyResources(panel12, "panel12");
+            panel12.Name = "panel12";
+            panel12.Click += panel12_Click;
+            // 
+            // btnModo
+            // 
+            resources.ApplyResources(btnModo, "btnModo");
+            btnModo.Name = "btnModo";
+            btnModo.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -120,6 +138,7 @@
             // 
             // button5
             // 
+            button5.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(button5, "button5");
             button5.Name = "button5";
             button5.UseVisualStyleBackColor = true;
@@ -133,13 +152,23 @@
             // 
             // button4
             // 
+            button4.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(button4, "button4");
             button4.Name = "button4";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
             // 
+            // button2
+            // 
+            button2.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(button2, "button2");
+            button2.Name = "button2";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button6_Click;
+            // 
             // btnProdutos
             // 
+            btnProdutos.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(btnProdutos, "btnProdutos");
             btnProdutos.Name = "btnProdutos";
             btnProdutos.UseVisualStyleBackColor = true;
@@ -166,11 +195,6 @@
             resources.ApplyResources(lbRelogio, "lbRelogio");
             lbRelogio.ForeColor = SystemColors.ActiveCaptionText;
             lbRelogio.Name = "lbRelogio";
-            // 
-            // contextMenuStrip1
-            // 
-            contextMenuStrip1.Name = "contextMenuStrip1";
-            resources.ApplyResources(contextMenuStrip1, "contextMenuStrip1");
             // 
             // label4
             // 
@@ -344,12 +368,10 @@
             label11.ForeColor = SystemColors.ActiveCaptionText;
             label11.Name = "label11";
             // 
-            // button2
+            // timerToggle
             // 
-            resources.ApplyResources(button2, "button2");
-            button2.Name = "button2";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button6_Click;
+            timerToggle.Interval = 10;
+            timerToggle.Tick += timerToggle_Tick;
             // 
             // HomeTela
             // 
@@ -375,6 +397,7 @@
             Load += HomeTela_Load;
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
+            panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
@@ -408,7 +431,6 @@
         private Button button4;
         private PictureBox pictureBox2;
         private Button btnProdutos;
-        private ContextMenuStrip contextMenuStrip1;
         private Label label4;
         private Label label5;
         private Label label7;
@@ -438,5 +460,8 @@
         private Panel panel11;
         private Label label11;
         private Button button2;
+        private Panel panel12;
+        private Button btnModo;
+        private System.Windows.Forms.Timer timerToggle;
     }
 }
