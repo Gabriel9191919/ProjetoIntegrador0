@@ -83,7 +83,7 @@ namespace TelaLogin
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         public void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -335,9 +335,9 @@ namespace TelaLogin
         private void btnAlterar_Click(object sender, EventArgs e)
         {
 
-            
 
-               
+
+
         }
         private void TxtPreco_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -409,15 +409,15 @@ namespace TelaLogin
 
                         cmd.ExecuteNonQuery();
                     }
-                    
+
                     string sql1 = "SELECT * FROM produtos";
-                        MySqlCommand cmd1 = new MySqlCommand(sql1, con);
-                        MySqlDataAdapter estoque = new MySqlDataAdapter(cmd1);
-                        DataTable qualquercoisa = new DataTable();
-                        estoque.Fill(qualquercoisa);
-                        dataGridView1.DataSource = qualquercoisa;
+                    MySqlCommand cmd1 = new MySqlCommand(sql1, con);
+                    MySqlDataAdapter estoque = new MySqlDataAdapter(cmd1);
+                    DataTable qualquercoisa = new DataTable();
+                    estoque.Fill(qualquercoisa);
+                    dataGridView1.DataSource = qualquercoisa;
                 }
-                        
+
 
                 MessageBox.Show("Alterações salvas!");
             }
@@ -426,9 +426,9 @@ namespace TelaLogin
                 MessageBox.Show("Erro: " + ex.Message);
             }
 
-            
-               
-            
+
+
+
         }
         private void EstilizarGrid()
         {
@@ -529,6 +529,13 @@ namespace TelaLogin
 
             dataGridView1.DefaultCellStyle.SelectionForeColor =
                 Color.Black;
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form5 telarela = new Form5();
+            telarela.ShowDialog();
+            this.Close();
         }
     }
 }

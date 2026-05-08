@@ -46,12 +46,13 @@
             button1 = new Button();
             btnProdutos = new Button();
             panel1 = new Panel();
+            Lbpresent = new Label();
             button9 = new Button();
             lbRelogio = new Label();
             label4 = new Label();
             btnSair = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            Lbpresent = new Label();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dvgEstoque).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
@@ -158,6 +159,7 @@
             // Painel_Principal
             // 
             Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(btnEstoque);
             Painel_Principal.Controls.Add(label2);
@@ -261,6 +263,16 @@
             panel1.Size = new Size(1925, 151);
             panel1.TabIndex = 52;
             // 
+            // Lbpresent
+            // 
+            Lbpresent.AutoSize = true;
+            Lbpresent.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
+            Lbpresent.ImeMode = ImeMode.NoControl;
+            Lbpresent.Location = new Point(131, 45);
+            Lbpresent.Name = "Lbpresent";
+            Lbpresent.Size = new Size(0, 40);
+            Lbpresent.TabIndex = 56;
+            // 
             // button9
             // 
             button9.BackColor = Color.Gold;
@@ -318,15 +330,17 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
-            // Lbpresent
+            // button3
             // 
-            Lbpresent.AutoSize = true;
-            Lbpresent.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
-            Lbpresent.ImeMode = ImeMode.NoControl;
-            Lbpresent.Location = new Point(131, 45);
-            Lbpresent.Name = "Lbpresent";
-            Lbpresent.Size = new Size(0, 40);
-            Lbpresent.TabIndex = 56;
+            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button3.ImeMode = ImeMode.NoControl;
+            button3.Location = new Point(0, 746);
+            button3.Name = "button3";
+            button3.Size = new Size(184, 95);
+            button3.TabIndex = 53;
+            button3.Text = "Relatório";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // EstoqueDetalhado
             // 
@@ -384,5 +398,6 @@
         private Button button9;
         private Button button1;
         public Label Lbpresent;
+        private Button button3;
     }
 }

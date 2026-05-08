@@ -88,7 +88,7 @@ namespace TelaLogin
             telaadd.ShowDialog();
 
             CarregarEstoque();
-            
+
         }
 
         // ❌ DELETAR CORRIGIDO
@@ -182,7 +182,7 @@ namespace TelaLogin
 
         private void button9_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
         protected override void OnMouseMove(MouseEventArgs e)
         {
@@ -303,6 +303,11 @@ namespace TelaLogin
                 Color.Black;
         }
 
-
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form5 telarela = new Form5();
+            telarela.ShowDialog();
+            this.Close();
+        }
     }
 }

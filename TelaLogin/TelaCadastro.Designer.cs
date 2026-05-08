@@ -40,6 +40,7 @@
             rButton1 = new RButton();
             label1 = new Label();
             pictureBox5 = new PictureBox();
+            button9 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
@@ -185,12 +186,27 @@
             pictureBox5.TabIndex = 24;
             pictureBox5.TabStop = false;
             // 
+            // button9
+            // 
+            button9.BackColor = Color.DimGray;
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button9.ForeColor = Color.Red;
+            button9.Location = new Point(1852, 12);
+            button9.Name = "button9";
+            button9.Size = new Size(56, 29);
+            button9.TabIndex = 26;
+            button9.Text = "SAIR";
+            button9.UseVisualStyleBackColor = false;
+            // 
             // TelaCadastro
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(button9);
             Controls.Add(label1);
             Controls.Add(pictureBox5);
             Controls.Add(rButton1);
@@ -228,5 +244,6 @@
         private RButton rButton1;
         private Label label1;
         private PictureBox pictureBox5;
+        private Button button9;
     }
 }

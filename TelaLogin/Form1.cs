@@ -155,7 +155,7 @@ namespace TelaLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void btnCadastrar_Click(object sender, EventArgs e)

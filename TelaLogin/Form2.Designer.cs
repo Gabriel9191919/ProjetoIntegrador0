@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PDV));
             Painel_Principal = new Panel();
+            button3 = new Button();
             label3 = new Label();
             btnEstoque = new Button();
             label2 = new Label();
@@ -48,7 +49,7 @@
             label8 = new Label();
             txtTotal = new TextBox();
             btnVender = new RButton();
-            DvgPdv = new DataGridView();
+            dataGridView1 = new DataGridView();
             bntAdd = new RButton();
             comboProduto = new ComboBox();
             label9 = new Label();
@@ -58,10 +59,9 @@
             label10 = new Label();
             LbNom = new Label();
             panel1 = new Panel();
-            button3 = new Button();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)DvgPdv).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -78,6 +78,13 @@
             Painel_Principal.Controls.Add(button2);
             Painel_Principal.Controls.Add(btnProdutos);
             Painel_Principal.Name = "Painel_Principal";
+            // 
+            // button3
+            // 
+            resources.ApplyResources(button3, "button3");
+            button3.Name = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label3
             // 
@@ -194,11 +201,12 @@
             btnVender.UseVisualStyleBackColor = false;
             btnVender.Click += btnVender_Click_1;
             // 
-            // DvgPdv
+            // dataGridView1
             // 
-            resources.ApplyResources(DvgPdv, "DvgPdv");
-            DvgPdv.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            DvgPdv.Name = "DvgPdv";
+            resources.ApplyResources(dataGridView1, "dataGridView1");
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.CellContentClick += DvgPdv_CellContentClick;
             // 
             // bntAdd
             // 
@@ -264,13 +272,6 @@
             panel1.Controls.Add(LbNom);
             panel1.Name = "panel1";
             // 
-            // button3
-            // 
-            resources.ApplyResources(button3, "button3");
-            button3.Name = "button3";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
             // PDV
             // 
             resources.ApplyResources(this, "$this");
@@ -282,7 +283,7 @@
             Controls.Add(label9);
             Controls.Add(comboProduto);
             Controls.Add(bntAdd);
-            Controls.Add(DvgPdv);
+            Controls.Add(dataGridView1);
             Controls.Add(btnVender);
             Controls.Add(txtTotal);
             Controls.Add(label8);
@@ -302,7 +303,7 @@
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)DvgPdv).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -329,7 +330,7 @@
         private Label label8;
         private TextBox txtTotal;
         private RButton btnVender;
-        private DataGridView DvgPdv;
+        private DataGridView dataGridView1;
         private RButton bntAdd;
         private ComboBox comboProduto;
         private Label label9;

@@ -26,6 +26,7 @@ namespace TelaLogin
                            "   🕒 " + DateTime.Now.ToString("HH:mm:ss");
 
             LbNom.Text = Sessao.Usuario + " está realizando uma venda";
+            EstilizarGrid();
 
         }
 
@@ -40,12 +41,12 @@ namespace TelaLogin
 
             txtPreco.ReadOnly = true;
 
-            DvgPdv.Columns.Clear();
-            DvgPdv.Columns.Add("id", "ID");
-            DvgPdv.Columns.Add("produto", "Produto");
-            DvgPdv.Columns.Add("preco", "Preço");
-            DvgPdv.Columns.Add("qtd", "Qtd");
-            DvgPdv.Columns.Add("total", "Total");
+            dataGridView1.Columns.Clear();
+            dataGridView1.Columns.Add("id", "ID");
+            dataGridView1.Columns.Add("produto", "Produto");
+            dataGridView1.Columns.Add("preco", "Preço");
+            dataGridView1.Columns.Add("qtd", "Qtd");
+            dataGridView1.Columns.Add("total", "Total");
 
             comboPagamento.Items.AddRange(new string[] { "Dinheiro", "Pix", "Cartão", "Débito", "Crédito" });
         }
@@ -159,7 +160,7 @@ namespace TelaLogin
 
         private void btnVender_Click_1(object sender, EventArgs e)
         {
-            if (DvgPdv.Rows.Count == 0)
+            if (dataGridView1.Rows.Count == 0)
             {
                 MessageBox.Show("Adicione produtos na venda!");
                 return;
@@ -181,7 +182,7 @@ namespace TelaLogin
                 {
                     // 2. MUDANÇA: Calcular o total da nota percorrendo o Grid
                     decimal totalGeralDaNota = 0;
-                    foreach (DataGridViewRow row in DvgPdv.Rows)
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         if (row.IsNewRow) continue;
                         totalGeralDaNota += Convert.ToDecimal(row.Cells["total"].Value);
@@ -198,7 +199,7 @@ namespace TelaLogin
                     long idVendaGerada = cmdVenda.LastInsertedId;
 
                     // 5. MUDANÇA: Agora percorremos o Grid para salvar cada item vinculado a esse ID
-                    foreach (DataGridViewRow row in DvgPdv.Rows)
+                    foreach (DataGridViewRow row in dataGridView1.Rows)
                     {
                         if (row.IsNewRow) continue;
 
@@ -230,7 +231,7 @@ namespace TelaLogin
                     MessageBox.Show($"Venda #{idVendaGerada} (Nota Fiscal) registrada com sucesso!");
 
                     // Limpar interface
-                    DvgPdv.Rows.Clear();
+                    dataGridView1.Rows.Clear();
                     txtTotal.Text = "Total: R$ 0,00";
                     txtQtd.Clear();
                 }
@@ -313,7 +314,7 @@ namespace TelaLogin
 
                 // 4. VERIFICAÇÃO DO CARRINHO (GRID): Soma o que já foi adicionado na tela
                 int quantidadeJaNoCarrinho = 0;
-                foreach (DataGridViewRow row in DvgPdv.Rows)
+                foreach (DataGridViewRow row in dataGridView1.Rows)
                 {
                     if (row.Cells["id"].Value != null && Convert.ToInt32(row.Cells["id"].Value) == idProduto)
                     {
@@ -332,7 +333,7 @@ namespace TelaLogin
 
                 // 6. ADIÇÃO AO DATAGRIDVIEW: Calcula o total do item e joga na lista
                 decimal totalItem = precoUnitario * quantidadeSolicitada;
-                DvgPdv.Rows.Add(idProduto, nomeProduto, precoUnitario, quantidadeSolicitada, totalItem);
+                dataGridView1.Rows.Add(idProduto, nomeProduto, precoUnitario, quantidadeSolicitada, totalItem);
 
                 // 7. ATUALIZAÇÃO DA INTERFACE: Limpa campos e atualiza o total da nota
                 txtQtd.Clear();
@@ -351,7 +352,7 @@ namespace TelaLogin
         private void AtualizarTotalGeral()
         {
             decimal total = 0;
-            foreach (DataGridViewRow row in DvgPdv.Rows)
+            foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 if (row.Cells["total"].Value != null)
                     total += Convert.ToDecimal(row.Cells["total"].Value);
@@ -398,6 +399,113 @@ namespace TelaLogin
             telarela.ShowDialog();
             this.Close();
         }
+
+        private void DvgPdv_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void EstilizarGrid()
+        {
+            // ====================================
+            // APARÊNCIA GERAL
+            // ====================================
+
+            dataGridView1.BorderStyle = BorderStyle.None;
+
+            dataGridView1.BackgroundColor = Color.Black;
+
+            dataGridView1.EnableHeadersVisualStyles = false;
+
+            dataGridView1.RowHeadersVisible = false;
+
+            dataGridView1.AllowUserToAddRows = false;
+
+            dataGridView1.AllowUserToResizeRows = false;
+
+            dataGridView1.MultiSelect = false;
+
+            dataGridView1.SelectionMode =
+                DataGridViewSelectionMode.FullRowSelect;
+
+            // ====================================
+            // CABEÇALHO
+            // ====================================
+
+            dataGridView1.ColumnHeadersBorderStyle =
+                DataGridViewHeaderBorderStyle.None;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.BackColor =
+                Color.Black;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.ForeColor =
+                Color.White;
+
+            dataGridView1.ColumnHeadersDefaultCellStyle.Font =
+                new Font("Segoe UI", 10, FontStyle.Bold);
+
+            dataGridView1.ColumnHeadersHeight = 35;
+
+            // ====================================
+            // LINHAS
+            // ====================================
+
+            dataGridView1.DefaultCellStyle.BackColor =
+                Color.Black;
+
+            dataGridView1.DefaultCellStyle.ForeColor =
+                Color.White;
+
+            dataGridView1.DefaultCellStyle.Font =
+                new Font("Segoe UI", 10);
+
+            // ====================================
+            // SELEÇÃO
+            // ====================================
+
+            dataGridView1.DefaultCellStyle.SelectionBackColor =
+                Color.White;
+
+            dataGridView1.DefaultCellStyle.SelectionForeColor =
+                Color.Black;
+
+            // ====================================
+            // GRID
+            // ====================================
+
+            dataGridView1.GridColor = Color.DimGray;
+
+            // ====================================
+            // LINHAS ALTERNADAS
+            // ====================================
+
+            dataGridView1.AlternatingRowsDefaultCellStyle.BackColor =
+                Color.FromArgb(20, 20, 20);
+
+            // ====================================
+            // AUTO AJUSTE
+            // ====================================
+
+            dataGridView1.AutoSizeColumnsMode =
+                DataGridViewAutoSizeColumnsMode.Fill;
+
+            // ====================================
+            // ALTURA DAS LINHAS
+            // ====================================
+
+            dataGridView1.RowTemplate.Height = 30;
+
+            // ====================================
+            // TIRAR FOCO AZUL
+            // ====================================
+
+            dataGridView1.DefaultCellStyle.SelectionBackColor =
+                Color.White;
+
+            dataGridView1.DefaultCellStyle.SelectionForeColor =
+                Color.Black;
+        }
     }
 }
+
 

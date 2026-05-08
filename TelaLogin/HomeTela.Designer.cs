@@ -69,6 +69,7 @@
             panel11 = new Panel();
             label11 = new Label();
             timerToggle = new System.Windows.Forms.Timer(components);
+            button3 = new Button();
             Painel_Principal.SuspendLayout();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -87,6 +88,7 @@
             // Painel_Principal
             // 
             Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(panel12);
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
@@ -373,6 +375,13 @@
             timerToggle.Interval = 10;
             timerToggle.Tick += timerToggle_Tick;
             // 
+            // button3
+            // 
+            resources.ApplyResources(button3, "button3");
+            button3.Name = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // HomeTela
             // 
             resources.ApplyResources(this, "$this");
@@ -463,5 +472,6 @@
         private Panel panel12;
         private Button btnModo;
         private System.Windows.Forms.Timer timerToggle;
+        private Button button3;
     }
 }

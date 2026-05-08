@@ -50,6 +50,7 @@
             lbbabel = new Label();
             btnAdd = new RButton();
             txtPesquisa = new TextBox();
+            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
@@ -102,6 +103,7 @@
             // Painel_Principal
             // 
             Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(btnEstoque);
             Painel_Principal.Controls.Add(label2);
@@ -282,6 +284,18 @@
             txtPesquisa.TabIndex = 52;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged_1;
             // 
+            // button3
+            // 
+            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button3.ImeMode = ImeMode.NoControl;
+            button3.Location = new Point(0, 747);
+            button3.Name = "button3";
+            button3.Size = new Size(184, 95);
+            button3.TabIndex = 53;
+            button3.Text = "Relatório";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
+            // 
             // TelaEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -333,5 +347,6 @@
         private RButton btnAdd;
         private TextBox txtPesquisa;
         private Button button2;
+        private Button button3;
     }
 }

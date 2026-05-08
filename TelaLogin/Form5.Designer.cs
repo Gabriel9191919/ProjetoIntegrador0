@@ -45,6 +45,7 @@
             lbhead = new Label();
             button1 = new Button();
             lbdok = new Label();
+            button3 = new Button();
             Painel_Principal.SuspendLayout();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -55,6 +56,7 @@
             // Painel_Principal
             // 
             Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(panel12);
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
@@ -128,6 +130,7 @@
             BtnTrocarSessao.TabIndex = 24;
             BtnTrocarSessao.Text = "Trocar de sessão";
             BtnTrocarSessao.UseVisualStyleBackColor = false;
+            BtnTrocarSessao.Click += BtnTrocarSessao_Click;
             // 
             // button5
             // 
@@ -141,6 +144,7 @@
             button5.TabIndex = 14;
             button5.Text = "Estoque";
             button5.UseVisualStyleBackColor = true;
+            button5.Click += button5_Click;
             // 
             // label2
             // 
@@ -179,6 +183,7 @@
             button2.TabIndex = 15;
             button2.Text = "PDV";
             button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
             // 
             // btnProdutos
             // 
@@ -192,6 +197,7 @@
             btnProdutos.TabIndex = 15;
             btnProdutos.Text = "Produtos";
             btnProdutos.UseVisualStyleBackColor = true;
+            btnProdutos.Click += btnProdutos_Click;
             // 
             // gridrt
             // 
@@ -238,6 +244,7 @@
             button1.TabIndex = 52;
             button1.Text = "SAIR";
             button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // lbdok
             // 
@@ -251,6 +258,17 @@
             lbdok.Size = new Size(138, 25);
             lbdok.TabIndex = 51;
             lbdok.Text = "Data e Hora";
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button3.ImeMode = ImeMode.NoControl;
+            button3.Location = new Point(0, 748);
+            button3.Name = "button3";
+            button3.Size = new Size(184, 95);
+            button3.TabIndex = 37;
+            button3.Text = "Relatório";
+            button3.UseVisualStyleBackColor = true;
             // 
             // Form5
             // 
@@ -293,5 +311,6 @@
         private Label lbdok;
         private Button button1;
         public Label lbhead;
+        private Button button3;
     }
 }

@@ -38,10 +38,14 @@
             pictureBox3 = new PictureBox();
             txtUsuario = new TextBox();
             btnAlterar = new RButton();
+            button9 = new Button();
+            label1 = new Label();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // pictureBox4
@@ -158,12 +162,51 @@
             btnAlterar.UseVisualStyleBackColor = false;
             btnAlterar.Click += btnAlterar_Click;
             // 
+            // button9
+            // 
+            button9.BackColor = Color.DimGray;
+            button9.FlatAppearance.BorderSize = 0;
+            button9.FlatStyle = FlatStyle.Flat;
+            button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button9.ForeColor = Color.Red;
+            button9.Location = new Point(1852, 12);
+            button9.Name = "button9";
+            button9.Size = new Size(56, 29);
+            button9.TabIndex = 32;
+            button9.Text = "SAIR";
+            button9.UseVisualStyleBackColor = false;
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.ForeColor = Color.Gold;
+            label1.Location = new Point(1713, 1047);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 15);
+            label1.TabIndex = 33;
+            label1.Text = "Powered by";
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(1724, 985);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(256, 120);
+            pictureBox5.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox5.TabIndex = 34;
+            pictureBox5.TabStop = false;
+            // 
             // EsqueciSenha
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
             ClientSize = new Size(1920, 1080);
+            Controls.Add(label1);
+            Controls.Add(pictureBox5);
+            Controls.Add(button9);
             Controls.Add(btnAlterar);
             Controls.Add(pictureBox4);
             Controls.Add(txtsenha2);
@@ -183,6 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -199,5 +243,8 @@
         private PictureBox pictureBox3;
         private TextBox txtUsuario;
         private RButton btnAlterar;
+        private Button button9;
+        private Label label1;
+        private PictureBox pictureBox5;
     }
 }

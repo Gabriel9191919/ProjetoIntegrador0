@@ -126,14 +126,10 @@
     <value>NoControl</value>
   </data>
   <data name="button3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 766</value>
+    <value>0, 749</value>
   </data>
   <data name="button3.Size" type="System.Drawing.Size, System.Drawing">
     <value>184, 95</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="button3.TabIndex" type="System.Int32, mscorlib">
-    <value>18</value>
   </data>
   <data name="button3.Text" xml:space="preserve">
     <value>Relatório</value>
@@ -863,6 +859,7 @@
   <data name="txtQtd.Size" type="System.Drawing.Size, System.Drawing">
     <value>231, 23</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="label4.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -947,7 +944,10 @@
   <data name="btnVender.Text" xml:space="preserve">
     <value>Finalizar</value>
   </data>
-  <data name="DvgPdv.Size" type="System.Drawing.Size, System.Drawing">
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1037, 261</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
     <value>385, 415</value>
   </data>
   <data name="bntAdd.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">

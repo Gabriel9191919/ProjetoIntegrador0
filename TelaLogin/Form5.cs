@@ -31,6 +31,8 @@ namespace TelaLogin
             lbhead.Text = Sessao.Usuario + " está verificando os registros";
             CarregarRelatorio();
             EstilizarGrid();
+            gridrt.CellFormatting += new DataGridViewCellFormattingEventHandler(dataGridView1_CellFormatting);
+
 
 
         }
@@ -196,6 +198,60 @@ namespace TelaLogin
             gridrt.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            TelaEstoque produto = new TelaEstoque();
+            produto.ShowDialog();
+            this.Close();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            EstoqueDetalhado estoque = new EstoqueDetalhado();
+            estoque.ShowDialog();
+            this.Close();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            PDV pdv = new PDV();
+            pdv.ShowDialog();
+            this.Close();
+        }
+
+        private void BtnTrocarSessao_Click(object sender, EventArgs e)
+        {
+            Form1 login = new Form1();
+            login.ShowDialog();
+            this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            // Verifica se estamos na coluna correta (ajuste o nome "Status" para o nome da sua coluna)
+            if (gridrt.Columns[e.ColumnIndex].Name == "Status" && e.Value != null)
+            {
+                string status = e.Value.ToString().ToLower();
+
+                if (status == "concluido" || status == "concluída")
+                {
+                    // Pinta o fundo da célula de verde e o texto de branco para melhor contraste
+                    e.CellStyle.BackColor = Color.LightGreen;
+                    e.CellStyle.ForeColor = Color.Black;
+                }
+                else if (status == "cancelado" || status == "cancelada")
+                {
+                    // Pinta o fundo da célula de vermelho
+                    e.CellStyle.BackColor = Color.LightCoral;
+                    e.CellStyle.ForeColor = Color.White;
+                }
+            }
+        }
     }
 }
 

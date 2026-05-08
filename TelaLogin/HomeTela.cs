@@ -81,7 +81,7 @@ namespace TelaLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void HomeTela_Load(object sender, EventArgs e)
@@ -280,7 +280,7 @@ namespace TelaLogin
 
         private void timerToggle_Tick(object sender, EventArgs e)
         {
-             if (!darkMode)
+            if (!darkMode)
             {
                 btnModo.Left += 2;
 
@@ -309,10 +309,10 @@ namespace TelaLogin
 
                     AtivarLightMode();
                 }
-            
-            }
 
             }
+
+        }
         private void AtivarDarkMode()
         {
             this.BackColor = SystemColors.ControlText;
@@ -344,7 +344,7 @@ namespace TelaLogin
         private void AtivarLightMode()
         {
             this.BackColor = SystemColors.ControlDarkDark;
-            
+
             foreach (Control c in Painel_Principal.Controls)
             {
                 if (c is Button)
@@ -367,6 +367,13 @@ namespace TelaLogin
                     btn.Cursor = Cursors.Hand;
                 }
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Form5 telarela = new Form5();
+            telarela.ShowDialog();
+            this.Close();
         }
     }
 }
