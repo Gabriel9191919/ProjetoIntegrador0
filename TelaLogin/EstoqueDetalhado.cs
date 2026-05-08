@@ -63,7 +63,7 @@ namespace TelaLogin
                         
                     FROM estoque e
                     INNER JOIN produtos p 
-                        ON e.id_produtodoestoque = p.id_produtos";
+                    ON e.id_produtodoestoque = p.id_produtos";
 
                     MySqlDataAdapter da = new MySqlDataAdapter(sql, con);
                     DataTable dt = new DataTable();

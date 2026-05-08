@@ -40,7 +40,7 @@
             button4 = new Button();
             button2 = new Button();
             btnProdutos = new Button();
-            dataGridView1 = new DataGridView();
+            gridrt = new DataGridView();
             panel1 = new Panel();
             lbhead = new Label();
             button1 = new Button();
@@ -48,7 +48,7 @@
             Painel_Principal.SuspendLayout();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gridrt).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
             // 
@@ -193,13 +193,14 @@
             btnProdutos.Text = "Produtos";
             btnProdutos.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // gridrt
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(317, 389);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(1089, 537);
-            dataGridView1.TabIndex = 16;
+            gridrt.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gridrt.Location = new Point(317, 389);
+            gridrt.Name = "gridrt";
+            gridrt.ReadOnly = true;
+            gridrt.Size = new Size(1089, 537);
+            gridrt.TabIndex = 16;
             // 
             // panel1
             // 
@@ -258,9 +259,9 @@
             BackColor = Color.Black;
             ClientSize = new Size(1920, 1061);
             Controls.Add(panel1);
-            Controls.Add(dataGridView1);
+            Controls.Add(gridrt);
             Controls.Add(Painel_Principal);
-            ForeColor = Color.Snow;
+            ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form5";
             Text = "Form5";
@@ -268,7 +269,7 @@
             Painel_Principal.PerformLayout();
             panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gridrt).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ResumeLayout(false);
@@ -287,7 +288,7 @@
         private Button button4;
         private Button button2;
         private Button btnProdutos;
-        private DataGridView dataGridView1;
+        private DataGridView gridrt;
         private Panel panel1;
         private Label lbdok;
         private Button button1;

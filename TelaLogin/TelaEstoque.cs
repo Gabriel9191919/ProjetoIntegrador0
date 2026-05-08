@@ -34,6 +34,7 @@ namespace TelaLogin
                   "🕒 " + DateTime.Now.ToString("HH:mm:ss");
 
             lbbabel.Text = Sessao.Usuario + " está monitorando o estoque";
+
         }
 
         private void TelaEstoque_Load(object sender, EventArgs e)
