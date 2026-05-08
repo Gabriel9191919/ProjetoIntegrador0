@@ -51,6 +51,7 @@
             label4 = new Label();
             btnSair = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
+            Lbpresent = new Label();
             ((System.ComponentModel.ISupportInitialize)dvgEstoque).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
@@ -250,6 +251,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Gold;
+            panel1.Controls.Add(Lbpresent);
             panel1.Controls.Add(button9);
             panel1.Controls.Add(lbRelogio);
             panel1.Controls.Add(label4);
@@ -316,6 +318,16 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // Lbpresent
+            // 
+            Lbpresent.AutoSize = true;
+            Lbpresent.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
+            Lbpresent.ImeMode = ImeMode.NoControl;
+            Lbpresent.Location = new Point(131, 45);
+            Lbpresent.Name = "Lbpresent";
+            Lbpresent.Size = new Size(0, 40);
+            Lbpresent.TabIndex = 56;
+            // 
             // EstoqueDetalhado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -371,5 +383,6 @@
         private System.Windows.Forms.Timer timer1;
         private Button button9;
         private Button button1;
+        public Label Lbpresent;
     }
 }

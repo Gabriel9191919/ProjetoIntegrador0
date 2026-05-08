@@ -19,11 +19,21 @@ namespace TelaLogin
         public TelaEstoque()
         {
             InitializeComponent();
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // 2. Define o tamanho máximo como a área útil (sem a Taskbar)
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            // 3. Maximiza o form
+            this.WindowState = FormWindowState.Maximized;
+
             attgrid objeto = new attgrid(this.dataGridView1);
             objeto.updategridProdutos();
 
             lbRelogio.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
                   "🕒 " + DateTime.Now.ToString("HH:mm:ss");
+
+            lbbabel.Text = Sessao.Usuario + " está monitorando o estoque";
         }
 
         private void TelaEstoque_Load(object sender, EventArgs e)

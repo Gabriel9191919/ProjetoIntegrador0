@@ -41,10 +41,15 @@
             button2 = new Button();
             btnProdutos = new Button();
             dataGridView1 = new DataGridView();
+            panel1 = new Panel();
+            lbhead = new Label();
+            button1 = new Button();
+            lbdok = new Label();
             Painel_Principal.SuspendLayout();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // Painel_Principal
@@ -62,7 +67,7 @@
             Painel_Principal.Dock = DockStyle.Left;
             Painel_Principal.Location = new Point(0, 0);
             Painel_Principal.Name = "Painel_Principal";
-            Painel_Principal.Size = new Size(184, 1041);
+            Painel_Principal.Size = new Size(184, 1061);
             Painel_Principal.TabIndex = 15;
             // 
             // panel12
@@ -90,7 +95,7 @@
             pictureBox2.BackColor = Color.Transparent;
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.ImeMode = ImeMode.NoControl;
-            pictureBox2.Location = new Point(0, 0);
+            pictureBox2.Location = new Point(0, 10);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(184, 151);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
@@ -196,15 +201,67 @@
             dataGridView1.Size = new Size(1089, 537);
             dataGridView1.TabIndex = 16;
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.Gold;
+            panel1.Controls.Add(lbhead);
+            panel1.Controls.Add(button1);
+            panel1.Controls.Add(lbdok);
+            panel1.Location = new Point(183, 0);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1749, 161);
+            panel1.TabIndex = 50;
+            // 
+            // lbhead
+            // 
+            lbhead.AutoSize = true;
+            lbhead.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
+            lbhead.ForeColor = Color.Black;
+            lbhead.ImeMode = ImeMode.NoControl;
+            lbhead.Location = new Point(173, 56);
+            lbhead.Name = "lbhead";
+            lbhead.Size = new Size(0, 40);
+            lbhead.TabIndex = 53;
+            // 
+            // button1
+            // 
+            button1.BackColor = Color.Gold;
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            button1.ForeColor = Color.Red;
+            button1.ImeMode = ImeMode.NoControl;
+            button1.Location = new Point(1642, 12);
+            button1.Name = "button1";
+            button1.Size = new Size(56, 29);
+            button1.TabIndex = 52;
+            button1.Text = "SAIR";
+            button1.UseVisualStyleBackColor = false;
+            // 
+            // lbdok
+            // 
+            lbdok.AutoSize = true;
+            lbdok.BackColor = Color.Gold;
+            lbdok.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
+            lbdok.ForeColor = SystemColors.ActiveCaptionText;
+            lbdok.ImeMode = ImeMode.NoControl;
+            lbdok.Location = new Point(1381, 9);
+            lbdok.Name = "lbdok";
+            lbdok.Size = new Size(138, 25);
+            lbdok.TabIndex = 51;
+            lbdok.Text = "Data e Hora";
+            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.Black;
-            ClientSize = new Size(1904, 1041);
+            ClientSize = new Size(1920, 1061);
+            Controls.Add(panel1);
             Controls.Add(dataGridView1);
             Controls.Add(Painel_Principal);
             ForeColor = Color.Snow;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form5";
             Text = "Form5";
             Painel_Principal.ResumeLayout(false);
@@ -212,6 +269,8 @@
             panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -229,5 +288,9 @@
         private Button button2;
         private Button btnProdutos;
         private DataGridView dataGridView1;
+        private Panel panel1;
+        private Label lbdok;
+        private Button button1;
+        public Label lbhead;
     }
 }

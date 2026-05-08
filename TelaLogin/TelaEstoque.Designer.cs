@@ -47,7 +47,7 @@
             timer1 = new System.Windows.Forms.Timer(components);
             notifyIcon1 = new NotifyIcon(components);
             panel1 = new Panel();
-            LbNome = new Label();
+            lbbabel = new Label();
             btnAdd = new RButton();
             txtPesquisa = new TextBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -233,22 +233,22 @@
             // panel1
             // 
             panel1.BackColor = Color.Gold;
-            panel1.Controls.Add(LbNome);
+            panel1.Controls.Add(lbbabel);
             panel1.Controls.Add(button9);
             panel1.Location = new Point(181, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1925, 151);
             panel1.TabIndex = 50;
             // 
-            // LbNome
+            // lbbabel
             // 
-            LbNome.AutoSize = true;
-            LbNome.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
-            LbNome.ImeMode = ImeMode.NoControl;
-            LbNome.Location = new Point(321, 45);
-            LbNome.Name = "LbNome";
-            LbNome.Size = new Size(0, 40);
-            LbNome.TabIndex = 1;
+            lbbabel.AutoSize = true;
+            lbbabel.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
+            lbbabel.ImeMode = ImeMode.NoControl;
+            lbbabel.Location = new Point(229, 49);
+            lbbabel.Name = "lbbabel";
+            lbbabel.Size = new Size(0, 40);
+            lbbabel.TabIndex = 1;
             // 
             // btnAdd
             // 
@@ -329,7 +329,7 @@
         private System.Windows.Forms.Timer timer1;
         private NotifyIcon notifyIcon1;
         private Panel panel1;
-        public Label LbNome;
+        public Label lbbabel;
         private RButton btnAdd;
         private TextBox txtPesquisa;
         private Button button2;

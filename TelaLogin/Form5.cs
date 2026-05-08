@@ -15,6 +15,19 @@ namespace TelaLogin
         public Form5()
         {
             InitializeComponent();
+
+            this.FormBorderStyle = FormBorderStyle.None;
+
+            // 2. Define o tamanho máximo como a área útil (sem a Taskbar)
+            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
+
+            // 3. Maximiza o form
+            this.WindowState = FormWindowState.Maximized;
+
+            lbdok.Text = "📅 " + DateTime.Now.ToString("dd/MM/yyyy") +
+                           "   🕒 " + DateTime.Now.ToString("HH:mm:ss");
+
+            lbhead.Text = Sessao.Usuario + " está verificando os registros";
         }
 
         private void button4_Click(object sender, EventArgs e)
