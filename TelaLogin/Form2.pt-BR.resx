@@ -962,6 +962,9 @@
   <data name="bntAdd.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
     <value>NoControl</value>
   </data>
+  <data name="bntAdd.Location" type="System.Drawing.Point, System.Drawing">
+    <value>513, 540</value>
+  </data>
   <data name="bntAdd.Size" type="System.Drawing.Size, System.Drawing">
     <value>189, 56</value>
   </data>
@@ -1048,6 +1051,30 @@
   </data>
   <data name="panel1.Size" type="System.Drawing.Size, System.Drawing">
     <value>1904, 141</value>
+  </data>
+  <data name="rButton1.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="rButton1.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rButton1.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Trebuchet MS, 15.75pt, style=Bold</value>
+  </data>
+  <data name="rButton1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rButton1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>708, 540</value>
+  </data>
+  <data name="rButton1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>189, 56</value>
+  </data>
+  <data name="rButton1.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="rButton1.Text" xml:space="preserve">
+    <value>Remover</value>
   </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1920, 1061</value>

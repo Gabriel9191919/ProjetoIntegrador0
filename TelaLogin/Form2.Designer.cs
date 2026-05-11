@@ -59,6 +59,7 @@
             label10 = new Label();
             LbNom = new Label();
             panel1 = new Panel();
+            rButton1 = new RButton();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -272,11 +273,28 @@
             panel1.Controls.Add(LbNom);
             panel1.Name = "panel1";
             // 
+            // rButton1
+            // 
+            resources.ApplyResources(rButton1, "rButton1");
+            rButton1.BackColor = Color.Gold;
+            rButton1.BackgroundColor = Color.Gold;
+            rButton1.BorderColor = Color.PaleVioletRed;
+            rButton1.BorderRadius = 20;
+            rButton1.BorderSize = 0;
+            rButton1.Cursor = Cursors.Hand;
+            rButton1.FlatAppearance.BorderSize = 0;
+            rButton1.ForeColor = SystemColors.ActiveCaptionText;
+            rButton1.Name = "rButton1";
+            rButton1.TextColor = SystemColors.ActiveCaptionText;
+            rButton1.UseVisualStyleBackColor = false;
+            rButton1.Click += rButton1_Click;
+            // 
             // PDV
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
+            Controls.Add(rButton1);
             Controls.Add(label10);
             Controls.Add(label6);
             Controls.Add(comboPagamento);
@@ -343,5 +361,6 @@
         private Panel panel1;
         private Button button2;
         private Button button3;
+        private RButton rButton1;
     }
 }

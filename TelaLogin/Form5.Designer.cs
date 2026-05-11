@@ -30,8 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form5));
             Painel_Principal = new Panel();
-            panel12 = new Panel();
-            btnModo = new Button();
+            button3 = new Button();
             pictureBox2 = new PictureBox();
             label3 = new Label();
             BtnTrocarSessao = new Button();
@@ -45,9 +44,7 @@
             lbhead = new Label();
             button1 = new Button();
             lbdok = new Label();
-            button3 = new Button();
             Painel_Principal.SuspendLayout();
-            panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)gridrt).BeginInit();
             panel1.SuspendLayout();
@@ -57,7 +54,6 @@
             // 
             Painel_Principal.BackColor = Color.Gold;
             Painel_Principal.Controls.Add(button3);
-            Painel_Principal.Controls.Add(panel12);
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(BtnTrocarSessao);
@@ -72,24 +68,16 @@
             Painel_Principal.Size = new Size(184, 1061);
             Painel_Principal.TabIndex = 15;
             // 
-            // panel12
+            // button3
             // 
-            panel12.BackColor = Color.Gray;
-            panel12.Controls.Add(btnModo);
-            panel12.Location = new Point(60, 917);
-            panel12.Name = "panel12";
-            panel12.Size = new Size(60, 30);
-            panel12.TabIndex = 36;
-            // 
-            // btnModo
-            // 
-            btnModo.FlatStyle = FlatStyle.Flat;
-            btnModo.ImeMode = ImeMode.NoControl;
-            btnModo.Location = new Point(2, 2);
-            btnModo.Name = "btnModo";
-            btnModo.Size = new Size(25, 25);
-            btnModo.TabIndex = 0;
-            btnModo.UseVisualStyleBackColor = true;
+            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button3.ImeMode = ImeMode.NoControl;
+            button3.Location = new Point(0, 748);
+            button3.Name = "button3";
+            button3.Size = new Size(184, 95);
+            button3.TabIndex = 37;
+            button3.Text = "Relatório";
+            button3.UseVisualStyleBackColor = true;
             // 
             // pictureBox2
             // 
@@ -259,17 +247,6 @@
             lbdok.TabIndex = 51;
             lbdok.Text = "Data e Hora";
             // 
-            // button3
-            // 
-            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button3.ImeMode = ImeMode.NoControl;
-            button3.Location = new Point(0, 748);
-            button3.Name = "button3";
-            button3.Size = new Size(184, 95);
-            button3.TabIndex = 37;
-            button3.Text = "Relatório";
-            button3.UseVisualStyleBackColor = true;
-            // 
             // Form5
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -285,7 +262,6 @@
             Text = "Form5";
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
-            panel12.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)gridrt).EndInit();
             panel1.ResumeLayout(false);
@@ -296,8 +272,6 @@
         #endregion
 
         private Panel Painel_Principal;
-        private Panel panel12;
-        private Button btnModo;
         private PictureBox pictureBox2;
         private Label label3;
         private Button BtnTrocarSessao;

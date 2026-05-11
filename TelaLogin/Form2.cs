@@ -1,6 +1,8 @@
 ﻿using MySql.Data.MySqlClient;
 using System;
 using System.Data;
+using System.Drawing;
+using System.Linq.Expressions;
 using System.Numerics;
 using System.Windows.Forms;
 
@@ -504,6 +506,41 @@ namespace TelaLogin
 
             dataGridView1.DefaultCellStyle.SelectionForeColor =
                 Color.Black;
+        }
+
+
+        private void RemoverProduto()
+        {
+            // Verifica se há uma linha selecionada
+            if (dataGridView1.CurrentRow != null && dataGridView1.SelectedRows.Count > 0)
+            {
+                DialogResult resultado = MessageBox.Show(
+                    "Deseja remover este item do carrinho?",
+                    "Remover Item",
+                    MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question
+                );
+
+                if (resultado == DialogResult.Yes)
+                {
+                    // Remove a linha selecionada do DataGridView
+                    dataGridView1.Rows.RemoveAt(dataGridView1.CurrentRow.Index);
+
+                    // Atualiza o total geral da nota após remover
+                    AtualizarTotalGeral();
+
+                    MessageBox.Show("Item removido do carrinho com sucesso!");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Selecione uma linha inteira na lista para remover.", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+        }
+        private void rButton1_Click(object sender, EventArgs e)
+        {
+            RemoverProduto();
+            CarregarProdutos();
         }
     }
 }
