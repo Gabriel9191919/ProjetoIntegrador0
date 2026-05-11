@@ -24,6 +24,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Imagens\Olho_Aberto.png" />
+    <None Remove="Imagens\Olho_Fechado.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Imagens\Olho_Aberto.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Imagens\Olho_Fechado.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.6.0" />
     <PackageReference Include="WinForms.DataVisualization" Version="1.10.0" />
   </ItemGroup>

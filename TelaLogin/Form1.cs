@@ -195,16 +195,18 @@ namespace TelaLogin
                 // mostra senha
                 txtSenha.PasswordChar = '\0';
 
-
-                btnOlho.BackgroundImage = Image.FromFile("Resources/olho_aberto.png");
+                // olho aberto
+                btnOlho.BackgroundImage =
+                    Image.FromFile("imagens/olho_aberto.png");
             }
             else
             {
                 // esconde senha
                 txtSenha.PasswordChar = '*';
 
-                // troca imagem
-                btnOlho.BackgroundImage = Image.FromFile("imagens/olho_fechado.png");
+                // olho fechado
+                btnOlho.BackgroundImage =
+                    Image.FromFile("imagens/olho_fechado.png");
             }
         }
 
