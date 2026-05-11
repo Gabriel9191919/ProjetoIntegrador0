@@ -35,6 +35,7 @@
             label1 = new Label();
             pictureBox3 = new PictureBox();
             Painel_Principal = new Panel();
+            button3 = new Button();
             label3 = new Label();
             btnEstoque = new Button();
             label2 = new Label();
@@ -50,7 +51,6 @@
             lbbabel = new Label();
             btnAdd = new RButton();
             txtPesquisa = new TextBox();
-            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
@@ -84,9 +84,9 @@
             label1.ForeColor = Color.Gold;
             label1.Location = new Point(863, 317);
             label1.Name = "label1";
-            label1.Size = new Size(130, 35);
+            label1.Size = new Size(150, 35);
             label1.TabIndex = 6;
-            label1.Text = "ESTOQUE";
+            label1.Text = "PRODUTOS";
             // 
             // pictureBox3
             // 
@@ -116,6 +116,18 @@
             Painel_Principal.Name = "Painel_Principal";
             Painel_Principal.Size = new Size(184, 1080);
             Painel_Principal.TabIndex = 13;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button3.ImeMode = ImeMode.NoControl;
+            button3.Location = new Point(0, 747);
+            button3.Name = "button3";
+            button3.Size = new Size(184, 95);
+            button3.TabIndex = 53;
+            button3.Text = "Relatório";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label3
             // 
@@ -283,18 +295,6 @@
             txtPesquisa.Size = new Size(243, 22);
             txtPesquisa.TabIndex = 52;
             txtPesquisa.TextChanged += txtPesquisa_TextChanged_1;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button3.ImeMode = ImeMode.NoControl;
-            button3.Location = new Point(0, 747);
-            button3.Name = "button3";
-            button3.Size = new Size(184, 95);
-            button3.TabIndex = 53;
-            button3.Text = "Relatório";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // TelaEstoque
             // 

@@ -38,6 +38,7 @@
             dvgEstoque = new DataGridView();
             pictureBox3 = new PictureBox();
             Painel_Principal = new Panel();
+            button3 = new Button();
             label3 = new Label();
             btnEstoque = new Button();
             label2 = new Label();
@@ -52,7 +53,6 @@
             label4 = new Label();
             btnSair = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
-            button3 = new Button();
             ((System.ComponentModel.ISupportInitialize)dvgEstoque).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             Painel_Principal.SuspendLayout();
@@ -86,7 +86,7 @@
             BtnDelete.Name = "BtnDelete";
             BtnDelete.Size = new Size(164, 40);
             BtnDelete.TabIndex = 39;
-            BtnDelete.Text = "Delete";
+            BtnDelete.Text = "Deletar";
             BtnDelete.TextColor = SystemColors.ActiveCaptionText;
             BtnDelete.UseVisualStyleBackColor = false;
             BtnDelete.Click += BtnDelete_Click;
@@ -172,6 +172,18 @@
             Painel_Principal.Name = "Painel_Principal";
             Painel_Principal.Size = new Size(184, 1080);
             Painel_Principal.TabIndex = 51;
+            // 
+            // button3
+            // 
+            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
+            button3.ImeMode = ImeMode.NoControl;
+            button3.Location = new Point(0, 746);
+            button3.Name = "button3";
+            button3.Size = new Size(184, 95);
+            button3.TabIndex = 53;
+            button3.Text = "Relatório";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // label3
             // 
@@ -329,18 +341,6 @@
             timer1.Enabled = true;
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
-            // 
-            // button3
-            // 
-            button3.Font = new Font("Trebuchet MS", 12F, FontStyle.Bold);
-            button3.ImeMode = ImeMode.NoControl;
-            button3.Location = new Point(0, 746);
-            button3.Name = "button3";
-            button3.Size = new Size(184, 95);
-            button3.TabIndex = 53;
-            button3.Text = "Relatório";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // EstoqueDetalhado
             // 
