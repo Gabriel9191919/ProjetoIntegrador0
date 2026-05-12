@@ -109,8 +109,8 @@ namespace TelaLogin
             ORDER BY e.datavencimento ASC 
             LIMIT 1;";
 
-                MySqlCommand cmd = new MySqlCommand(sql, con);
-                MySqlDataReader reader = cmd.ExecuteReader();
+                MySqlCommand cmdea = new MySqlCommand(sql, con);
+                MySqlDataReader reader = cmdea.ExecuteReader();
 
                 if (reader.Read())
                 {
@@ -145,9 +145,9 @@ namespace TelaLogin
                 // Ajustei "quantitade" para "quantidade" (verifique se no seu banco está com 'd' ou 't')
                 string sql = "SELECT SUM(quantidade) FROM estoque;";
 
-                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlCommand cmdi = new MySqlCommand(sql, con);
 
-                object resultado = cmd.ExecuteScalar();
+                object resultado = cmdi.ExecuteScalar();
 
                 if (resultado != null && resultado != DBNull.Value)
                 {
@@ -182,9 +182,9 @@ namespace TelaLogin
             ON e.id_produtodoestoque = p.id_produtos
             ORDER BY e.quantidade ASC 
                     LIMIT 1;";
-                MySqlCommand cmd = new MySqlCommand(sql, con);
+                MySqlCommand wcmd = new MySqlCommand(sql, con);
 
-                MySqlDataReader reader = cmd.ExecuteReader();
+                MySqlDataReader reader = wcmd.ExecuteReader();
 
                 string textoFinal = "Menor produto em estoque:\n";
 
@@ -210,6 +210,57 @@ namespace TelaLogin
             }
             finally
             {
+                con.Close();
+            }
+
+            string query = "SELECT SUM(quantidade) FROM itens_venda";
+            MySqlCommand cmd = new MySqlCommand(query, con);
+
+            try
+            {
+                con.Open();
+                // ExecuteScalar é ideal para consultas que retornam apenas um valor (um número)
+                object resultado = cmd.ExecuteScalar();
+
+                // Verifica se não é nulo e joga na Label
+                label13.Text = resultado != DBNull.Value ? resultado.ToString() : "0";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Erro: " + ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+
+            // Produto mais vendido da semana
+            string queryu = @"
+    SELECT p.produto 
+    FROM itens_venda iv 
+    JOIN produtos p ON iv.id_produto = p.id_produtos 
+    JOIN vendas v ON iv.id_venda = v.id_venda 
+    WHERE v.status_venda = 'concluida' 
+      AND v.data_venda >= DATE_SUB(CURDATE(), INTERVAL 7 DAY)
+    GROUP BY p.id_produtos 
+    ORDER BY SUM(iv.quantidade) DESC 
+    LIMIT 1";
+
+            // Note que aqui o nome é 'cmdau'
+            using (MySqlCommand cmdau = new MySqlCommand(queryu, con))
+            {
+                con.Open();
+                // Aqui estava o erro: você deve usar 'cmdau' e não 'cmd'
+                var resultado = cmdau.ExecuteScalar();
+
+                if (resultado != null)
+                {
+                    label12.Text = resultado.ToString();
+                }
+                else
+                {
+                    label12.Text = "Sem vendas esta semana";
+                }
                 con.Close();
             }
         }
@@ -374,6 +425,11 @@ namespace TelaLogin
             Form5 telarela = new Form5();
             telarela.ShowDialog();
             this.Close();
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

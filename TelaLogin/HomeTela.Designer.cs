@@ -31,6 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HomeTela));
             Painel_Principal = new Panel();
+            button3 = new Button();
             panel12 = new Panel();
             btnModo = new Button();
             pictureBox2 = new PictureBox();
@@ -69,7 +70,8 @@
             panel11 = new Panel();
             label11 = new Label();
             timerToggle = new System.Windows.Forms.Timer(components);
-            button3 = new Button();
+            label12 = new Label();
+            label13 = new Label();
             Painel_Principal.SuspendLayout();
             panel12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -79,6 +81,8 @@
             panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             panel4.SuspendLayout();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
             panel7.SuspendLayout();
             panel9.SuspendLayout();
             panel10.SuspendLayout();
@@ -100,6 +104,13 @@
             Painel_Principal.Controls.Add(btnProdutos);
             resources.ApplyResources(Painel_Principal, "Painel_Principal");
             Painel_Principal.Name = "Painel_Principal";
+            // 
+            // button3
+            // 
+            resources.ApplyResources(button3, "button3");
+            button3.Name = "button3";
+            button3.UseVisualStyleBackColor = true;
+            button3.Click += button3_Click;
             // 
             // panel12
             // 
@@ -292,12 +303,14 @@
             // panel5
             // 
             panel5.BackColor = SystemColors.ActiveCaption;
+            panel5.Controls.Add(label12);
             resources.ApplyResources(panel5, "panel5");
             panel5.Name = "panel5";
             // 
             // panel6
             // 
             panel6.BackColor = SystemColors.ActiveCaption;
+            panel6.Controls.Add(label13);
             resources.ApplyResources(panel6, "panel6");
             panel6.Name = "panel6";
             // 
@@ -375,12 +388,20 @@
             timerToggle.Interval = 10;
             timerToggle.Tick += timerToggle_Tick;
             // 
-            // button3
+            // label12
             // 
-            resources.ApplyResources(button3, "button3");
-            button3.Name = "button3";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            resources.ApplyResources(label12, "label12");
+            label12.BackColor = SystemColors.ActiveCaption;
+            label12.ForeColor = SystemColors.ActiveCaptionText;
+            label12.Name = "label12";
+            label12.Click += label12_Click;
+            // 
+            // label13
+            // 
+            resources.ApplyResources(label13, "label13");
+            label13.BackColor = SystemColors.ActiveCaption;
+            label13.ForeColor = SystemColors.ActiveCaptionText;
+            label13.Name = "label13";
             // 
             // HomeTela
             // 
@@ -419,6 +440,10 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             panel4.ResumeLayout(false);
             panel4.PerformLayout();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
             panel7.ResumeLayout(false);
             panel7.PerformLayout();
             panel9.ResumeLayout(false);
@@ -473,5 +498,7 @@
         private Button btnModo;
         private System.Windows.Forms.Timer timerToggle;
         private Button button3;
+        private Label label12;
+        private Label label13;
     }
 }
