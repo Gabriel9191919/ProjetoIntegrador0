@@ -1076,6 +1076,30 @@
   <data name="rButton1.Text" xml:space="preserve">
     <value>Remover</value>
   </data>
+  <data name="rButton2.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="rButton2.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="rButton2.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Trebuchet MS, 15.75pt, style=Bold</value>
+  </data>
+  <data name="rButton2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="rButton2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1020, 851</value>
+  </data>
+  <data name="rButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 48</value>
+  </data>
+  <data name="rButton2.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="rButton2.Text" xml:space="preserve">
+    <value>Cancelar</value>
+  </data>
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>1920, 1061</value>
   </data>

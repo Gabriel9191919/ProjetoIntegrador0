@@ -276,7 +276,7 @@
             btnAdd.FlatAppearance.BorderSize = 0;
             btnAdd.FlatStyle = FlatStyle.Flat;
             btnAdd.ForeColor = SystemColors.ActiveCaptionText;
-            btnAdd.Location = new Point(666, 388);
+            btnAdd.Location = new Point(646, 388);
             btnAdd.Name = "btnAdd";
             btnAdd.Size = new Size(164, 40);
             btnAdd.TabIndex = 28;

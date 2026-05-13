@@ -157,7 +157,7 @@ namespace TelaLogin
 
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Environment.Exit(0);
         }
 
         private void btnVender_Click_1(object sender, EventArgs e)
@@ -541,6 +541,75 @@ namespace TelaLogin
         {
             RemoverProduto();
             CarregarProdutos();
+        }
+
+        private void rButton2_Click(object sender, EventArgs e)
+        {
+            // 1. Verificação básica: Tem algo no grid para cancelar?
+            if (dataGridView1.Rows.Count == 0)
+            {
+                MessageBox.Show("Não há itens lançados para cancelar.");
+                return;
+            }
+
+            DialogResult confirmar = MessageBox.Show("Deseja realmente cancelar esta operação? Os itens retornarão ao estoque.", "Confirmar Cancelamento", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (confirmar == DialogResult.Yes)
+            {
+                using (MySqlConnection con = new MySqlConnection(conexao))
+                {
+                    con.Open();
+                    MySqlTransaction trans = con.BeginTransaction();
+
+                    try
+                    {
+                        // 2. Devolver os itens que estão no Grid para o Estoque
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            if (row.IsNewRow) continue;
+
+                            int idProd = Convert.ToInt32(row.Cells["id"].Value);
+                            int qtd = Convert.ToInt32(row.Cells["qtd"].Value);
+
+                            // Soma de volta ao estoque o que havia sido "reservado" ou baixado no lançamento
+                            string updateEstoque = "UPDATE estoque SET quantidade = quantidade + @qtd WHERE id_produtodoestoque = @idProd";
+                            MySqlCommand cmdEstoque = new MySqlCommand(updateEstoque, con, trans);
+                            cmdEstoque.Parameters.AddWithValue("@qtd", qtd);
+                            cmdEstoque.Parameters.AddWithValue("@idProd", idProd);
+                            cmdEstoque.ExecuteNonQuery();
+                        }
+
+                        // 3. Registrar o cancelamento na tabela de vendas (mesmo sem finalizar)
+                        // Isso serve para o seu relatório de "Vendas Abortadas"
+                        decimal totalGeral = 0;
+                        foreach (DataGridViewRow row in dataGridView1.Rows)
+                        {
+                            if (row.IsNewRow) continue;
+                            totalGeral += Convert.ToDecimal(row.Cells["total"].Value);
+                        }
+
+                        string sqlCancelamento = "INSERT INTO vendas (total_venda, status_venda, forma_pagamento) VALUES (@total, 'Abortada', 'Nenhum')";
+                        MySqlCommand cmdCancel = new MySqlCommand(sqlCancelamento, con, trans);
+                        cmdCancel.Parameters.AddWithValue("@total", totalGeral);
+                        cmdCancel.ExecuteNonQuery();
+
+                        // 4. Finaliza a transação no banco
+                        trans.Commit();
+
+                        // 5. Limpa a interface para o próximo cliente
+                        dataGridView1.Rows.Clear();
+                        txtTotal.Text = "Total: R$ 0,00";
+                        txtQtd.Clear();
+
+                        MessageBox.Show("Operação cancelada. O estoque foi recomposto e o log registrado.");
+                    }
+                    catch (Exception ex)
+                    {
+                        trans.Rollback();
+                        MessageBox.Show("Erro ao estornar itens: " + ex.Message);
+                    }
+                }
+            }
         }
     }
 }

@@ -238,7 +238,7 @@ namespace TelaLogin
             {
                 string status = e.Value.ToString().ToLower();
 
-                if (status == "concluido" || status == "concluída")
+                if (status == "concluida" || status == "concluída")
                 {
                     // Pinta o fundo da célula de verde e o texto de branco para melhor contraste
                     e.CellStyle.BackColor = Color.LightGreen;

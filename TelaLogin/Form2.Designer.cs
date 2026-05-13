@@ -60,6 +60,7 @@
             LbNom = new Label();
             panel1 = new Panel();
             rButton1 = new RButton();
+            rButton2 = new RButton();
             Painel_Principal.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
@@ -289,11 +290,28 @@
             rButton1.UseVisualStyleBackColor = false;
             rButton1.Click += rButton1_Click;
             // 
+            // rButton2
+            // 
+            resources.ApplyResources(rButton2, "rButton2");
+            rButton2.BackColor = Color.Gold;
+            rButton2.BackgroundColor = Color.Gold;
+            rButton2.BorderColor = Color.PaleVioletRed;
+            rButton2.BorderRadius = 20;
+            rButton2.BorderSize = 0;
+            rButton2.Cursor = Cursors.Hand;
+            rButton2.FlatAppearance.BorderSize = 0;
+            rButton2.ForeColor = SystemColors.ActiveCaptionText;
+            rButton2.Name = "rButton2";
+            rButton2.TextColor = SystemColors.ActiveCaptionText;
+            rButton2.UseVisualStyleBackColor = false;
+            rButton2.Click += rButton2_Click;
+            // 
             // PDV
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlDarkDark;
+            Controls.Add(rButton2);
             Controls.Add(rButton1);
             Controls.Add(label10);
             Controls.Add(label6);
@@ -362,5 +380,6 @@
         private Button button2;
         private Button button3;
         private RButton rButton1;
+        private RButton rButton2;
     }
 }

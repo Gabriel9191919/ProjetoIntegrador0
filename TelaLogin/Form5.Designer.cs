@@ -190,7 +190,7 @@
             // gridrt
             // 
             gridrt.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gridrt.Location = new Point(317, 389);
+            gridrt.Location = new Point(528, 411);
             gridrt.Name = "gridrt";
             gridrt.ReadOnly = true;
             gridrt.Size = new Size(1089, 537);
@@ -251,7 +251,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.Black;
+            BackColor = SystemColors.ControlDark;
             ClientSize = new Size(1920, 1061);
             Controls.Add(panel1);
             Controls.Add(gridrt);

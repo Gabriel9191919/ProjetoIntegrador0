@@ -175,6 +175,7 @@
             button9.TabIndex = 32;
             button9.Text = "SAIR";
             button9.UseVisualStyleBackColor = false;
+            button9.Click += button9_Click;
             // 
             // label1
             // 
