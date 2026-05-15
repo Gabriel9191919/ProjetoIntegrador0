@@ -360,6 +360,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "EstoqueDetalhado";
             Text = "EstoqueDetalhado";
+            WindowState = FormWindowState.Maximized;
             Load += EstoqueDetalhado_Load;
             ((System.ComponentModel.ISupportInitialize)dvgEstoque).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();

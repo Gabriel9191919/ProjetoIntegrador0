@@ -260,6 +260,8 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "Form5";
             Text = "Form5";
+            WindowState = FormWindowState.Maximized;
+            Load += Form5_Load;
             Painel_Principal.ResumeLayout(false);
             Painel_Principal.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

@@ -221,6 +221,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "TelaCadastro";
             Text = "TelaCadastro";
+            WindowState = FormWindowState.Maximized;
             Load += TelaCadastro_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();

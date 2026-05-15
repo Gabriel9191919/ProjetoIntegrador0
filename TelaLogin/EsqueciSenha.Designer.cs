@@ -222,6 +222,7 @@
             Name = "EsqueciSenha";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "EsqueciSenha";
+            WindowState = FormWindowState.Maximized;
             Load += EsqueciSenha_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();

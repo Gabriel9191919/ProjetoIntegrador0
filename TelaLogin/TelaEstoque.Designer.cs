@@ -314,6 +314,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "TelaEstoque";
             Text = "TelaEstoque";
+            WindowState = FormWindowState.Maximized;
             Load += TelaEstoque_Load;
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
