@@ -34,8 +34,6 @@ namespace TelaLogin
         {
             SessaoTimer.Iniciar(this);
             this.FormBorderStyle = FormBorderStyle.None;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-            this.WindowState = FormWindowState.Maximized;
 
             CarregarProdutos();
 

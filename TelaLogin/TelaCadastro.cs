@@ -123,12 +123,6 @@ namespace TelaLogin
 
             this.FormBorderStyle = FormBorderStyle.None;
 
-            // 2. Define o tamanho máximo como a área útil (sem a Taskbar)
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
-
-            // 3. Maximiza o form
-            this.WindowState = FormWindowState.Maximized;
-
 
 
 
