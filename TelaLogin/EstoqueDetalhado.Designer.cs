@@ -152,13 +152,13 @@
             pictureBox3.Location = new Point(815, 161);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(213, 153);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 35;
             pictureBox3.TabStop = false;
             // 
             // Painel_Principal
             // 
-            Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.BackColor = Color.Black;
             Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(btnEstoque);
@@ -236,7 +236,7 @@
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(184, 151);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
@@ -264,12 +264,13 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Gold;
+            panel1.BackColor = Color.Black;
             panel1.Controls.Add(Lbpresent);
             panel1.Controls.Add(button9);
             panel1.Controls.Add(lbRelogio);
             panel1.Controls.Add(label4);
             panel1.Controls.Add(btnSair);
+            panel1.ForeColor = SystemColors.ButtonFace;
             panel1.Location = new Point(177, 0);
             panel1.Name = "panel1";
             panel1.Size = new Size(1925, 151);
@@ -279,6 +280,7 @@
             // 
             Lbpresent.AutoSize = true;
             Lbpresent.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
+            Lbpresent.ForeColor = SystemColors.ButtonFace;
             Lbpresent.ImeMode = ImeMode.NoControl;
             Lbpresent.Location = new Point(131, 45);
             Lbpresent.Name = "Lbpresent";
@@ -287,7 +289,7 @@
             // 
             // button9
             // 
-            button9.BackColor = Color.Gold;
+            button9.BackColor = Color.Black;
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -303,8 +305,9 @@
             // lbRelogio
             // 
             lbRelogio.AutoSize = true;
-            lbRelogio.BackColor = Color.Gold;
+            lbRelogio.BackColor = Color.Black;
             lbRelogio.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbRelogio.ForeColor = SystemColors.ButtonFace;
             lbRelogio.Location = new Point(1345, 9);
             lbRelogio.Name = "lbRelogio";
             lbRelogio.Size = new Size(76, 25);
@@ -315,6 +318,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
+            label4.ForeColor = SystemColors.ButtonFace;
             label4.ImeMode = ImeMode.NoControl;
             label4.Location = new Point(321, 45);
             label4.Name = "label4";

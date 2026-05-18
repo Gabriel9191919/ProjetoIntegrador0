@@ -96,13 +96,13 @@
             pictureBox3.Location = new Point(815, 161);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(213, 153);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 12;
             pictureBox3.TabStop = false;
             // 
             // Painel_Principal
             // 
-            Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.BackColor = Color.Black;
             Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(btnEstoque);
@@ -180,7 +180,7 @@
             pictureBox2.Location = new Point(0, 0);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(184, 151);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
@@ -208,7 +208,7 @@
             // 
             // button9
             // 
-            button9.BackColor = Color.Gold;
+            button9.BackColor = Color.Black;
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -224,8 +224,9 @@
             // lbRelogio
             // 
             lbRelogio.AutoSize = true;
-            lbRelogio.BackColor = Color.Gold;
+            lbRelogio.BackColor = Color.Black;
             lbRelogio.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lbRelogio.ForeColor = SystemColors.ButtonFace;
             lbRelogio.Location = new Point(1522, 9);
             lbRelogio.Name = "lbRelogio";
             lbRelogio.Size = new Size(76, 25);
@@ -246,7 +247,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Gold;
+            panel1.BackColor = Color.Black;
             panel1.Controls.Add(lbbabel);
             panel1.Controls.Add(button9);
             panel1.Location = new Point(181, 0);
@@ -258,6 +259,7 @@
             // 
             lbbabel.AutoSize = true;
             lbbabel.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
+            lbbabel.ForeColor = SystemColors.ButtonFace;
             lbbabel.ImeMode = ImeMode.NoControl;
             lbbabel.Location = new Point(229, 49);
             lbbabel.Name = "lbbabel";

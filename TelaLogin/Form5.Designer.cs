@@ -52,7 +52,7 @@
             // 
             // Painel_Principal
             // 
-            Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.BackColor = Color.Black;
             Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
@@ -88,7 +88,7 @@
             pictureBox2.Location = new Point(0, 10);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(184, 151);
-            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox2.TabIndex = 12;
             pictureBox2.TabStop = false;
             // 
@@ -106,7 +106,7 @@
             // 
             // BtnTrocarSessao
             // 
-            BtnTrocarSessao.BackColor = Color.Gold;
+            BtnTrocarSessao.BackColor = Color.Black;
             BtnTrocarSessao.FlatAppearance.BorderSize = 0;
             BtnTrocarSessao.FlatStyle = FlatStyle.Flat;
             BtnTrocarSessao.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -198,7 +198,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Gold;
+            panel1.BackColor = Color.Black;
             panel1.Controls.Add(lbhead);
             panel1.Controls.Add(button1);
             panel1.Controls.Add(lbdok);
@@ -211,7 +211,7 @@
             // 
             lbhead.AutoSize = true;
             lbhead.Font = new Font("Trebuchet MS", 24F, FontStyle.Bold);
-            lbhead.ForeColor = Color.Black;
+            lbhead.ForeColor = SystemColors.ButtonFace;
             lbhead.ImeMode = ImeMode.NoControl;
             lbhead.Location = new Point(173, 56);
             lbhead.Name = "lbhead";
@@ -220,7 +220,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Gold;
+            button1.BackColor = Color.Black;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -237,9 +237,9 @@
             // lbdok
             // 
             lbdok.AutoSize = true;
-            lbdok.BackColor = Color.Gold;
+            lbdok.BackColor = Color.Black;
             lbdok.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
-            lbdok.ForeColor = SystemColors.ActiveCaptionText;
+            lbdok.ForeColor = SystemColors.ButtonFace;
             lbdok.ImeMode = ImeMode.NoControl;
             lbdok.Location = new Point(1381, 9);
             lbdok.Name = "lbdok";

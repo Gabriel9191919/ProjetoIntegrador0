@@ -30,25 +30,48 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            txtUsuario = new TextBox();
-            linkLabel1 = new LinkLabel();
-            checkBox1 = new CheckBox();
-            txtSenha = new TextBox();
-            rButton1 = new RButton();
-            pictureBox1 = new PictureBox();
-            pictureBox2 = new PictureBox();
-            pictureBox3 = new PictureBox();
             label1 = new Label();
             pictureBox4 = new PictureBox();
-            button1 = new Button();
-            btnCadastrar = new RButton();
-            btnOlho = new Button();
             Timer = new System.Windows.Forms.Timer(components);
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            txtUsuario = new TextBox();
+            linkLabel1 = new LinkLabel();
+            pictureBox3 = new PictureBox();
+            checkBox1 = new CheckBox();
+            txtSenha = new TextBox();
+            pictureBox2 = new PictureBox();
+            rButton1 = new RButton();
+            btnCadastrar = new RButton();
+            pictureBox1 = new PictureBox();
+            button1 = new Button();
+            btnOlho = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.ForeColor = Color.Gold;
+            label1.Location = new Point(1713, 1047);
+            label1.Name = "label1";
+            label1.Size = new Size(69, 15);
+            label1.TabIndex = 12;
+            label1.Text = "Powered by";
+            label1.Click += label1_Click_1;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(1724, 985);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(256, 120);
+            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox4.TabIndex = 13;
+            pictureBox4.TabStop = false;
             // 
             // txtUsuario
             // 
@@ -76,6 +99,18 @@
             linkLabel1.Text = "Esqueci a senha";
             linkLabel1.LinkClicked += linkLabel1_LinkClicked;
             // 
+            // pictureBox3
+            // 
+            pictureBox3.Anchor = AnchorStyles.None;
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(807, 301);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(316, 140);
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox3.TabIndex = 11;
+            pictureBox3.TabStop = false;
+            // 
             // checkBox1
             // 
             checkBox1.Anchor = AnchorStyles.None;
@@ -101,6 +136,18 @@
             txtSenha.TabIndex = 2;
             txtSenha.KeyDown += txtSenha_KeyDown;
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Anchor = AnchorStyles.None;
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(789, 533);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(30, 23);
+            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox2.TabIndex = 10;
+            pictureBox2.TabStop = false;
+            // 
             // rButton1
             // 
             rButton1.Anchor = AnchorStyles.None;
@@ -121,79 +168,6 @@
             rButton1.TextColor = SystemColors.ActiveCaptionText;
             rButton1.UseVisualStyleBackColor = false;
             rButton1.Click += rButton1_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Anchor = AnchorStyles.None;
-            pictureBox1.BackColor = Color.Transparent;
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(789, 494);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(29, 20);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox1.TabIndex = 9;
-            pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            pictureBox2.Anchor = AnchorStyles.None;
-            pictureBox2.BackColor = Color.Transparent;
-            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(789, 533);
-            pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(30, 23);
-            pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox2.TabIndex = 10;
-            pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            pictureBox3.Anchor = AnchorStyles.None;
-            pictureBox3.BackColor = Color.Transparent;
-            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(807, 301);
-            pictureBox3.Name = "pictureBox3";
-            pictureBox3.Size = new Size(316, 140);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
-            pictureBox3.TabIndex = 11;
-            pictureBox3.TabStop = false;
-            // 
-            // label1
-            // 
-            label1.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            label1.AutoSize = true;
-            label1.ForeColor = Color.Gold;
-            label1.Location = new Point(1713, 1047);
-            label1.Name = "label1";
-            label1.Size = new Size(69, 15);
-            label1.TabIndex = 12;
-            label1.Text = "Powered by";
-            label1.Click += label1_Click_1;
-            // 
-            // pictureBox4
-            // 
-            pictureBox4.Anchor = AnchorStyles.Bottom | AnchorStyles.Right;
-            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
-            pictureBox4.Location = new Point(1724, 985);
-            pictureBox4.Name = "pictureBox4";
-            pictureBox4.Size = new Size(256, 120);
-            pictureBox4.SizeMode = PictureBoxSizeMode.StretchImage;
-            pictureBox4.TabIndex = 13;
-            pictureBox4.TabStop = false;
-            // 
-            // button1
-            // 
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            button1.ForeColor = Color.Red;
-            button1.Location = new Point(936, 730);
-            button1.Name = "button1";
-            button1.Size = new Size(56, 29);
-            button1.TabIndex = 25;
-            button1.Text = "SAIR";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // btnCadastrar
             // 
@@ -216,6 +190,32 @@
             btnCadastrar.UseVisualStyleBackColor = false;
             btnCadastrar.Click += btnCadastrar_Click;
             // 
+            // pictureBox1
+            // 
+            pictureBox1.Anchor = AnchorStyles.None;
+            pictureBox1.BackColor = Color.Transparent;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(789, 494);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(29, 20);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 9;
+            pictureBox1.TabStop = false;
+            // 
+            // button1
+            // 
+            button1.FlatAppearance.BorderSize = 0;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            button1.ForeColor = Color.Red;
+            button1.Location = new Point(936, 730);
+            button1.Name = "button1";
+            button1.Size = new Size(56, 29);
+            button1.TabIndex = 25;
+            button1.Text = "SAIR";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
+            // 
             // btnOlho
             // 
             btnOlho.Anchor = AnchorStyles.None;
@@ -237,7 +237,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.Black;
             ClientSize = new Size(1920, 1080);
             Controls.Add(btnOlho);
             Controls.Add(button1);
@@ -257,29 +257,29 @@
             Name = "Form1";
             StartPosition = FormStartPosition.CenterScreen;
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-        private TextBox txtUsuario;
-        private LinkLabel linkLabel1;
-        private CheckBox checkBox1;
-        private TextBox txtSenha;
-        private RButton rButton1;
-        private PictureBox pictureBox1;
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox3;
         private Label label1;
         private PictureBox pictureBox4;
-        private Button button1;
-        private RButton btnCadastrar;
         private Button button2;
-        private Button btnOlho;
         private System.Windows.Forms.Timer Timer;
+        private TextBox txtUsuario;
+        private LinkLabel linkLabel1;
+        private PictureBox pictureBox3;
+        private CheckBox checkBox1;
+        private TextBox txtSenha;
+        private PictureBox pictureBox2;
+        private RButton rButton1;
+        private RButton btnCadastrar;
+        private PictureBox pictureBox1;
+        private Button button1;
+        private Button btnOlho;
     }
 }

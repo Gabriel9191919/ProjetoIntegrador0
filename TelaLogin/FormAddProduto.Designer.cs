@@ -61,7 +61,7 @@
             pictureBox3.Location = new Point(204, 12);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(213, 153);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 28;
             pictureBox3.TabStop = false;
             // 
@@ -126,7 +126,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.Black;
             ClientSize = new Size(593, 368);
             Controls.Add(rButton1);
             Controls.Add(label2);

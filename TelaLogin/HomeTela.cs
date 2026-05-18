@@ -278,6 +278,7 @@ namespace TelaLogin
             Form1 tela = new Form1();
             tela.Show();
             this.Hide();
+            SessaoTimer.Parar();
         }
 
         private void label7_Click(object sender, EventArgs e)

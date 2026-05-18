@@ -32,11 +32,9 @@
             txtvenc = new TextBox();
             label1 = new Label();
             txtqtd = new TextBox();
-            txtpreco = new TextBox();
             label2 = new Label();
             label3 = new Label();
             label4 = new Label();
-            label5 = new Label();
             pictureBox3 = new PictureBox();
             rButton1 = new RButton();
             btnSair = new Button();
@@ -47,9 +45,9 @@
             // txtvenc
             // 
             txtvenc.Font = new Font("Segoe UI", 12F);
-            txtvenc.Location = new Point(363, 239);
+            txtvenc.Location = new Point(216, 239);
             txtvenc.Name = "txtvenc";
-            txtvenc.Size = new Size(193, 29);
+            txtvenc.Size = new Size(340, 29);
             txtvenc.TabIndex = 0;
             txtvenc.TextChanged += txtvenc_TextChanged;
             txtvenc.KeyPress += txtvenc_KeyPress;
@@ -72,15 +70,6 @@
             txtqtd.TabIndex = 3;
             txtqtd.TextChanged += textBox2_TextChanged;
             txtqtd.KeyPress += txtqtd_KeyPress;
-            // 
-            // txtpreco
-            // 
-            txtpreco.Font = new Font("Segoe UI", 12F);
-            txtpreco.Location = new Point(117, 242);
-            txtpreco.Name = "txtpreco";
-            txtpreco.Size = new Size(54, 29);
-            txtpreco.TabIndex = 4;
-            txtpreco.KeyPress += txtpreco_KeyPress;
             // 
             // label2
             // 
@@ -106,21 +95,11 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(209, 245);
+            label4.Location = new Point(62, 242);
             label4.Name = "label4";
             label4.Size = new Size(148, 21);
             label4.TabIndex = 8;
             label4.Text = "Data de vencimento";
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Font = new Font("Segoe UI", 12F);
-            label5.Location = new Point(62, 242);
-            label5.Name = "label5";
-            label5.Size = new Size(49, 21);
-            label5.TabIndex = 9;
-            label5.Text = "Preco";
             // 
             // pictureBox3
             // 
@@ -130,7 +109,7 @@
             pictureBox3.Location = new Point(204, 12);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(213, 153);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 13;
             pictureBox3.TabStop = false;
             // 
@@ -182,18 +161,16 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoScroll = true;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.Black;
             ClientSize = new Size(609, 407);
             ControlBox = false;
             Controls.Add(comboBox1);
             Controls.Add(btnSair);
             Controls.Add(rButton1);
             Controls.Add(pictureBox3);
-            Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
-            Controls.Add(txtpreco);
             Controls.Add(txtqtd);
             Controls.Add(label1);
             Controls.Add(txtvenc);
@@ -214,11 +191,9 @@
         private TextBox txtvenc;
         private Label label1;
         private TextBox txtqtd;
-        private TextBox txtpreco;
         private Label label2;
         private Label label3;
         private Label label4;
-        private Label label5;
         private PictureBox pictureBox3;
         private RButton rButton1;
         private Button btnSair;

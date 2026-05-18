@@ -106,7 +106,7 @@
             pictureBox3.Location = new Point(807, 301);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(316, 140);
-            pictureBox3.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox3.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox3.TabIndex = 19;
             pictureBox3.TabStop = false;
             // 
@@ -188,7 +188,7 @@
             // 
             // button9
             // 
-            button9.BackColor = Color.DimGray;
+            button9.BackColor = Color.Transparent;
             button9.FlatAppearance.BorderSize = 0;
             button9.FlatStyle = FlatStyle.Flat;
             button9.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -204,7 +204,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.ControlDarkDark;
+            BackColor = Color.Black;
             ClientSize = new Size(1920, 1080);
             Controls.Add(button9);
             Controls.Add(label1);

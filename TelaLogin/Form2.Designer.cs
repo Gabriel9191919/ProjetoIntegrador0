@@ -70,7 +70,7 @@
             // Painel_Principal
             // 
             resources.ApplyResources(Painel_Principal, "Painel_Principal");
-            Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.BackColor = Color.Black;
             Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(label3);
             Painel_Principal.Controls.Add(btnEstoque);
@@ -137,7 +137,7 @@
             // button1
             // 
             resources.ApplyResources(button1, "button1");
-            button1.BackColor = Color.Gold;
+            button1.BackColor = Color.Black;
             button1.FlatAppearance.BorderSize = 0;
             button1.ForeColor = Color.Red;
             button1.Name = "button1";
@@ -258,19 +258,20 @@
             // label10
             // 
             resources.ApplyResources(label10, "label10");
-            label10.BackColor = Color.Gold;
-            label10.ForeColor = SystemColors.ActiveCaptionText;
+            label10.BackColor = Color.Black;
+            label10.ForeColor = SystemColors.ButtonFace;
             label10.Name = "label10";
             // 
             // LbNom
             // 
             resources.ApplyResources(LbNom, "LbNom");
+            LbNom.ForeColor = SystemColors.ButtonFace;
             LbNom.Name = "LbNom";
             // 
             // panel1
             // 
             resources.ApplyResources(panel1, "panel1");
-            panel1.BackColor = Color.Gold;
+            panel1.BackColor = Color.Black;
             panel1.Controls.Add(LbNom);
             panel1.Name = "panel1";
             // 

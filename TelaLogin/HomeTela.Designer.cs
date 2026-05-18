@@ -88,7 +88,7 @@
             // 
             // Painel_Principal
             // 
-            Painel_Principal.BackColor = Color.Gold;
+            Painel_Principal.BackColor = Color.Black;
             Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
@@ -123,7 +123,7 @@
             // 
             // BtnTrocarSessao
             // 
-            BtnTrocarSessao.BackColor = Color.Gold;
+            BtnTrocarSessao.BackColor = Color.Black;
             BtnTrocarSessao.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(BtnTrocarSessao, "BtnTrocarSessao");
             BtnTrocarSessao.ForeColor = Color.Red;
@@ -147,10 +147,11 @@
             // 
             // button4
             // 
+            button4.BackColor = Color.Black;
             button4.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(button4, "button4");
             button4.Name = "button4";
-            button4.UseVisualStyleBackColor = true;
+            button4.UseVisualStyleBackColor = false;
             button4.Click += button4_Click;
             // 
             // button2
@@ -171,7 +172,7 @@
             // 
             // panel1
             // 
-            panel1.BackColor = Color.Gold;
+            panel1.BackColor = Color.Black;
             panel1.Controls.Add(LbNome);
             panel1.Controls.Add(lbRelogio);
             resources.ApplyResources(panel1, "panel1");
@@ -181,14 +182,15 @@
             // LbNome
             // 
             resources.ApplyResources(LbNome, "LbNome");
-            LbNome.BackColor = Color.Gold;
+            LbNome.BackColor = Color.Black;
+            LbNome.ForeColor = SystemColors.ButtonFace;
             LbNome.Name = "LbNome";
             LbNome.Click += LbNome_Click;
             // 
             // lbRelogio
             // 
             resources.ApplyResources(lbRelogio, "lbRelogio");
-            lbRelogio.ForeColor = SystemColors.ActiveCaptionText;
+            lbRelogio.ForeColor = SystemColors.ButtonFace;
             lbRelogio.Name = "lbRelogio";
             // 
             // label4
@@ -224,7 +226,7 @@
             // 
             // button1
             // 
-            button1.BackColor = Color.Gold;
+            button1.BackColor = Color.Black;
             button1.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(button1, "button1");
             button1.ForeColor = Color.Red;
@@ -255,17 +257,17 @@
             // 
             // panel8
             // 
-            panel8.BackColor = Color.Gold;
+            panel8.BackColor = Color.Black;
             panel8.Controls.Add(label8);
-            panel8.ForeColor = Color.Yellow;
+            panel8.ForeColor = Color.Black;
             resources.ApplyResources(panel8, "panel8");
             panel8.Name = "panel8";
             // 
             // label8
             // 
             resources.ApplyResources(label8, "label8");
-            label8.BackColor = Color.Gold;
-            label8.ForeColor = SystemColors.ActiveCaptionText;
+            label8.BackColor = Color.Black;
+            label8.ForeColor = SystemColors.ButtonFace;
             label8.Name = "label8";
             // 
             // pictureBox7
@@ -322,7 +324,7 @@
             // 
             // panel7
             // 
-            panel7.BackColor = Color.Gold;
+            panel7.BackColor = Color.Black;
             panel7.Controls.Add(label1);
             panel7.ForeColor = Color.Yellow;
             resources.ApplyResources(panel7, "panel7");
@@ -331,13 +333,13 @@
             // label1
             // 
             resources.ApplyResources(label1, "label1");
-            label1.BackColor = Color.Gold;
-            label1.ForeColor = SystemColors.ActiveCaptionText;
+            label1.BackColor = Color.Black;
+            label1.ForeColor = SystemColors.ButtonHighlight;
             label1.Name = "label1";
             // 
             // panel9
             // 
-            panel9.BackColor = Color.Gold;
+            panel9.BackColor = Color.Black;
             panel9.Controls.Add(label9);
             panel9.ForeColor = Color.Yellow;
             resources.ApplyResources(panel9, "panel9");
@@ -346,13 +348,13 @@
             // label9
             // 
             resources.ApplyResources(label9, "label9");
-            label9.BackColor = Color.Gold;
-            label9.ForeColor = SystemColors.ActiveCaptionText;
+            label9.BackColor = Color.Black;
+            label9.ForeColor = SystemColors.ButtonFace;
             label9.Name = "label9";
             // 
             // panel10
             // 
-            panel10.BackColor = Color.Gold;
+            panel10.BackColor = Color.Black;
             panel10.Controls.Add(label10);
             panel10.ForeColor = Color.Yellow;
             resources.ApplyResources(panel10, "panel10");
@@ -361,29 +363,28 @@
             // label10
             // 
             resources.ApplyResources(label10, "label10");
-            label10.BackColor = Color.Gold;
-            label10.ForeColor = SystemColors.ActiveCaptionText;
+            label10.BackColor = Color.Black;
+            label10.ForeColor = SystemColors.ButtonFace;
             label10.Name = "label10";
             // 
             // panel11
             // 
-            panel11.BackColor = Color.Gold;
+            panel11.BackColor = Color.Black;
             panel11.Controls.Add(label11);
-            panel11.ForeColor = Color.Yellow;
+            panel11.ForeColor = Color.Black;
             resources.ApplyResources(panel11, "panel11");
             panel11.Name = "panel11";
             // 
             // label11
             // 
             resources.ApplyResources(label11, "label11");
-            label11.BackColor = Color.Gold;
-            label11.ForeColor = SystemColors.ActiveCaptionText;
+            label11.BackColor = Color.Black;
+            label11.ForeColor = SystemColors.ButtonFace;
             label11.Name = "label11";
             // 
             // timerToggle
             // 
             timerToggle.Interval = 10;
-            
             // 
             // HomeTela
             // 

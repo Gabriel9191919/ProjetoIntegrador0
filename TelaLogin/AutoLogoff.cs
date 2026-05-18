@@ -62,5 +62,11 @@ namespace TelaLogin
         {
             tempo = 0;
         }
+
+
+        public static void Parar()
+        {
+            timer.Stop();
+        }
     }
 }
