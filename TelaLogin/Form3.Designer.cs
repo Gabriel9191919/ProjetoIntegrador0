@@ -45,9 +45,9 @@
             // txtvenc
             // 
             txtvenc.Font = new Font("Segoe UI", 12F);
-            txtvenc.Location = new Point(216, 239);
+            txtvenc.Location = new Point(308, 239);
             txtvenc.Name = "txtvenc";
-            txtvenc.Size = new Size(340, 29);
+            txtvenc.Size = new Size(170, 29);
             txtvenc.TabIndex = 0;
             txtvenc.TextChanged += txtvenc_TextChanged;
             txtvenc.KeyPress += txtvenc_KeyPress;
@@ -95,7 +95,7 @@
             // 
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F);
-            label4.Location = new Point(62, 242);
+            label4.Location = new Point(154, 242);
             label4.Name = "label4";
             label4.Size = new Size(148, 21);
             label4.TabIndex = 8;

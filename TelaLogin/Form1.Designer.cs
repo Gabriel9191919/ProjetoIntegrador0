@@ -219,12 +219,12 @@
             // btnOlho
             // 
             btnOlho.Anchor = AnchorStyles.None;
-            btnOlho.BackColor = Color.Transparent;
+            btnOlho.BackColor = Color.Gray;
             btnOlho.BackgroundImage = (Image)resources.GetObject("btnOlho.BackgroundImage");
             btnOlho.BackgroundImageLayout = ImageLayout.Stretch;
             btnOlho.FlatAppearance.BorderSize = 0;
             btnOlho.FlatStyle = FlatStyle.Flat;
-            btnOlho.ForeColor = Color.Transparent;
+            btnOlho.ForeColor = Color.White;
             btnOlho.Location = new Point(1129, 532);
             btnOlho.Name = "btnOlho";
             btnOlho.Size = new Size(24, 24);

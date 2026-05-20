@@ -33,7 +33,6 @@
             button3 = new Button();
             pictureBox2 = new PictureBox();
             label3 = new Label();
-            BtnTrocarSessao = new Button();
             button5 = new Button();
             label2 = new Label();
             button4 = new Button();
@@ -56,7 +55,6 @@
             Painel_Principal.Controls.Add(button3);
             Painel_Principal.Controls.Add(pictureBox2);
             Painel_Principal.Controls.Add(label3);
-            Painel_Principal.Controls.Add(BtnTrocarSessao);
             Painel_Principal.Controls.Add(button5);
             Painel_Principal.Controls.Add(label2);
             Painel_Principal.Controls.Add(button4);
@@ -103,22 +101,6 @@
             label3.Size = new Size(68, 32);
             label3.TabIndex = 17;
             label3.Text = "J&&M";
-            // 
-            // BtnTrocarSessao
-            // 
-            BtnTrocarSessao.BackColor = Color.Black;
-            BtnTrocarSessao.FlatAppearance.BorderSize = 0;
-            BtnTrocarSessao.FlatStyle = FlatStyle.Flat;
-            BtnTrocarSessao.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            BtnTrocarSessao.ForeColor = Color.Red;
-            BtnTrocarSessao.ImeMode = ImeMode.NoControl;
-            BtnTrocarSessao.Location = new Point(12, 953);
-            BtnTrocarSessao.Name = "BtnTrocarSessao";
-            BtnTrocarSessao.Size = new Size(155, 57);
-            BtnTrocarSessao.TabIndex = 24;
-            BtnTrocarSessao.Text = "Trocar de sessão";
-            BtnTrocarSessao.UseVisualStyleBackColor = false;
-            BtnTrocarSessao.Click += BtnTrocarSessao_Click;
             // 
             // button5
             // 
@@ -226,7 +208,7 @@
             button1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             button1.ForeColor = Color.Red;
             button1.ImeMode = ImeMode.NoControl;
-            button1.Location = new Point(1642, 12);
+            button1.Location = new Point(1650, 10);
             button1.Name = "button1";
             button1.Size = new Size(56, 29);
             button1.TabIndex = 52;
@@ -241,7 +223,7 @@
             lbdok.Font = new Font("Microsoft Sans Serif", 15.75F, FontStyle.Bold);
             lbdok.ForeColor = SystemColors.ButtonFace;
             lbdok.ImeMode = ImeMode.NoControl;
-            lbdok.Location = new Point(1381, 9);
+            lbdok.Location = new Point(1334, 10);
             lbdok.Name = "lbdok";
             lbdok.Size = new Size(138, 25);
             lbdok.TabIndex = 51;
@@ -276,7 +258,6 @@
         private Panel Painel_Principal;
         private PictureBox pictureBox2;
         private Label label3;
-        private Button BtnTrocarSessao;
         private Button button5;
         private Label label2;
         private Button button4;
